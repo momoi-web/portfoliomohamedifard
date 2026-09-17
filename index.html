@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohamed Ifard - Portfolio</title>
+    <style>
+        /* Styles de base */
+        :root {
+            --primary-color: #4a3b38;
+            --secondary-color: #6b5b58;
+            --background-color: #f9f9f9;
+            --text-color: #333333;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.8; /* Texte plus espacé en hauteur */
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+        }
+
+        /* En-tête / Navigation */
+        header {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 1.2rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 40px; /* Plus d'espace entre les liens du menu */
+        }
+
+        nav a {
+            color: var(--white);
+            font-weight: bold;
+            padding: 8px 15px;
+            transition: background 0.3s;
+            border-radius: 5px;
+            font-size: 1.1rem;
+        }
+
+        nav a:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* Bannière principale (Hero) - Plus haute */
+        .hero {
+            background: linear-gradient(rgba(74, 59, 56, 0.8), rgba(74, 59, 56, 0.8)), url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&q=80') center/cover;
+            color: var(--white);
+            text-align: center;
+            padding: 180px 20px; /* Bannière beaucoup plus grande */
+        }
+
+        .hero h1 {
+            font-size: 4rem; /* Titre plus grand */
+            margin-bottom: 15px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .hero p {
+            font-size: 1.8rem;
+            letter-spacing: 4px; /* Plus d'espace entre les lettres */
+        }
+
+        /* Conteneur principal - Plus large */
+        .container {
+            max-width: 1200px; /* Utilise plus de largeur sur l'écran */
+            margin: 0 auto;
+            padding: 80px 20px; /* Plus de marge au dessus et en dessous */
+        }
+
+        /* Section À propos - Plus aérée */
+        .about-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 60px; /* Grand espace entre la photo et le texte */
+            align-items: center;
+            margin-bottom: 120px; /* Grand espace avant la section suivante */
+            background: var(--white);
+            padding: 60px; /* Boîte plus grande */
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .about-img {
+            flex: 1;
+            min-width: 300px;
+            background-color: #ddd;
+            height: 400px; /* Photo plus grande */
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777;
+            font-size: 1.2rem;
+        }
+
+        .about-text {
+            flex: 2;
+            min-width: 350px;
+            font-size: 1.1rem; /* Texte légèrement plus grand */
+        }
+
+        .section-title {
+            background-color: var(--primary-color);
+            color: var(--white);
+            display: inline-block;
+            padding: 12px 25px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+            font-weight: bold;
+            font-size: 1.3rem;
+            letter-spacing: 1px;
+        }
+
+        /* Sections Grid - Plus espacées */
+        .grid-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 50px; /* Grand espace entre les blocs */
+            margin-bottom: 120px;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 50px 40px; /* Blocs beaucoup plus larges de l'intérieur */
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px); /* Animation un peu plus marquée */
+        }
+
+        .card h3 {
+            color: var(--primary-color);
+            margin-bottom: 25px;
+            font-size: 1.5rem;
+        }
+
+        .card p {
+            font-size: 1.1rem;
+        }
+
+        .btn-projet {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 12px 25px;
+            background: var(--primary-color);
+            color: var(--white);
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .btn-projet:hover {
+            background: var(--secondary-color);
+            color: var(--white);
+        }
+
+        /* Footer / Contact - Plus imposant */
+        footer {
+            background-color: #444;
+            color: var(--white);
+            text-align: center;
+            padding: 60px 20px;
+            margin-top: 60px;
+        }
+
+        footer p {
+            font-size: 1.4rem;
+            margin-bottom: 30px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 60px; /* Plus d'espace entre les infos de contact */
+            flex-wrap: wrap;
+        }
+
+        .contact-info a {
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+        
+        .contact-info a:hover {
+            color: #d1c4c1;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="#accueil">Accueil</a>
+            <a href="#formation">Formation</a>
+            <a href="#projets">Mes Projets</a>
+            <a href="#logiciels">Logiciels</a>
+        </nav>
+    </header>
+
+    <section id="accueil" class="hero">
+        <h1>Mohamed Ifard</h1>
+        <p>PORTFOLIO</p>
+    </section>
+
+    <div class="container">
+        
+        <!-- Section Qui suis-je -->
+        <section class="about-section">
+            <div class="about-img">
+                [Insérez votre photo ici]
+            </div>
+            <div class="about-text">
+                <div class="section-title">Qui suis-je</div>
+                <p>Je m'appelle Mohamed Ifard. Je suis d'origine italienne et marocaine, ce qui a été pour moi un véritable défi lorsque je suis arrivé en France : d'abord pour apprendre la langue, mais aussi pour découvrir la culture du pays.</p>
+                <p>J'ai tout de même eu quelques facilités, car j'apprends rapidement. J'ai ensuite pu intégrer un lycée scientifique, car j'aime les sciences et je voulais devenir ingénieur. Grâce à mes spécialités : les mathématiques, la physique-chimie et les sciences de l'ingénieur, j'ai pu intégrer le BUT GMP à l'IUT d'Orléans.</p>
+            </div>
+        </section>
+
+        <!-- Section Formation -->
+        <section id="formation">
+            <div class="section-title">Formation</div>
+            <div class="grid-section">
+                <div class="card">
+                    <h3>IUT'O (Orléans)</h3>
+                    <p><strong>Bachelor Universitaire de Technologie en Génie Mécanique et Productique (GMP)</strong></p>
+                    <p>Spécialité : Simulation numérique et réalité virtuelle</p>
+                </div>
+                <div class="card">
+                    <h3>Lycée Jacques de Vaucanson (Tours)</h3>
+                    <p><strong>Obtention du baccalauréat</strong></p>
+                    <p>Spécialités : Sciences de l'ingénieur & Mathématiques</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Navigation Rapide Projets & Logiciels -->
+        <section id="projets" class="grid-section">
+            <div class="card">
+                <h3>Mes Projets</h3>
+                <p>Découvrez mes projets associatifs (HYPERBOLE++), professionnels (INGENAO, Ingenium 360) et scolaires.</p>
+                <a href="#" class="btn-projet">Voir mes projets en détail</a>
+            </div>
+            <div class="card" id="logiciels">
+                <h3>Logiciels Maîtrisés</h3>
+                <p>SolidWorks, TopSolid, Creo, Solid Edge, MATLAB & Simulink, Pack Office.</p>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Pied de page / Contact -->
+    <footer>
+        <p>Contactez-moi</p>
+        <div class="contact-info">
+            <a href="https://linkedin.com" target="_blank">🔗 LinkedIn</a>
+            <a href="mailto:ifard.mohamed1@gmail.com">✉️ ifard.mohamed1@gmail.com</a>
+            <a href="tel:+330644069669">📞 +33 06 44 06 96 69</a>
+        </div>
+    </footer>
+
+</body>
+</html>

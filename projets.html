@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohamed Ifard - Mes Projets</title>
+    <style>
+        /* Styles de base (identiques à l'accueil pour la cohérence) */
+        :root {
+            --primary-color: #4a3b38;
+            --secondary-color: #6b5b58;
+            --background-color: #f9f9f9;
+            --text-color: #333333;
+            --white: #ffffff;
+            --accent: #d97736; /* Une couleur d'accentuation (orange type GMP) */
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.8;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+        }
+
+        /* En-tête / Navigation */
+        header {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 1.2rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        nav a {
+            color: var(--white);
+            font-weight: bold;
+            padding: 8px 15px;
+            transition: background 0.3s;
+            border-radius: 5px;
+            font-size: 1.1rem;
+        }
+
+        nav a:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* Bannière Projets */
+        .hero-projets {
+            background-color: var(--secondary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .hero-projets h1 {
+            font-size: 3rem;
+            margin: 0;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        /* Conteneur principal */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        /* Style des sections projets */
+        .category-title {
+            background-color: var(--primary-color);
+            color: var(--white);
+            display: inline-block;
+            padding: 10px 25px;
+            border-radius: 5px;
+            margin: 60px 0 30px 0;
+            font-weight: bold;
+            font-size: 1.4rem;
+            text-transform: uppercase;
+        }
+
+        .project-card {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 50px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: flex-start;
+        }
+
+        /* Inverser l'ordre une fois sur deux pour le design */
+        .project-card:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .project-img-placeholder {
+            flex: 1;
+            min-width: 300px;
+            background-color: #e0e0e0;
+            min-height: 250px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777;
+            font-style: italic;
+        }
+
+        .project-content {
+            flex: 2;
+            min-width: 350px;
+        }
+
+        .project-content h2 {
+            color: var(--primary-color);
+            margin-top: 0;
+            font-size: 2rem;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+
+        .project-content h4 {
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .project-content ul {
+            padding-left: 20px;
+        }
+
+        .project-content li {
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #444;
+            color: var(--white);
+            text-align: center;
+            padding: 60px 20px;
+            margin-top: 60px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+
+        .contact-info a {
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="index.html">Accueil</a>
+            <a href="index.html#formation">Formation</a>
+            <a href="projets.html">Mes Projets</a>
+            <a href="index.html#logiciels">Logiciels</a>
+        </nav>
+    </header>
+
+    <section class="hero-projets">
+        <h1>Mes Projets & Expériences</h1>
+    </section>
+
+    <div class="container">
+
+        <!-- PROJET ASSOCIATIF -->
+        <div class="category-title">Projet Associatif</div>
+
+        <div class="project-card">
+            <div class="project-img-placeholder">
+                [Image : Voiture Shell Eco-marathon]
+            </div>
+            <div class="project-content">
+                <h2>HYPERBOLE++</h2>
+                <h4>Shell Eco-marathon</h4>
+                <p>Pendant mon cursus, j'ai rejoint l'association HYPERBOLE++. Notre objectif était de construire un prototype électrique pour participer au <strong>Shell Eco-marathon</strong>, une compétition internationale visant à concevoir des véhicules ultra-économes en énergie.</p>
+                <p>Notre équipe a conçu et fabriqué par ses propres moyens un prototype doté d'une coque en carbone et d'un design aérodynamique optimisé. Malgré un budget modeste, nous nous sommes distingués par notre ingéniosité et la maîtrise des technologies électriques, obtenant ainsi une très bonne place au classement.</p>
+            </div>
+        </div>
+
+
+        <!-- PROJETS PROFESSIONNELS (STAGES) -->
+        <div class="category-title">Expériences Professionnelles</div>
+
+        <div class="project-card">
+            <div class="project-img-placeholder">
+                [Image : Pousseur de papier INGENAO]
+            </div>
+            <div class="project-content">
+                <h2>Stage chez INGENAO</h2>
+                <h4>Mise en place d'une méthodologie de travail</h4>
+                <p>Durant ce stage de 14 semaines, j'ai eu l'occasion de travailler de manière autonome sur plusieurs projets. Mon étude s'est concentrée sur le "pousseur de papier". J'ai élaboré une méthodologie en 3 étapes :</p>
+                <ul>
+                    <li><strong>Étape 1 : Réalisation d'un scan 3D</strong> de l'environnement pour relever les zones et points d'accroche possibles.</li>
+                    <li><strong>Étape 2 : Étude & Conception 3D</strong> (optimisation des assemblages).</li>
+                    <li><strong>Étape 3 : Mise en plan pour fabrication</strong> (tri des ensembles, vues de détails, nomenclatures).</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <div class="project-img-placeholder">
+                [Image : Treuil INGENIUM 360]
+            </div>
+            <div class="project-content">
+                <h2>Stage chez Ingenium 360</h2>
+                <h4>Conception d'un nouveau treuil manuel</h4>
+                <p>Ingenium 360 est un bureau d'études spécialisé dans le levage. Mon projet principal consistait à concevoir un nouveau treuil manuel suite au signalement d'un problème d'ergonomie par un client (risques de TMS dus au système de manivelle à cliquet).</p>
+                <p><strong>Mes missions :</strong></p>
+                <ul>
+                    <li>Analyse du besoin (diagramme pieuvre).</li>
+                    <li>Mise en place d'un fichier de traçabilité (nomenclature) pour gérer les pièces.</li>
+                    <li>Proposition de solutions techniques : par exemple, un système d'entraînement via des crabots se mettant en rotation et translation axiale pour comprimer un ressort de pression.</li>
+                </ul>
+            </div>
+        </div>
+
+
+        <!-- PROJET SCOLAIRE -->
+        <div class="category-title">Projet Scolaire</div>
+
+        <div class="project-card">
+            <div class="project-img-placeholder">
+                [Image : Modélisation Pompe à Palette]
+            </div>
+            <div class="project-content">
+                <h2>Pompe à Palettes</h2>
+                <h4>Projet d'industrialisation (Semestre 5)</h4>
+                <p>Dans le cadre de nos travaux pratiques d'industrialisation, nous devions fabriquer une pompe à palettes en usinant deux pièces clés : le corps et l'axe.</p>
+                <p>J'ai été chargé de réaliser ces deux composants par usinage dans la masse, ainsi que l'outillage destiné à maintenir le corps de la pompe. Cela impliquait la création de trois programmes FAO. Ce projet m'a permis de suivre le processus complet, de la conception à la réalisation sur machine-outil.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Pied de page / Contact -->
+    <footer>
+        <p>Contactez-moi</p>
+        <div class="contact-info">
+            <a href="https://linkedin.com" target="_blank">🔗 LinkedIn</a>
+            <a href="mailto:ifard.mohamed1@gmail.com">✉️ ifard.mohamed1@gmail.com</a>
+            <a href="tel:+330644069669">📞 +33 06 44 06 96 69</a>
+        </div>
+    </footer>
+
+</body>
+</html>
