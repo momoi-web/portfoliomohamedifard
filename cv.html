@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mohamed Ifard - Mon CV</title>
     <style>
-        /* Styles de base cohérents avec le reste du site */
         :root {
             --primary-color: #4a3b38;
             --secondary-color: #6b5b58;
@@ -14,179 +13,26 @@
             --white: #ffffff;
             --cv-left-bg: #f4f1f0;
         }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--background-color);
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-
-        a {
-            text-decoration: none;
-            color: var(--primary-color);
-        }
-
-        /* En-tête / Navigation */
-        header {
-            background-color: var(--primary-color);
-            color: var(--white);
-            padding: 1.2rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
-
-        nav {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-        }
-
-        nav a {
-            color: var(--white);
-            font-weight: bold;
-            padding: 8px 15px;
-            transition: background 0.3s;
-            border-radius: 5px;
-            font-size: 1.1rem;
-        }
-
-        nav a:hover {
-            background-color: var(--secondary-color);
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 40px auto;
-            padding: 20px;
-        }
-
-        /* Section Vidéo / Photo de présentation */
-        .presentation-box {
-            background-color: var(--white);
-            border-radius: 15px;
-            padding: 40px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            margin-bottom: 60px;
-        }
-
-        .video-placeholder {
-            width: 100%;
-            max-width: 600px;
-            height: 350px;
-            background-color: #ddd;
-            margin: 0 auto;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #777;
-            font-size: 1.2rem;
-        }
-
-        /* Structure du CV en HTML (Meilleur qu'une image !) */
-        .cv-wrapper {
-            background: var(--white);
-            display: flex;
-            flex-wrap: wrap;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        .cv-left {
-            background-color: var(--cv-left-bg);
-            flex: 1;
-            min-width: 250px;
-            padding: 40px 30px;
-            border-right: 2px solid #e0e0e0;
-        }
-
-        .cv-right {
-            flex: 2.5;
-            min-width: 350px;
-            padding: 40px;
-        }
-
-        .cv-header-right {
-            background-color: #333;
-            color: white;
-            padding: 20px;
-            text-align: center;
-            border-radius: 5px;
-            margin-bottom: 30px;
-        }
-
-        .cv-title {
-            font-size: 1.2rem;
-            letter-spacing: 2px;
-            margin-bottom: 20px;
-            color: var(--primary-color);
-            text-align: center;
-            font-weight: bold;
-            border-bottom: 1px solid var(--primary-color);
-            padding-bottom: 5px;
-        }
-
-        .cv-left h2 {
-            font-size: 1.8rem;
-            margin-top: 0;
-            color: var(--primary-color);
-        }
-
-        .cv-left h4 {
-            margin: 5px 0 20px 0;
-            color: #777;
-        }
-
-        .cv-section {
-            margin-bottom: 30px;
-        }
-
-        .cv-item-title {
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-        
-        .cv-date {
-            color: var(--secondary-color);
-            font-size: 0.9rem;
-            font-weight: bold;
-        }
-
-        ul {
-            padding-left: 20px;
-            margin-top: 5px;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #444;
-            color: var(--white);
-            text-align: center;
-            padding: 60px 20px;
-            margin-top: 60px;
-        }
-        
-        .contact-info {
-            display: flex;
-            justify-content: center;
-            gap: 60px;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
-
-        .contact-info a {
-            color: var(--white);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: var(--background-color); color: var(--text-color); line-height: 1.6; }
+        a { text-decoration: none; color: var(--primary-color); }
+        header { background-color: var(--primary-color); color: var(--white); padding: 1.2rem 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+        nav { display: flex; justify-content: center; gap: 40px; }
+        nav a { color: var(--white); font-weight: bold; padding: 8px 15px; border-radius: 5px; font-size: 1.1rem; }
+        nav a:hover { background-color: var(--secondary-color); }
+        .container { max-width: 1000px; margin: 40px auto; padding: 20px; }
+        .presentation-box { background-color: var(--white); border-radius: 15px; padding: 40px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.05); margin-bottom: 60px; }
+        .cv-wrapper { background: var(--white); display: flex; flex-wrap: wrap; box-shadow: 0 10px 25px rgba(0,0,0,0.1); border-radius: 10px; overflow: hidden; }
+        .cv-left { background-color: var(--cv-left-bg); flex: 1; min-width: 250px; padding: 40px 30px; border-right: 2px solid #e0e0e0; }
+        .cv-right { flex: 2.5; min-width: 350px; padding: 40px; }
+        .cv-header-right { background-color: #333; color: white; padding: 20px; text-align: center; border-radius: 5px; margin-bottom: 30px; }
+        .cv-title { font-size: 1.2rem; letter-spacing: 2px; margin-bottom: 20px; color: var(--primary-color); text-align: center; font-weight: bold; border-bottom: 1px solid var(--primary-color); padding-bottom: 5px; }
+        .cv-left h2 { font-size: 1.8rem; margin-top: 0; color: var(--primary-color); }
+        .cv-left h4 { margin: 5px 0 20px 0; color: #777; }
+        .cv-section { margin-bottom: 30px; }
+        .cv-item-title { font-weight: bold; margin-bottom: 5px; }
+        .cv-date { color: var(--secondary-color); font-size: 0.9rem; font-weight: bold; }
+        ul { padding-left: 20px; margin-top: 5px; }
+        footer { background-color: #444; color: var(--white); text-align: center; padding: 60px 20px; margin-top: 60px; }
     </style>
 </head>
 <body>
@@ -200,114 +46,53 @@
     </header>
 
     <div class="container">
-        
-        <!-- Boîte de présentation -->
         <div class="presentation-box">
             <h1 style="color: var(--primary-color); margin-bottom: 30px;">PRÉSENTATION</h1>
-            <div class="video-placeholder">
-                [Insérez votre vidéo ou photo de présentation ici]
-            </div>
+            <p>Ici, vous pourrez insérer votre vidéo ou photo de présentation.</p>
         </div>
 
         <h2 style="color: var(--primary-color);">Mon CV :</h2>
 
-        <!-- Début du CV interactif -->
         <div class="cv-wrapper">
-            
-            <!-- Colonne de gauche (Profil, Contact, Logiciels) -->
             <div class="cv-left">
                 <h2>Mohamed IFARD</h2>
                 <h4>Né le 17/09/2004</h4>
 
                 <div class="cv-section">
                     <div class="cv-title">PROFIL</div>
-                    <p style="font-size: 0.9rem;">Déterminé, sérieux, autonome et conscient du travail qui m'attend, je suis enthousiaste à l'idée de contribuer à développer des solutions innovantes.</p>
+                    <p style="font-size: 0.9rem;">Déterminé, sérieux, autonome et conscient du travail qui m'attend, je suis enthousiaste à l'idée de contribuer à développer des solutions innovantes.[cite: 7]</p>
                 </div>
 
                 <div class="cv-section">
                     <div class="cv-title">CONTACT</div>
                     <p style="font-size: 0.9rem;">
-                        📍 155 Quai Paul Bert, 37100 Tours<br>
-                        ✉️ ifard.mohamed1@gmail.com<br>
-                        📞 06 44 06 96 69
-                    </p>
-                </div>
-
-                <div class="cv-section">
-                    <div class="cv-title">LOGICIELS</div>
-                    <p style="font-size: 0.9rem;">
-                        <strong>CAO/FAO :</strong> CREO, TopSolid, SolidWorks, SolidEdge, OnShape<br>
-                        <strong>Simulink & Matlab</strong><br>
-                        <strong>Suite Office</strong>
-                    </p>
-                </div>
-
-                <div class="cv-section">
-                    <div class="cv-title">LINGUISTIQUE</div>
-                    <p style="font-size: 0.9rem;">
-                        <strong>Italien :</strong> Langue natale<br>
-                        <strong>Anglais :</strong> B2
+                        📍 155 Quai Paul Bert, 37100 Tours[cite: 7]<br>
+                        ✉️ ifard.mohamed1@gmail.com[cite: 7]<br>
+                        📞 06 44 06 96 69[cite: 7]
                     </p>
                 </div>
             </div>
 
-            <!-- Colonne de droite (Formation, Expérience) -->
             <div class="cv-right">
-                
                 <div class="cv-header-right">
-                    <h3>RECHERCHE STAGE DE DEUXIÈME ANNÉE</h3>
-                    <p>BUT GÉNIE MÉCANIQUE ET PRODUCTIQUE<br>16 MARS - 19 JUIN 2025</p>
+                    <h3>STAGE DE DEUXIÈME ANNÉE DE BUT GÉNIE MÉCANIQUE ET PRODUCTIQUE</h3>
+                    <p>16 MARS - 19 JUIN 2025[cite: 7]</p>
                 </div>
 
                 <div class="cv-section">
                     <div class="cv-title">FORMATION</div>
-                    
                     <div style="margin-bottom: 20px;">
-                        <span class="cv-date">2023 - 2026</span>
-                        <div class="cv-item-title">Bachelor Universitaire de Technologie (BUT) GMP</div>
-                        <p style="margin: 0; font-size: 0.95rem;"><em>IUT d'Orléans (45) - Spécialité : Simulation numérique et réalité virtuelle</em></p>
-                        <ul style="font-size: 0.9rem; color: #555;">
-                            <li>Solution mécanique et étude par éléments finis</li>
-                            <li>Projet académique : intégration du train avant dans un prototype pour le Shell Eco-marathon</li>
-                            <li>Travail d'équipe et réactivité face aux problèmes</li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <span class="cv-date">2023</span>
-                        <div class="cv-item-title">Baccalauréat Scientifique</div>
-                        <p style="margin: 0; font-size: 0.95rem;"><em>Lycée Jacques de Vaucanson, Tours (37) - Mention : Assez bien</em></p>
-                        <p style="font-size: 0.9rem; color: #555; margin-top: 5px;">Spécialités : Mathématiques et Sciences de l'ingénieur. Grand oral sur l'influence de l'aérodynamisme.</p>
+                        <span class="cv-date">2023-26</span>
+                        <div class="cv-item-title">Bachelor universitaire technologique (BUT) en Génie mécanique et Productique (GMP) - deuxième année[cite: 7]</div>
+                        <p style="margin: 0; font-size: 0.95rem;"><em>IUT D'Orléans (45) - spécialité simulation numérique et réalité virtuelle[cite: 7]</em></p>
                     </div>
                 </div>
-
-                <div class="cv-section">
-                    <div class="cv-title">EXPÉRIENCE</div>
-                    
-                    <div>
-                        <span class="cv-date">7 Juillet - 31 Août 2025</span>
-                        <div class="cv-item-title">Stage - INGENIUM 360</div>
-                        <ul style="font-size: 0.9rem; color: #555;">
-                            <li>Gestion du cycle de vie d'un produit</li>
-                            <li>Mise en place de cahier des charges et processus qualité</li>
-                            <li>Résolution de problèmes mécaniques et conception 3D</li>
-                            <li>Gestion de nomenclature</li>
-                        </ul>
-                    </div>
-                </div>
-
             </div>
         </div>
-
     </div>
 
-    <!-- Pied de page -->
     <footer>
-        <p>Contactez-moi</p>
-        <div class="contact-info">
-            <a href="https://linkedin.com" target="_blank">🔗 LinkedIn</a>
-            <a href="mailto:ifard.mohamed1@gmail.com">✉️ ifard.mohamed1@gmail.com</a>
-        </div>
+        <p>© Mohamed Ifard - Portfolio</p>
     </footer>
 
 </body>
