@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détail du Projet - Stage INGENIUM 360</title>
+    <style>
+        :root {
+            --primary-color: #4a3b38;
+            --secondary-color: #6b5b58;
+            --background-color: #f9f9f9;
+            --text-color: #333333;
+            --white: #ffffff;
+        }
+
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: var(--background-color); color: var(--text-color); line-height: 1.8; }
+        a { text-decoration: none; color: var(--primary-color); }
+        
+        header { background-color: var(--primary-color); color: var(--white); padding: 1.2rem 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+        nav { display: flex; justify-content: center; gap: 40px; }
+        nav a { color: var(--white); font-weight: bold; padding: 8px 15px; border-radius: 5px; font-size: 1.1rem; }
+        nav a:hover { background-color: var(--secondary-color); }
+
+        .project-hero { background-color: var(--secondary-color); color: var(--white); text-align: center; padding: 60px 20px; }
+        .project-hero h1 { font-size: 2.5rem; margin-bottom: 10px; }
+
+        .container { max-width: 1000px; margin: 40px auto; padding: 20px; background: var(--white); border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        
+        .back-button { display: inline-block; margin-bottom: 30px; font-weight: bold; color: var(--secondary-color); }
+        .back-button:hover { color: var(--primary-color); text-decoration: underline; }
+
+        .intro-box { background-color: #f4f1f0; padding: 30px; border-left: 5px solid var(--primary-color); margin-bottom: 50px; border-radius: 0 10px 10px 0; display: flex; flex-wrap: wrap; gap: 20px; align-items: center; }
+        .intro-text { flex: 2; min-width: 300px; }
+        .intro-img { flex: 1; min-width: 250px; height: 250px; background-color: #e0e0e0; display: flex; align-items: center; justify-content: center; color: #777; border-radius: 10px; text-align: center; padding: 10px; }
+
+        .section-block { margin-bottom: 50px; }
+        .section-title { color: var(--primary-color); font-size: 1.5rem; margin-bottom: 20px; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        
+        .content-flex { display: flex; flex-wrap: wrap; gap: 30px; align-items: flex-start; }
+        .content-text { flex: 1; min-width: 300px; }
+        .content-img { flex: 1; min-width: 300px; min-height: 250px; background-color: #e0e0e0; display: flex; align-items: center; justify-content: center; flex-direction: column; color: #777; border-radius: 10px; padding: 15px; text-align: center; gap: 15px; }
+        
+        ul { padding-left: 20px; }
+        footer { background-color: #444; color: var(--white); text-align: center; padding: 40px 20px; margin-top: 60px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="index.html">Accueil</a>
+            <a href="cv.html">Mon CV</a>
+            <a href="projets.html">Mes Projets</a>
+        </nav>
+    </header>
+
+    <div class="project-hero">
+        <h1>Stage chez INGENIUM 360</h1>
+        <p style="font-size: 1.2rem;">Conception d'un système Stop-chute (Fall Arrest)</p>
+    </div>
+
+    <div class="container">
+        <a href="projets.html" class="back-button">← Retour à tous les projets</a>
+
+        <!-- Introduction -->
+        <div class="intro-box">
+            <div class="intro-text">
+                <p>Dans le cadre de mon stage, j'ai intégré <strong>INGENIUM 360</strong>, un bureau d'études spécialisé. Cette entreprise m'a permis de travailler sur un de leurs projets d'envergure : le <strong>projet Fall Arrest</strong>.</p>
+                <p>Ce projet m'a été confié car il y a eu un problème soulevé lors de tests : le client se plaignait de douleurs liées à l'utilisation de la manivelle. Mes missions étaient divisées en deux parties : mettre en place un suivi rigoureux des composants, puis développer et proposer une solution technique pour relâcher à distance la tension du ressort qui influe sur le système de serrage du câble.</p>
+            </div>
+            <div class="intro-img">
+                [Image : Modélisation 3D du treuil bleu INGENIUM 360]
+            </div>
+        </div>
+
+        <!-- Section 1 : Traçabilité -->
+        <div class="section-block">
+            <h2 class="section-title">Mission 1 : Fichier de Traçabilité & Nomenclature</h2>
+            <div class="content-flex" style="flex-direction: row-reverse;">
+                <div class="content-text">
+                    <p>Pour mettre en place ce système, on a reconstruit un <strong>fichier de traçabilité</strong> qui renseigne la désignation des pièces, les références associées et leurs caractéristiques. On pourra donc connaître chaque pièce utilisée pour chaque ensemble du treuil.</p>
+                    <p>Mon travail consistait au contrôle des pièces : je prenais une pièce qui manquait d'informations dans la nomenclature (dénommée « N-A »), puis je faisais le lien avec son modèle 3D, son plan, sa désignation et sa fonction (ou localisation). Ensuite, je l'ajoutais au document officiel.</p>
+                </div>
+                <div class="content-img">
+                    <div>[Image : Tableau de traçabilité]</div>
+                    <div>[Image : Tableau de nomenclature Excel]</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2 : Conception Technique -->
+        <div class="section-block">
+            <h2 class="section-title">Mission 2 : Étude Conceptuelle & Solution Technique</h2>
+            <div class="content-flex">
+                <div class="content-text">
+                    <p>J'ai été amené à proposer et modéliser une solution pour pouvoir régler la tension du ressort à distance, permettant ainsi le serrage du câble et son enroulement.</p>
+                    <p>Pour ce faire, j'ai dressé un cahier des charges listant toutes les informations et exigences nécessaires pour ce projet (Opérateur, Durée de vie, Sécurité, Fiabilité, Budget...). Après avoir listé ces contraintes, je les ai retranscrites à l'aide d'un <strong>diagramme pieuvre</strong>.</p>
+                    <p><strong>Une des solutions proposées :</strong> Un système d'entraînement par crabots. Avec ce relai, tout est fait en rotation et peut seulement se translater axialement afin de comprimer le ressort de pression.</p>
+                </div>
+                <div class="content-img">
+                    <div>[Image : Diagramme Pieuvre (Système de poussée)]</div>
+                    <div>[Image : Schéma de la solution technique par crabots]</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>© Mohamed Ifard - Portfolio</p>
+    </footer>
+
+</body>
+</html>
