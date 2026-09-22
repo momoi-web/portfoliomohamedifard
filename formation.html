@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohamed Ifard - Ma Formation</title>
+    <style>
+        :root {
+            --primary-color: #4a3b38;
+            --secondary-color: #6b5b58;
+            --background-color: #f9f9f9;
+            --text-color: #333333;
+            --white: #ffffff;
+            --accent: #d97736;
+        }
+
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: var(--background-color); color: var(--text-color); line-height: 1.8; }
+        a { text-decoration: none; color: var(--primary-color); }
+        
+        header { background-color: var(--primary-color); color: var(--white); padding: 1.2rem 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+        nav { display: flex; justify-content: center; gap: 40px; }
+        nav a { color: var(--white); font-weight: bold; padding: 8px 15px; border-radius: 5px; font-size: 1.1rem; }
+        nav a:hover { background-color: var(--secondary-color); }
+
+        .hero-formation { background-color: var(--secondary-color); color: var(--white); text-align: center; padding: 60px 20px; }
+        .hero-formation h1 { font-size: 2.5rem; margin-bottom: 10px; }
+
+        .container { max-width: 1000px; margin: 40px auto; padding: 20px; }
+        
+        .back-button { display: inline-block; margin-bottom: 30px; font-weight: bold; color: var(--secondary-color); }
+        .back-button:hover { color: var(--primary-color); text-decoration: underline; }
+
+        .formation-card { background: var(--white); border-radius: 15px; padding: 40px; margin-bottom: 40px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-left: 6px solid var(--accent); }
+        .formation-card h2 { color: var(--primary-color); margin-top: 0; font-size: 1.8rem; }
+        .formation-card h4 { color: #666; margin-bottom: 20px; font-weight: normal; font-size: 1.1rem; }
+        
+        .tag-list { display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0; }
+        .tag { background-color: #f4f1f0; color: var(--primary-color); padding: 6px 14px; border-radius: 20px; font-size: 0.9rem; font-weight: 600; }
+
+        .project-box { background-color: #faf8f7; border: 1px solid #e8e4e2; padding: 25px; border-radius: 10px; margin-top: 25px; }
+        .project-box h3 { color: var(--primary-color); margin-top: 0; font-size: 1.2rem; border-bottom: 1px solid #ddd; padding-bottom: 8px; }
+
+        ul { padding-left: 20px; }
+        li { margin-bottom: 8px; }
+
+        footer { background-color: #444; color: var(--white); text-align: center; padding: 40px 20px; margin-top: 60px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="index.html">Accueil</a>
+            <a href="cv.html">Mon CV</a>
+            <a href="projets.html">Mes Projets</a>
+            <a href="formation.html">Formation</a>
+        </nav>
+    </header>
+
+    <div class="hero-formation">
+        <h1>Mon Parcours de Formation</h1>
+        <p style="font-size: 1.2rem;">Cursus universitaire et projets académiques</p>
+    </div>
+
+    <div class="container">
+        <a href="index.html" class="back-button">← Retour à l'accueil</a>
+
+        <!-- BUT GMP -->
+        <div class="formation-card">
+            <h2>Bachelor Universitaire de Technologie (BUT) en Génie Mécanique et Productique (GMP)</h2>
+            <h4>2023 - 2026 | IUT d'Orléans (45) — Spécialité simulation numérique et réalité virtuelle[cite: 5]</h4>
+            
+            <p>Ce cursus approfondi m'a permis d'acquérir de solides compétences théoriques et pratiques dans le domaine de la conception mécanique, de l'industrialisation et de l'ingénierie numérique.</p>
+            
+            <p><strong>Domaines abordés :</strong></p>
+            <div class="tag-list">
+                <span class="tag">Solution mécanique</span>
+                <span class="tag">Étude par éléments finis</span>
+                <span class="tag">Projets de bureau d'étude</span>
+                <span class="tag">Modélisation et conception 3D</span>
+                <span class="tag">Rétro-conception</span>
+                <span class="tag">Prototypage</span>
+            </div>
+
+            <!-- Projet Académique 1 -->
+            <div class="project-box">
+                <h3>Projet académique : Intégration de train avant pour le Shell Eco-marathon</h3>
+                <p><strong>Période :</strong> Mai 2024[cite: 5]</p>
+                <ul>
+                    <li>Conception du train avant et analyse technique approfondie[cite: 5].</li>
+                    <li>Démonstration d'une forte réactivité pour trouver des solutions techniques face aux imprévus[cite: 5].</li>
+                    <li>Travail d'équipe rigoureux et efficacité sous pression lors de la participation au Shell Eco-marathon[cite: 5].</li>
+                </ul>
+            </div>
+
+            <!-- Projet Académique 2 -->
+            <div class="project-box">
+                <h3>Projet académique : Hybridation d'une pile à combustible hydrogène (Renault Twizy)</h3>
+                <p>Participation au défi UTAC[cite: 5] :</p>
+                <ul>
+                    <li>Prototypage et élaboration d'un état de l'art technologique[cite: 5].</li>
+                    <li>Conception mécanique d'un support spécifique pour la bonbonne d'hydrogène[cite: 5].</li>
+                    <li>Optimisation énergétique globale entre la batterie et la pile à combustible[cite: 5].</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- BAC -->
+        <div class="formation-card">
+            <h2>Baccalauréat Scientifique</h2>
+            <h4>2023 | Lycée Jacques de Vaucanson, Tours (37) — Mention Assez Bien[cite: 5]</h4>
+            <p>Spécialité mathématiques et sciences de l'ingénieur[cite: 5].</p>
+            <div class="tag-list">
+                <span class="tag">Mathématiques</span>
+                <span class="tag">Sciences de l'Ingénieur</span>
+            </div>
+            <p><strong>Grand oral :</strong> Étude sur l'influence de l'aérodynamisme sur les véhicules[cite: 5].</p>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>© Mohamed Ifard - Portfolio</p>
+    </footer>
+
+</body>
+</html>
