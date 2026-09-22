@@ -15,47 +15,63 @@
         }
 
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: var(--background-color); color: var(--text-color); line-height: 1.8; }
-        a { text-decoration: none; color: var(--primary-color); }
+        a { text-decoration: none; color: inherit; }
         
-        header { background-color: var(--primary-color); color: var(--white); padding: 1.2rem 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
-        nav { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
-        nav a { color: var(--white); font-weight: bold; padding: 8px 15px; border-radius: 5px; font-size: 1.1rem; transition: background 0.3s; }
+        header { background-color: var(--primary-color); color: var(--white); position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+        .nav-container { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; }
+        .logo { font-weight: bold; font-size: 1.2rem; color: white; }
+        
+        nav { display: flex; gap: 20px; }
+        nav a { color: var(--white); font-weight: bold; padding: 8px 12px; border-radius: 5px; font-size: 1rem; transition: background 0.3s; }
         nav a:hover { background-color: var(--secondary-color); }
 
+        .menu-btn { display: none; background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; }
+
         .hero-software { background-color: var(--secondary-color); color: var(--white); text-align: center; padding: 60px 20px; }
-        .hero-software h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .hero-software h1 { font-size: 2.2rem; margin-bottom: 10px; }
 
-        .container { max-width: 1000px; margin: 40px auto; padding: 20px; }
+        .container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
         
-        .back-button { display: inline-block; margin-bottom: 30px; font-weight: bold; color: var(--secondary-color); }
-        .back-button:hover { color: var(--primary-color); text-decoration: underline; }
+        .back-button { display: inline-block; margin-bottom: 20px; font-weight: bold; color: var(--secondary-color); }
+        .back-button:hover { text-decoration: underline; }
 
-        .software-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-bottom: 40px; }
+        .software-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-bottom: 40px; }
         
-        .software-card { background: var(--white); border-radius: 12px; padding: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-top: 4px solid var(--accent); }
-        .software-card h3 { color: var(--primary-color); margin-top: 0; font-size: 1.3rem; margin-bottom: 15px; }
+        .software-card { background: var(--white); border-radius: 12px; padding: 25px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-top: 4px solid var(--accent); }
+        .software-card h3 { color: var(--primary-color); margin-top: 0; font-size: 1.2rem; margin-bottom: 15px; }
         
         ul { padding-left: 20px; margin: 0; }
         li { margin-bottom: 8px; font-size: 0.95rem; }
 
-        footer { background-color: #444; color: var(--white); text-align: center; padding: 40px 20px; margin-top: 60px; }
+        footer { background-color: #444; color: var(--white); text-align: center; padding: 30px 20px; margin-top: 50px; }
+
+        @media (max-width: 768px) {
+            .menu-btn { display: block; }
+            nav { display: none; width: 100%; flex-direction: column; background-color: var(--primary-color); position: absolute; top: 60px; left: 0; padding: 10px 0; text-align: center; box-shadow: 0 5px 10px rgba(0,0,0,0.2); }
+            nav.active { display: flex; }
+            nav a { padding: 12px 0; }
+        }
     </style>
 </head>
 <body>
 
     <header>
-        <nav>
-            <a href="index.html">Accueil</a>
-            <a href="cv.html">Mon CV</a>
-            <a href="formation.html">Formation</a>
-            <a href="projets.html">Mes Projets</a>
-            <a href="logiciels.html">Logiciels</a>
-        </nav>
+        <div class="nav-container">
+            <div class="logo">Mohamed Ifard</div>
+            <button class="menu-btn" onclick="toggleMenu()">☰</button>
+            <nav id="nav-menu">
+                <a href="index.html">Accueil</a>
+                <a href="cv.html">Mon CV</a>
+                <a href="formation.html">Formation</a>
+                <a href="projets.html">Mes Projets</a>
+                <a href="logiciels.html">Logiciels</a>
+            </nav>
+        </div>
     </header>
 
     <div class="hero-software">
         <h1>Logiciels Maîtrisés</h1>
-        <p style="font-size: 1.2rem;">Outils de CAO, FAO, simulation et gestion</p>
+        <p style="font-size: 1.1rem;">Outils de CAO, FAO, simulation et gestion</p>
     </div>
 
     <div class="container">
@@ -63,45 +79,41 @@
 
         <div class="software-grid">
             
-            <!-- Carte 1 : CAO / FAO -->
             <div class="software-card">
                 <h3>CAO / FAO</h3>
                 <ul>
-                    <li><strong>SolidWorks</strong> (Modélisation 3D & Assemblages)</li>
-                    <li><strong>TopSolid</strong> (Conception & Usinage FAO)</li>
-                    <li><strong>CREO</strong> (Paramétrique & Bureau d'études)</li>
-                    <li><strong>Solid Edge</strong> (Conception mécanique)</li>
-                    <li><strong>OnShape</strong> (CAO Collaborative cloud)</li>
+                    <li><strong>SolidWorks</strong> (Modélisation 3D)</li>
+                    <li><strong>TopSolid</strong> (Conception & Usinage)</li>
+                    <li><strong>CREO</strong> (Paramétrique & BE)</li>
+                    <li><strong>Solid Edge</strong> (Mécanique)</li>
+                    <li><strong>OnShape</strong> (Cloud collaboratif)</li>
                 </ul>
             </div>
 
-            <!-- Carte 2 : Simulation & Calcul -->
             <div class="software-card">
                 <h3>Simulation & Calcul</h3>
                 <ul>
-                    <li><strong>MATLAB & Simulink</strong> (Modélisation multiphysique)</li>
-                    <li><strong>Études par éléments finis (EF)</strong></li>
+                    <li><strong>MATLAB & Simulink</strong> (Multiphysique)</li>
+                    <li>Études par éléments finis (EF)</li>
                     <li>Optimisation énergétique</li>
                 </ul>
             </div>
 
-            <!-- Carte 3 : Réalité Virtuelle & Numérique -->
             <div class="software-card">
                 <h3>Réalité Virtuelle & Scan</h3>
                 <ul>
-                    <li><strong>Navisworks</strong> (Coordination & Revue de projet)</li>
-                    <li><strong>Recap</strong> (Traitement de nuages de points)</li>
-                    <li>Immersion et Réalité Virtuelle</li>
+                    <li><strong>Navisworks</strong> (Coordination)</li>
+                    <li><strong>Recap</strong> (Nuages de points)</li>
+                    <li>Immersion 3D</li>
                 </ul>
             </div>
 
-            <!-- Carte 4 : Bureautique & Gestion -->
             <div class="software-card">
                 <h3>Bureautique & Gestion</h3>
                 <ul>
-                    <li><strong>Suite Office</strong> (Word, Excel, PowerPoint)</li>
-                    <li>Gestion de projets & nomenclatures</li>
-                    <li>Suivi du cycle de vie produit (PLM)</li>
+                    <li><strong>Suite Office</strong> (Word, Excel)</li>
+                    <li>Gestion de projets</li>
+                    <li>Suivi nomenclature / PLM</li>
                 </ul>
             </div>
 
@@ -113,5 +125,10 @@
         <p>© Mohamed Ifard - Portfolio</p>
     </footer>
 
+    <script>
+        function toggleMenu() {
+            document.getElementById('nav-menu').classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
