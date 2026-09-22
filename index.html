@@ -17,53 +17,70 @@
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: var(--background-color); color: var(--text-color); line-height: 1.8; }
         a { text-decoration: none; color: inherit; }
         
-        header { background-color: var(--primary-color); color: var(--white); padding: 1.2rem 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
-        nav { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
-        nav a { color: var(--white); font-weight: bold; padding: 8px 15px; border-radius: 5px; font-size: 1.1rem; transition: background 0.3s; }
+        /* Navigation adaptative */
+        header { background-color: var(--primary-color); color: var(--white); position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+        .nav-container { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; }
+        .logo { font-weight: bold; font-size: 1.2rem; }
+        
+        nav { display: flex; gap: 20px; }
+        nav a { color: var(--white); font-weight: bold; padding: 8px 12px; border-radius: 5px; font-size: 1rem; transition: background 0.3s; }
         nav a:hover { background-color: var(--secondary-color); }
 
-        .hero { background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('fond-aeroport.jpg') no-repeat center center/cover; color: var(--white); text-align: center; padding: 100px 20px; }
-        .hero h1 { font-size: 3.5rem; margin-bottom: 10px; font-family: 'Times New Roman', Times, serif; }
-        .hero p { font-size: 1.5rem; letter-spacing: 2px; text-transform: uppercase; }
+        /* Bouton Menu Mobile (caché sur PC) */
+        .menu-btn { display: none; background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; }
 
-        .container { max-width: 1100px; margin: 60px auto; padding: 0 20px; }
-        
-        /* Style de la section "Qui suis-je" */
-        .about-section { background: var(--white); border-radius: 15px; padding: 40px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); display: flex; flex-wrap: wrap; gap: 40px; align-items: center; margin-bottom: 60px; }
-        .about-photo { flex: 1; min-width: 280px; height: 350px; background-color: #e0e0e0; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #777; font-style: italic; border: 2px dashed #ccc; }
-        .about-content { flex: 2; min-width: 300px; }
-        
-        .cv-button { display: inline-block; background-color: var(--primary-color); color: var(--white); padding: 12px 25px; border-radius: 8px; font-weight: bold; margin-bottom: 25px; transition: background 0.3s, transform 0.2s; }
-        .cv-button:hover { background-color: var(--secondary-color); transform: scale(1.02); }
-        .about-content p { color: #444; font-size: 1.05rem; margin-bottom: 20px; text-align: justify; }
+        .hero { background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('fond-aeroport.jpg') no-repeat center center/cover; color: var(--white); text-align: center; padding: 80px 20px; }
+        .hero h1 { font-size: 2.8rem; margin-bottom: 10px; font-family: 'Times New Roman', Times, serif; }
+        .hero p { font-size: 1.2rem; letter-spacing: 2px; text-transform: uppercase; }
 
-        /* Grille des 3 cartes demandées */
-        .grid-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
         
-        .card { background: var(--white); border-radius: 15px; padding: 35px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s ease, box-shadow 0.3s ease; border-top: 5px solid var(--primary-color); display: flex; flex-direction: column; justify-content: space-between; }
-        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        /* Section Qui suis-je responsive */
+        .about-section { background: var(--white); border-radius: 15px; padding: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); display: flex; flex-wrap: wrap; gap: 30px; align-items: center; margin-bottom: 40px; }
+        .about-photo { flex: 1; min-width: 250px; height: 320px; background-color: #e0e0e0; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #777; font-style: italic; border: 2px dashed #ccc; }
+        .about-content { flex: 2; min-width: 280px; }
         
-        .card h3 { color: var(--primary-color); margin-top: 0; font-size: 1.6rem; margin-bottom: 20px; }
-        .card p { color: #555; font-size: 1rem; margin-bottom: 25px; }
-        
-        .card-link { font-weight: bold; color: var(--accent); display: inline-flex; align-items: center; gap: 5px; margin-top: auto; }
-        .card-link:hover { text-decoration: underline; }
+        .cv-button { display: inline-block; background-color: var(--primary-color); color: var(--white); padding: 10px 20px; border-radius: 8px; font-weight: bold; margin-bottom: 20px; }
+        .about-content p { color: #444; font-size: 1rem; margin-bottom: 15px; text-align: justify; }
 
-        footer { background-color: #444; color: var(--white); text-align: center; padding: 40px 20px; margin-top: 60px; }
-        .contact-info { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-top: 15px; }
-        .contact-info a { color: var(--white); }
+        /* Grille des cartes responsive */
+        .grid-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        .card { background: var(--white); border-radius: 15px; padding: 25px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-top: 5px solid var(--primary-color); display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.3s; }
+        .card:hover { transform: translateY(-3px); }
+        .card h3 { color: var(--primary-color); margin-top: 0; font-size: 1.4rem; margin-bottom: 15px; }
+        .card p { color: #555; font-size: 0.95rem; margin-bottom: 20px; }
+        .card-link { font-weight: bold; color: var(--accent); margin-top: auto; }
+
+        footer { background-color: #444; color: var(--white); text-align: center; padding: 30px 20px; margin-top: 50px; }
+        .contact-info { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 15px; }
+        .contact-info a { color: var(--white); font-size: 0.9rem; }
+
+        /* Media Queries pour Téléphones */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .menu-btn { display: block; }
+            nav { display: none; width: 100%; flex-direction: column; background-color: var(--primary-color); position: absolute; top: 60px; left: 0; padding: 10px 0; text-align: center; box-shadow: 0 5px 10px rgba(0,0,0,0.2); }
+            nav.active { display: flex; }
+            nav a { padding: 12px 0; }
+            .about-section { padding: 20px; gap: 20px; }
+        }
     </style>
 </head>
 <body>
 
     <!-- NAVIGATION -->
     <header>
-        <nav>
-            <a href="index.html">Accueil</a>
-            <a href="cv.html">Mon CV</a>
-            <a href="formation.html">Formation</a>
-            <a href="projets.html">Mes Projets</a>
-        </nav>
+        <div class="nav-container">
+            <div class="logo">Mohamed Ifard</div>
+            <button class="menu-btn" onclick="toggleMenu()">☰</button>
+            <nav id="nav-menu">
+                <a href="index.html">Accueil</a>
+                <a href="cv.html">Mon CV</a>
+                <a href="formation.html">Formation</a>
+                <a href="projets.html">Mes Projets</a>
+                <a href="logiciels.html">Logiciels</a>
+            </nav>
+        </div>
     </header>
 
     <!-- SECTION HERO -->
@@ -75,24 +92,21 @@
     <!-- CONTENU PRINCIPAL -->
     <div class="container">
 
-        <!-- SECTION QUI SUIS-JE / PRÉSENTATION -->
+        <!-- SECTION QUI SUIS-JE -->
         <div class="about-section">
             <div class="about-photo">
                 [Insérez votre photo ici]
             </div>
             <div class="about-content">
                 <a href="cv.html" class="cv-button">Qui suis-je (Voir mon CV) ➔</a>
-                
-                <p>Je m'appelle Mohamed Ifard. Je suis d'origine italienne et marocaine, ce qui a été pour moi un véritable défi lorsque je suis arrivé en France : d'abord pour apprendre la langue, mais aussi pour découvrir la culture du pays[cite: 8].</p>
-                
-                <p>J'ai tout de même eu quelques facilités, car j'apprends rapidement. J'ai ensuite pu intégrer un lycée scientifique, car j'aime les sciences et je voulais devenir ingénieur[cite: 8]. Grâce à mes spécialités : les mathématiques, la physique-chimie et les sciences de l'ingénieur, j'ai pu intégrer le BUT GMP à l'IUT d'Orléans[cite: 8].</p>
+                <p>Je m'appelle Mohamed Ifard. Je suis d'origine italienne et marocaine, ce qui a été pour moi un véritable défi lorsque je suis arrivé en France : d'abord pour apprendre la langue, mais aussi pour découvrir la culture du pays.</p>
+                <p>J'ai tout de même eu quelques facilités, car j'apprends rapidement. J'ai ensuite pu intégrer un lycée scientifique, car j'aime les sciences et je voulais devenir ingénieur. Grâce à mes spécialités : les mathématiques, la physique-chimie et les sciences de l'ingénieur, j'ai pu intégrer le BUT GMP à l'IUT d'Orléans.</p>
             </div>
         </div>
 
-        <!-- GRILLE DES 3 SECTIONS SOUHAITÉES -->
+        <!-- GRILLE DES CARTES -->
         <div class="grid-cards">
             
-            <!-- 1. Formation & Cursus -->
             <a href="formation.html" class="card">
                 <div>
                     <h3>Formation & Cursus</h3>
@@ -101,7 +115,6 @@
                 <span class="card-link">Voir le détail de ma formation →</span>
             </a>
 
-            <!-- 2. Mes Projets -->
             <a href="projets.html" class="card">
                 <div>
                     <h3>Mes Projets</h3>
@@ -110,15 +123,13 @@
                 <span class="card-link">Voir mes projets en détail →</span>
             </a>
 
-            <!-- 3. Logiciels Maîtrisés -->
-           <a href="logiciels.html" class="card" style="border-top-color: var(--accent);">
+            <a href="logiciels.html" class="card" style="border-top-color: var(--accent);">
                 <div>
                     <h3>Logiciels Maîtrisés</h3>
                     <p>SolidWorks, TopSolid, Creo, Solid Edge, MATLAB & Simulink, Pack Office, Navisworks, Recap.</p>
                 </div>
                 <span class="card-link">Voir le détail des logiciels →</span>
             </a>
-            </div>
 
         </div>
 
@@ -134,5 +145,12 @@
         </div>
     </footer>
 
+    <!-- SCRIPT MENU MOBILE -->
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('nav-menu');
+            menu.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
