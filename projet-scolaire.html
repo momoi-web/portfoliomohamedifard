@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détail du Projet - Pompe à Palettes</title>
+    <style>
+        :root {
+            --primary-color: #4a3b38;
+            --secondary-color: #6b5b58;
+            --background-color: #f9f9f9;
+            --text-color: #333333;
+            --white: #ffffff;
+        }
+
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: var(--background-color); color: var(--text-color); line-height: 1.8; }
+        a { text-decoration: none; color: var(--primary-color); }
+        
+        header { background-color: var(--primary-color); color: var(--white); padding: 1.2rem 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+        nav { display: flex; justify-content: center; gap: 40px; }
+        nav a { color: var(--white); font-weight: bold; padding: 8px 15px; border-radius: 5px; font-size: 1.1rem; }
+        nav a:hover { background-color: var(--secondary-color); }
+
+        .project-hero { background-color: var(--secondary-color); color: var(--white); text-align: center; padding: 60px 20px; }
+        .project-hero h1 { font-size: 2.5rem; margin-bottom: 10px; }
+
+        .container { max-width: 1000px; margin: 40px auto; padding: 20px; background: var(--white); border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        
+        .back-button { display: inline-block; margin-bottom: 30px; font-weight: bold; color: var(--secondary-color); }
+        .back-button:hover { color: var(--primary-color); text-decoration: underline; }
+
+        .intro-box { background-color: #f4f1f0; padding: 30px; border-left: 5px solid var(--primary-color); margin-bottom: 50px; border-radius: 0 10px 10px 0; display: flex; flex-wrap: wrap; gap: 30px; align-items: center; }
+        .intro-text { flex: 2; min-width: 300px; }
+        .intro-img { flex: 1; min-width: 250px; height: 250px; background-color: #e0e0e0; display: flex; align-items: center; justify-content: center; color: #777; border-radius: 10px; padding: 10px; text-align: center; }
+
+        .section-block { margin-bottom: 50px; }
+        .section-title { color: var(--primary-color); font-size: 1.5rem; margin-bottom: 20px; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        
+        .content-flex { display: flex; flex-wrap: wrap; gap: 30px; align-items: flex-start; }
+        .content-text { flex: 1; min-width: 300px; }
+        .content-img { flex: 1; min-width: 300px; height: 250px; background-color: #e0e0e0; display: flex; align-items: center; justify-content: center; color: #777; border-radius: 10px; padding: 15px; text-align: center; }
+        
+        ul { padding-left: 20px; }
+        li { margin-bottom: 10px; }
+        footer { background-color: #444; color: var(--white); text-align: center; padding: 40px 20px; margin-top: 60px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="index.html">Accueil</a>
+            <a href="cv.html">Mon CV</a>
+            <a href="projets.html">Mes Projets</a>
+        </nav>
+    </header>
+
+    <div class="project-hero">
+        <h1>Pompe à Palettes</h1>
+        <p style="font-size: 1.2rem;">Projet Scolaire - TP d'industrialisation (S5)</p>
+    </div>
+
+    <div class="container">
+        <a href="projets.html" class="back-button">← Retour à tous les projets</a>
+
+        <!-- Introduction -->
+        <div class="intro-box">
+            <div class="intro-text">
+                <p>Dans le cadre de notre TP d'industrialisation en S5, nous devions réaliser une pompe à palettes composée de plusieurs parties. Deux pièces étaient à fabriquer : le corps et l'axe.</p>
+                <p>Nous disposions de la CAO complète de la pompe, ce qui nous a permis de commencer notre travail efficacement.</p>
+            </div>
+            <div class="intro-img">
+                [Image : Modélisation CAO de la Pompe à palette avec corps rouge]
+            </div>
+        </div>
+
+        <!-- Section 1 : Usinage et FAO -->
+        <div class="section-block">
+            <h2 class="section-title">Fabrication & FAO</h2>
+            <div class="content-flex" style="flex-direction: row-reverse;">
+                <div class="content-text">
+                    <p>Pour ma part, j'ai été chargé de réaliser les deux composants par usinage dans la masse, ainsi que l'outillage destiné à maintenir le corps de la pompe en position.</p>
+                    <p>Il était donc nécessaire de créer <strong>trois FAO</strong> :</p>
+                    <ul>
+                        <li>une pour l'outillage,</li>
+                        <li>une pour le corps,</li>
+                        <li>et une pour l'axe.</li>
+                    </ul>
+                </div>
+                <div class="content-img">
+                    [Image : Modélisation de l'Outillage de maintien]
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2 : Bilan du processus -->
+        <div class="section-block">
+            <h2 class="section-title">Bilan du Projet</h2>
+            <p>Ce TP nous a permis de suivre l'ensemble du processus, de la conception à la réalisation, en passant par la création du programme d'usinage puis son exécution sur la machine.</p>
+            <p>Nous avons ainsi été confrontés aux différents problèmes et contraintes possibles lors de l'industrialisation d'une pièce.</p>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>© Mohamed Ifard - Portfolio</p>
+    </footer>
+
+</body>
+</html>
