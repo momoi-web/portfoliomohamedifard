@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohamed Ifard - Mon CV</title>
+    <title>Mohamed Ifard - Portfolio</title>
     <style>
         :root {
             --primary-color: #4a3b38;
@@ -11,215 +11,146 @@
             --background-color: #f9f9f9;
             --text-color: #333333;
             --white: #ffffff;
-            --cv-left-bg: #f4f1f0;
+            --accent: #d97736;
         }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: var(--background-color); color: var(--text-color); line-height: 1.6; }
-        a { text-decoration: none; color: var(--primary-color); }
-        
-        header { background-color: var(--primary-color); color: var(--white); padding: 1.2rem 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
-        nav { display: flex; justify-content: center; gap: 40px; }
-        nav a { color: var(--white); font-weight: bold; padding: 8px 15px; border-radius: 5px; font-size: 1.1rem; }
-        nav a:hover { background-color: var(--secondary-color); }
-        
-        .container { max-width: 1100px; margin: 40px auto; padding: 20px; }
-        
-        /* Boîte de présentation vidéo */
-        .presentation-box { background-color: var(--white); border-radius: 15px; padding: 40px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.05); margin-bottom: 60px; }
-        .video-placeholder { background-color: #e0e0e0; width: 100%; max-width: 700px; height: 400px; margin: 0 auto; display: flex; align-items: center; justify-content: center; border-radius: 10px; color: #777; font-style: italic; border: 2px dashed #bbb; }
 
-        .cv-wrapper { background: var(--white); display: flex; flex-wrap: wrap; box-shadow: 0 10px 25px rgba(0,0,0,0.1); border-radius: 10px; overflow: hidden; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: var(--background-color); color: var(--text-color); line-height: 1.8; }
+        a { text-decoration: none; color: inherit; }
         
-        /* Colonne Gauche */
-        .cv-left { background-color: var(--cv-left-bg); flex: 1; min-width: 280px; max-width: 350px; padding: 40px 30px; border-right: 2px solid #e0e0e0; }
-        .cv-left h2 { font-size: 2rem; margin-top: 0; color: var(--primary-color); line-height: 1.2; margin-bottom: 5px; }
-        .cv-left h4 { margin: 0 0 30px 0; color: #777; font-size: 1.1rem; }
+        /* Navigation adaptative */
+        header { background-color: var(--primary-color); color: var(--white); position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+        .nav-container { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; }
+        .logo { font-weight: bold; font-size: 1.2rem; }
         
-        .cv-section { margin-bottom: 30px; }
-        .cv-title { font-size: 1.2rem; letter-spacing: 2px; margin-bottom: 15px; color: var(--primary-color); font-weight: bold; border-bottom: 2px solid var(--primary-color); padding-bottom: 5px; display: inline-block; }
+        nav { display: flex; gap: 20px; }
+        nav a { color: var(--white); font-weight: bold; padding: 8px 12px; border-radius: 5px; font-size: 1rem; transition: background 0.3s; }
+        nav a:hover { background-color: var(--secondary-color); }
+
+        /* Bouton Menu Mobile (caché sur PC) */
+        .menu-btn { display: none; background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; }
+
+        .hero { background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('fond-aeroport.jpg') no-repeat center center/cover; color: var(--white); text-align: center; padding: 80px 20px; }
+        .hero h1 { font-size: 2.8rem; margin-bottom: 10px; font-family: 'Times New Roman', Times, serif; }
+        .hero p { font-size: 1.2rem; letter-spacing: 2px; text-transform: uppercase; }
+
+        .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
         
-        .contact-list, .skill-list { list-style: none; padding: 0; margin: 0; font-size: 0.95rem; }
-        .contact-list li { margin-bottom: 10px; display: flex; align-items: flex-start; gap: 10px; }
-        .skill-list li { margin-bottom: 5px; }
-        .skill-category { font-weight: bold; color: var(--secondary-color); margin-top: 10px; display: block; }
+        /* Section Qui suis-je responsive */
+        .about-section { background: var(--white); border-radius: 15px; padding: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); display: flex; flex-wrap: wrap; gap: 30px; align-items: center; margin-bottom: 40px; }
+        .about-photo { flex: 1; min-width: 250px; height: 320px; background-color: #e0e0e0; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #777; font-style: italic; border: 2px dashed #ccc; }
+        .about-content { flex: 2; min-width: 280px; }
         
-        /* Colonne Droite */
-        .cv-right { flex: 2.5; min-width: 400px; padding: 40px; }
-        .cv-header-right { background-color: var(--primary-color); color: white; padding: 25px; text-align: center; border-radius: 5px; margin-bottom: 40px; }
-        .cv-header-right h3 { margin: 0 0 10px 0; font-size: 1.5rem; letter-spacing: 1px; }
-        .cv-header-right p { margin: 0; font-size: 1.1rem; font-weight: bold; color: #e0e0e0; }
-        
-        .timeline-item { margin-bottom: 35px; }
-        .timeline-date { color: var(--secondary-color); font-size: 1rem; font-weight: bold; display: block; margin-bottom: 5px; }
-        .timeline-title { font-size: 1.15rem; font-weight: bold; color: var(--text-color); margin-bottom: 5px; }
-        .timeline-subtitle { font-style: italic; color: #555; margin-bottom: 10px; display: block; }
-        
-        ul.task-list { padding-left: 20px; margin-top: 5px; font-size: 0.95rem; }
-        ul.task-list li { margin-bottom: 5px; }
-        
-        footer { background-color: #444; color: var(--white); text-align: center; padding: 40px 20px; margin-top: 60px; }
+        .cv-button { display: inline-block; background-color: var(--primary-color); color: var(--white); padding: 10px 20px; border-radius: 8px; font-weight: bold; margin-bottom: 20px; }
+        .about-content p { color: #444; font-size: 1rem; margin-bottom: 15px; text-align: justify; }
+
+        /* Grille des cartes responsive */
+        .grid-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        .card { background: var(--white); border-radius: 15px; padding: 25px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-top: 5px solid var(--primary-color); display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.3s; }
+        .card:hover { transform: translateY(-3px); }
+        .card h3 { color: var(--primary-color); margin-top: 0; font-size: 1.4rem; margin-bottom: 15px; }
+        .card p { color: #555; font-size: 0.95rem; margin-bottom: 20px; }
+        .card-link { font-weight: bold; color: var(--accent); margin-top: auto; }
+
+        footer { background-color: #444; color: var(--white); text-align: center; padding: 30px 20px; margin-top: 50px; }
+        .contact-info { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 15px; }
+        .contact-info a { color: var(--white); font-size: 0.9rem; }
+
+        /* Media Queries pour Téléphones */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .menu-btn { display: block; }
+            nav { display: none; width: 100%; flex-direction: column; background-color: var(--primary-color); position: absolute; top: 60px; left: 0; padding: 10px 0; text-align: center; box-shadow: 0 5px 10px rgba(0,0,0,0.2); }
+            nav.active { display: flex; }
+            nav a { padding: 12px 0; }
+            .about-section { padding: 20px; gap: 20px; }
+        }
     </style>
 </head>
 <body>
 
+    <!-- NAVIGATION -->
     <header>
-        <nav>
-            <a href="index.html">Accueil</a>
-            <a href="cv.html">Mon CV</a>
-            <a href="projets.html">Mes Projets</a>
-        </nav>
+        <div class="nav-container">
+            <div class="logo">Mohamed Ifard</div>
+            <button class="menu-btn" onclick="toggleMenu()">☰</button>
+            <nav id="nav-menu">
+                <a href="index.html">Accueil</a>
+                <a href="cv.html">Mon CV</a>
+                <a href="formation.html">Formation</a>
+                <a href="projets.html">Mes Projets</a>
+                <a href="logiciels.html">Logiciels</a>
+            </nav>
+        </div>
     </header>
 
+    <!-- SECTION HERO -->
+    <section class="hero">
+        <h1>Mohamed Ifard</h1>
+        <p>Portfolio</p>
+    </section>
+
+    <!-- CONTENU PRINCIPAL -->
     <div class="container">
-        
-        <!-- SECTION VIDÉO DE PRÉSENTATION -->
-        <div class="presentation-box">
-            <h1 style="color: var(--primary-color); margin-bottom: 30px;">PRÉSENTATION</h1>
-            <div class="video-placeholder">
-                [Intégration de la vidéo à venir]
+
+        <!-- SECTION QUI SUIS-JE -->
+        <div class="about-section">
+            <div class="about-photo">
+                [Insérez votre photo ici]
             </div>
-            <p style="margin-top: 20px; color: #555;">(C'est ici que nous mettrons le code de votre vidéo YouTube, Vimeo ou mp4)</p>
+            <div class="about-content">
+                <a href="cv.html" class="cv-button">Qui suis-je (Voir mon CV) ➔</a>
+                <p>Je m'appelle Mohamed Ifard. Je suis d'origine italienne et marocaine, ce qui a été pour moi un véritable défi lorsque je suis arrivé en France : d'abord pour apprendre la langue, mais aussi pour découvrir la culture du pays.</p>
+                <p>J'ai tout de même eu quelques facilités, car j'apprends rapidement. J'ai ensuite pu intégrer un lycée scientifique, car j'aime les sciences et je voulais devenir ingénieur. Grâce à mes spécialités : les mathématiques, la physique-chimie et les sciences de l'ingénieur, j'ai pu intégrer le BUT GMP à l'IUT d'Orléans.</p>
+            </div>
         </div>
 
-        <div class="cv-wrapper">
+        <!-- GRILLE DES CARTES -->
+        <div class="grid-cards">
             
-            <!-- COLONNE GAUCHE -->
-            <div class="cv-left">
-                <h2>Mohamed IFARD</h2>
-                <h4>20 ANS (17/06/2005)</h4>
-
-                <div class="cv-section">
-                    <div class="cv-title">PROFIL</div>
-                    <p style="font-size: 0.95rem; text-align: justify;">Déterminé, sérieux, autonome et conscient du travail qui m'attend, je suis enthousiaste à l'idée de contribuer à développer des solutions innovantes.</p>
+            <a href="formation.html" class="card">
+                <div>
+                    <h3>Formation & Cursus</h3>
+                    <p><strong>IUT d'Orléans & Lycée Vaucanson (Tours)</strong><br><br>Bachelor Universitaire de Technologie en Génie Mécanique et Productique (GMP) - Spécialité Simulation numérique et réalité virtuelle.</p>
                 </div>
+                <span class="card-link">Voir le détail de ma formation →</span>
+            </a>
 
-                <div class="cv-section">
-                    <div class="cv-title">CONTACT</div>
-                    <ul class="contact-list">
-                        <li>📍 133 Quai Paul Bert, 37100, Tours</li>
-                        <li>✉️ ifard.mohamed1@gmail.com</li>
-                        <li>📞 06 44 06 96 69</li>
-                    </ul>
+            <a href="projets.html" class="card">
+                <div>
+                    <h3>Mes Projets</h3>
+                    <p>Découvrez mes projets associatifs (HYPERBOLE++), professionnels (Pousseur de papier, Stop-chute) et scolaires (Pompe à palettes) en détail.</p>
                 </div>
+                <span class="card-link">Voir mes projets en détail →</span>
+            </a>
 
-                <div class="cv-section">
-                    <div class="cv-title">COMPÉTENCES</div>
-                    <ul class="skill-list">
-                        <li><strong>Permis B</strong></li>
-                    </ul>
-                    
-                    <span class="skill-category">LOGICIELS</span>
-                    <ul class="skill-list">
-                        <li>CAO/FAO : CREO / TOPSolide</li>
-                        <li>SolidWorks / SolidEdge / OnShape</li>
-                        <li>Simulink / Matlab</li>
-                        <li>Navisworks / Recap</li>
-                        <li>Suite Office</li>
-                    </ul>
-
-                    <span class="skill-category">LANGUES</span>
-                    <ul class="skill-list">
-                        <li>Italien : Langue native</li>
-                        <li>Anglais : B2</li>
-                    </ul>
+            <a href="logiciels.html" class="card" style="border-top-color: var(--accent);">
+                <div>
+                    <h3>Logiciels Maîtrisés</h3>
+                    <p>SolidWorks, TopSolid, Creo, Solid Edge, MATLAB & Simulink, Pack Office, Navisworks, Recap.</p>
                 </div>
+                <span class="card-link">Voir le détail des logiciels →</span>
+            </a>
 
-                <div class="cv-section">
-                    <div class="cv-title">CENTRES D'INTÉRÊT</div>
-                    <ul class="skill-list">
-                        <li><strong>Sports :</strong> Football, Vélo (niveau amateur)</li>
-                        <li><strong>Voyages :</strong> Italie, Maroc, Angleterre</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- COLONNE DROITE -->
-            <div class="cv-right">
-                
-                <div class="cv-header-right">
-                    <h3>RECHERCHE CONTRAT D'APPRENTISSAGE</h3>
-                    <p>BUT - 3ÈME ANNÉE GÉNIE MÉCANIQUE ET PRODUCTIQUE (2026-2027)</p>
-                </div>
-
-                <div class="cv-section">
-                    <div class="cv-title">FORMATION</div>
-                    
-                    <div class="timeline-item">
-                        <span class="timeline-date">2023 - 2026</span>
-                        <div class="timeline-title">Bachelor universitaire technologique (BUT) en Génie mécanique et Productique (GMP)</div>
-                        <span class="timeline-subtitle">IUT D'Orléans (45) - spécialité simulation numérique et réalité virtuelle</span>
-                        <ul class="task-list" style="columns: 2;">
-                            <li>Solution mécanique</li>
-                            <li>Étude par éléments finis</li>
-                            <li>Projets de bureau d'étude</li>
-                            <li>Modélisation et conception 3D</li>
-                            <li>Rétro-conception</li>
-                            <li>Prototypage</li>
-                        </ul>
-                        
-                        <p style="font-size: 0.95rem; font-weight: bold; margin-top: 15px; margin-bottom: 5px;">Projet académique : Intégration de train avant dans un prototype (Shell Eco-marathon)</p>
-                        <ul class="task-list">
-                            <li>Conception du train avant et analyse technique.</li>
-                            <li>Réactivité à trouver des solutions et efficacité face aux problèmes imprévisibles.</li>
-                            <li>Participation au Shell Eco-marathon (15-22 mai 2024).</li>
-                        </ul>
-
-                        <p style="font-size: 0.95rem; font-weight: bold; margin-top: 15px; margin-bottom: 5px;">Projet académique : Hybridation d'une pile à combustible hydrogène (Renault Twizy)</p>
-                        <ul class="task-list">
-                            <li>Prototypage et élaboration d'un état de l'art.</li>
-                            <li>Conception d'un support pour la bonbonne d'hydrogène.</li>
-                            <li>Optimisation énergétique entre la batterie et la pile à combustible.</li>
-                        </ul>
-                    </div>
-
-                    <div class="timeline-item">
-                        <span class="timeline-date">2023</span>
-                        <div class="timeline-title">Bac scientifique (Spécialité Mathématiques et Sciences de l'ingénieur)</div>
-                        <span class="timeline-subtitle">Lycée Jacques de Vaucanson, Tours (37) - Mention : Assez bien</span>
-                        <ul class="task-list">
-                            <li>Grand oral : influence de l'aérodynamisme sur les véhicules.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="cv-section">
-                    <div class="cv-title">EXPÉRIENCE</div>
-                    
-                    <div class="timeline-item">
-                        <span class="timeline-date">16 mars - 19 juin 2026</span>
-                        <div class="timeline-title">Stage de 14 semaines (Troisième année de BUT)</div>
-                        <span class="timeline-subtitle">INGENAO, Saint-Jean-de-la-Ruelle (45140)</span>
-                        <ul class="task-list" style="columns: 2;">
-                            <li>Gestion de plusieurs projets en parallèle</li>
-                            <li>Mise en plan d'ensembles complexes</li>
-                            <li>Cotation GPS</li>
-                            <li>Calcul de structure</li>
-                            <li>Conception mécanique & 3D</li>
-                        </ul>
-                    </div>
-
-                    <div class="timeline-item">
-                        <span class="timeline-date">7 juillet - 31 août 2025</span>
-                        <div class="timeline-title">Stage de 8 semaines (Deuxième année de BUT)</div>
-                        <span class="timeline-subtitle">INGENIUM 360, Nazelles-Négron (37530)</span>
-                        <ul class="task-list" style="columns: 2;">
-                            <li>Gérer le cycle de vie d'un produit</li>
-                            <li>Mise en place de cahier des charges</li>
-                            <li>Processus qualité produit</li>
-                            <li>Résolution de problème mécanique</li>
-                            <li>Gestion d'un projet & nomenclature</li>
-                            <li>Conception 3D</li>
-                        </ul>
-                    </div>
-
-                </div>
-
-            </div>
         </div>
+
     </div>
 
+    <!-- FOOTER -->
     <footer>
-        <p>© Mohamed Ifard - Portfolio</p>
+        <p>Contactez-moi</p>
+        <div class="contact-info">
+            <a href="https://linkedin.com" target="_blank">🔗 LinkedIn</a>
+            <a href="mailto:ifard.mohamed1@gmail.com">✉️ ifard.mohamed1@gmail.com</a>
+            <a href="tel:+33644069669">📞 06 44 06 96 69</a>
+        </div>
     </footer>
 
+    <!-- SCRIPT MENU MOBILE -->
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('nav-menu');
+            menu.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
