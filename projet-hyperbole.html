@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détail du Projet - HYPERBOLE++</title>
+    <style>
+        :root {
+            --primary-color: #4a3b38;
+            --secondary-color: #6b5b58;
+            --background-color: #f9f9f9;
+            --text-color: #333333;
+            --white: #ffffff;
+        }
+
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: var(--background-color); color: var(--text-color); line-height: 1.8; }
+        a { text-decoration: none; color: var(--primary-color); }
+        
+        header { background-color: var(--primary-color); color: var(--white); padding: 1.2rem 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+        nav { display: flex; justify-content: center; gap: 40px; }
+        nav a { color: var(--white); font-weight: bold; padding: 8px 15px; border-radius: 5px; font-size: 1.1rem; }
+        nav a:hover { background-color: var(--secondary-color); }
+
+        .project-hero { background-color: var(--secondary-color); color: var(--white); text-align: center; padding: 60px 20px; }
+        .project-hero h1 { font-size: 2.5rem; margin-bottom: 10px; }
+
+        .container { max-width: 1000px; margin: 40px auto; padding: 20px; background: var(--white); border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        
+        .back-button { display: inline-block; margin-bottom: 30px; font-weight: bold; color: var(--secondary-color); }
+        .back-button:hover { color: var(--primary-color); text-decoration: underline; }
+
+        .intro-box { background-color: #f4f1f0; padding: 30px; border-left: 5px solid var(--primary-color); margin-bottom: 50px; border-radius: 0 10px 10px 0; display: flex; flex-wrap: wrap; gap: 20px; align-items: center; }
+        .intro-text { flex: 2; min-width: 300px; }
+        .intro-img { flex: 1; min-width: 250px; height: 200px; background-color: #e0e0e0; display: flex; align-items: center; justify-content: center; color: #777; border-radius: 10px; }
+
+        .section-block { margin-bottom: 50px; }
+        .section-title { color: var(--primary-color); font-size: 1.5rem; margin-bottom: 20px; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        
+        .content-flex { display: flex; flex-wrap: wrap; gap: 30px; align-items: flex-start; }
+        .content-text { flex: 1; min-width: 300px; }
+        .content-img { flex: 1; min-width: 300px; height: 250px; background-color: #e0e0e0; display: flex; align-items: center; justify-content: center; color: #777; border-radius: 10px; }
+        
+        ul { padding-left: 20px; }
+        footer { background-color: #444; color: var(--white); text-align: center; padding: 40px 20px; margin-top: 60px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="index.html">Accueil</a>
+            <a href="cv.html">Mon CV</a>
+            <a href="projets.html">Mes Projets</a>
+        </nav>
+    </header>
+
+    <div class="project-hero">
+        <h1>HYPERBOLE++</h1>
+        <p style="font-size: 1.2rem;">Projet associatif - Shell Eco-marathon</p>
+    </div>
+
+    <div class="container">
+        <a href="projets.html" class="back-button">← Retour à tous les projets</a>
+
+        <!-- Introduction -->
+        <div class="intro-box">
+            <div class="intro-text">
+                <p>Pendant mon cursus, j'ai pu joindre une association qui se tenait dans mon université[cite: 4]. Elle se nommait <strong>HYPERBOLE ++</strong>, c'est une association qui a fait participer des élèves pour construire un prototype permettant de rejoindre le SHELL ECO-MARATHON[cite: 4].</p>
+            </div>
+            <div class="intro-img">
+                [Image : Stand HYPERBOLE++]
+            </div>
+        </div>
+
+        <!-- Section 1 : Le Shell Eco-marathon -->
+        <div class="section-block">
+            <h2 class="section-title">Qu'est-ce que le Shell Eco-marathon ?</h2>
+            <div class="content-flex">
+                <div class="content-text">
+                    <p>Le Shell Eco-marathon est une compétition internationale où des étudiant-e-s conçoivent et construisent des véhicules ultra-économes en énergie[cite: 4]. L'objectif est simple mais ambitieux : parcourir la plus grande distance possible avec l'équivalent d'un seul litre de carburant (ou son équivalent énergétique)[cite: 4].</p>
+                    <p>Les véhicules concourent dans deux grandes catégories[cite: 4] :</p>
+                    <ul>
+                        <li><strong>Prototype :</strong> véhicules très légers, faits pour optimiser la consommation[cite: 4].</li>
+                        <li><strong>UrbanConcept :</strong> modèles un peu plus proches de la voiture « de ville », tout en restant très économes[cite: 4].</li>
+                    </ul>
+                    <p>La compétition encourage l'innovation, la collaboration, l'ingénierie et la sensibilisation à la mobilité durable[cite: 4].</p>
+                </div>
+                <div class="content-img">
+                    [Image : Piste Shell Eco-marathon]
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2 : Notre Prototype -->
+        <div class="section-block">
+            <h2 class="section-title">Notre Prototype Électrique</h2>
+            <div class="content-flex" style="flex-direction: row-reverse;">
+                <div class="content-text">
+                    <p>Comme chaque année, notre équipe a participé au Shell Eco-marathon avec notre <strong>prototype électrique conçu et fabriqué par nos soins</strong>[cite: 4].</p>
+                    <p>Doté d'une coque en carbone et d'un design aérodynamique optimisé, notre véhicule allie légèreté, performance et efficacité énergétique[cite: 4].</p>
+                    <p>Malgré l'un des budgets les plus modestes parmi toutes les équipes participantes, nous avons su nous distinguer grâce à notre ingéniosité, notre travail d'équipe et notre maîtrise des technologies électriques, ce qui nous a permis d'obtenir une très bonne place au classement[cite: 4].</p>
+                </div>
+                <div class="content-img">
+                    [Image : Prototype sur scène - "We passed Technical Inspection!"]
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>© Mohamed Ifard - Portfolio</p>
+    </footer>
+
+</body>
+</html>
