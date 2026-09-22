@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détail du Projet - Stage INGENAO</title>
+    <style>
+        :root {
+            --primary-color: #4a3b38;
+            --secondary-color: #6b5b58;
+            --background-color: #f9f9f9;
+            --text-color: #333333;
+            --white: #ffffff;
+        }
+
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: var(--background-color); color: var(--text-color); line-height: 1.8; }
+        a { text-decoration: none; color: var(--primary-color); }
+        
+        header { background-color: var(--primary-color); color: var(--white); padding: 1.2rem 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+        nav { display: flex; justify-content: center; gap: 40px; }
+        nav a { color: var(--white); font-weight: bold; padding: 8px 15px; border-radius: 5px; font-size: 1.1rem; }
+        nav a:hover { background-color: var(--secondary-color); }
+
+        .project-hero { background-color: var(--secondary-color); color: var(--white); text-align: center; padding: 60px 20px; }
+        .project-hero h1 { font-size: 2.5rem; margin-bottom: 10px; }
+
+        .container { max-width: 1000px; margin: 40px auto; padding: 20px; background: var(--white); border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        
+        .back-button { display: inline-block; margin-bottom: 30px; font-weight: bold; color: var(--secondary-color); }
+        .back-button:hover { color: var(--primary-color); text-decoration: underline; }
+
+        .intro-box { background-color: #f4f1f0; padding: 30px; border-left: 5px solid var(--primary-color); margin-bottom: 50px; border-radius: 0 10px 10px 0; }
+        
+        .step-block { margin-bottom: 60px; padding-bottom: 30px; border-bottom: 1px solid #eee; }
+        .step-title { color: var(--primary-color); font-size: 1.5rem; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        
+        .content-flex { display: flex; flex-wrap: wrap; gap: 30px; align-items: center; }
+        .content-text { flex: 1; min-width: 300px; }
+        .content-img { flex: 1; min-width: 300px; height: 250px; background-color: #e0e0e0; display: flex; align-items: center; justify-content: center; color: #777; border-radius: 10px; text-align: center; padding: 10px; }
+        
+        ul { padding-left: 20px; }
+        li { margin-bottom: 10px; }
+        
+        /* Process diagram */
+        .process-diagram { display: flex; justify-content: space-between; align-items: center; margin: 40px 0; background: var(--white); padding: 20px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); text-align: center; flex-wrap: wrap; gap: 20px; }
+        .process-step { flex: 1; min-width: 150px; }
+        .process-icon { font-size: 2rem; color: var(--primary-color); margin-bottom: 10px; }
+        .process-arrow { font-size: 1.5rem; color: #ccc; font-weight: bold; }
+
+        footer { background-color: #444; color: var(--white); text-align: center; padding: 40px 20px; margin-top: 60px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="index.html">Accueil</a>
+            <a href="cv.html">Mon CV</a>
+            <a href="projets.html">Mes Projets</a>
+        </nav>
+    </header>
+
+    <div class="project-hero">
+        <h1>Stage chez INGENAO</h1>
+        <p style="font-size: 1.2rem;">Mise en place d'une méthodologie de travail</p>
+    </div>
+
+    <div class="container">
+        <a href="projets.html" class="back-button">← Retour à tous les projets</a>
+
+        <!-- Introduction -->
+        <div class="intro-box">
+            <p>Dans le cadre de mon cursus en BUT Génie Mécanique et Productique à l'IUT d'Orléans, j'ai effectué mon stage de 14 semaines (du 15 mars au 19 juin) au sein de l'entreprise <strong>INGENAO</strong> à Orléans[cite: 9]. Cette entreprise est spécialisée dans la prestation de services, de conception mécanique et tuyauterie pour l'industrie[cite: 9].</p>
+            <p>Au cours de ce stage, j'ai effectué plusieurs projets, certains seul et d'autres en m'intégrant sur quelques jours d'une commande[cite: 9]. Dans ce stage j'ai dû faire preuve d'autonomie au maximum[cite: 9]. Le bureau d'étude m'a confié différentes tâches notamment en rapport avec le <strong>"pousseur de papier"</strong>[cite: 9]. J'ai compilé et allégé des assemblages en cours afin qu'on puisse le proposer au client pour une première évolution[cite: 9].</p>
+        </div>
+
+        <!-- Diagramme de processus -->
+        <div class="process-diagram">
+            <div class="process-step">
+                <div class="process-icon">📷</div>
+                <strong>Nuage de points</strong><br>
+                <span style="font-size: 0.9rem; color: #777;">(fonctionnel)</span>
+            </div>
+            <div class="process-arrow">➔</div>
+            <div class="process-step">
+                <div class="process-icon">💻</div>
+                <strong>Étude & conception 3D</strong>
+            </div>
+            <div class="process-arrow">➔</div>
+            <div class="process-step">
+                <div class="process-icon">📄</div>
+                <strong>Mise en plan</strong><br>
+                <span style="font-size: 0.9rem; color: #777;">(pour fabrication)</span>
+            </div>
+        </div>
+
+        <!-- Etape 1 -->
+        <div class="step-block">
+            <h2 class="step-title">Étape 1 : Réalisation d'un scan 3D</h2>
+            <div class="content-flex">
+                <div class="content-img">
+                    [Image : Logiciel de scan 3D / Nuage de points]
+                </div>
+                <div class="content-text">
+                    <p>Plusieurs positions de scan pour relever toutes les zones et points d'accroche possibles[cite: 9].</p>
+                    <p>Vient ensuite l'étape du <strong>nettoyage</strong>, car lors de la prise de scan, nous numérisons également certains éléments du décor qui n'ont aucune utilité et peuvent gêner le travail[cite: 9]. Pour ce faire, on supprime donc l'ensemble des éléments indésirables afin d'obtenir un résultat exploitable[cite: 9].</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Etape 2 -->
+        <div class="step-block">
+            <h2 class="step-title">Étape 2 : Étude & conception 3D</h2>
+            <div class="content-flex" style="flex-direction: row-reverse;">
+                <div class="content-img">
+                    [Image : Modélisation 3D du pousseur de papier]
+                </div>
+                <div class="content-text">
+                    <p>Après cette étape vient le début de l'étude et donc de la conception de la maquette 3D[cite: 9]. Il est important de noter que l'étape précédente est essentielle au bon déroulement de l'étude[cite: 9]. Je me concentrerai ici uniquement sur le projet du pousseur de papier[cite: 9].</p>
+                    <p>Dans cette étape, j'ai pu valider les différentes étapes, en <strong>optimisant les différentes pièces</strong> ou encore en <strong>allégeant l'assemblage 3D</strong>[cite: 9].</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Etape 3 -->
+        <div class="step-block" style="border-bottom: none; margin-bottom: 0;">
+            <h2 class="step-title">Étape 3 : Mise en plan pour fabrication</h2>
+            <div class="content-flex">
+                <div class="content-img">
+                    [Image : Mise en plan 2D (Cartouche INGENAO)]
+                </div>
+                <div class="content-text">
+                    <ul>
+                        <li><strong>Mise en plan de l'ensemble :</strong> vues de détails pour valider[cite: 9].</li>
+                        <li><strong>Trier les ensembles :</strong> distinguer les pièces standard des pièces sur mesure[cite: 9].</li>
+                        <li><strong>Feuilles de détail :</strong> vues isométriques pour le dossier d'usinage[cite: 9].</li>
+                        <li><strong>Affichage :</strong> ajouter des spécifications pour le contrôle (ex: tolérance géométrique)[cite: 9].</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>© Mohamed Ifard - Portfolio</p>
+    </footer>
+
+</body>
+</html>
