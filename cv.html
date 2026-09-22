@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohamed Ifard - Portfolio</title>
+    <title>Mohamed Ifard - Mon CV</title>
     <style>
         :root {
             --primary-color: #4a3b38;
@@ -11,64 +11,67 @@
             --background-color: #f9f9f9;
             --text-color: #333333;
             --white: #ffffff;
-            --accent: #d97736;
+            --cv-left-bg: #f4f1f0;
         }
-
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: var(--background-color); color: var(--text-color); line-height: 1.8; }
-        a { text-decoration: none; color: inherit; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: var(--background-color); color: var(--text-color); line-height: 1.6; }
+        a { text-decoration: none; color: var(--primary-color); }
         
         /* Navigation adaptative */
         header { background-color: var(--primary-color); color: var(--white); position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
         .nav-container { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; }
-        .logo { font-weight: bold; font-size: 1.2rem; }
+        .logo { font-weight: bold; font-size: 1.2rem; color: white; }
         
         nav { display: flex; gap: 20px; }
         nav a { color: var(--white); font-weight: bold; padding: 8px 12px; border-radius: 5px; font-size: 1rem; transition: background 0.3s; }
         nav a:hover { background-color: var(--secondary-color); }
 
-        /* Bouton Menu Mobile (caché sur PC) */
         .menu-btn { display: none; background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; }
-
-        .hero { background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('fond-aeroport.jpg') no-repeat center center/cover; color: var(--white); text-align: center; padding: 80px 20px; }
-        .hero h1 { font-size: 2.8rem; margin-bottom: 10px; font-family: 'Times New Roman', Times, serif; }
-        .hero p { font-size: 1.2rem; letter-spacing: 2px; text-transform: uppercase; }
-
+        
         .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
         
-        /* Section Qui suis-je responsive */
-        .about-section { background: var(--white); border-radius: 15px; padding: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); display: flex; flex-wrap: wrap; gap: 30px; align-items: center; margin-bottom: 40px; }
-        .about-photo { flex: 1; min-width: 250px; height: 320px; background-color: #e0e0e0; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #777; font-style: italic; border: 2px dashed #ccc; }
-        .about-content { flex: 2; min-width: 280px; }
+        .presentation-box { background-color: var(--white); border-radius: 15px; padding: 30px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.05); margin-bottom: 40px; }
+        .video-placeholder { background-color: #e0e0e0; width: 100%; max-width: 700px; height: 300px; margin: 0 auto; display: flex; align-items: center; justify-content: center; border-radius: 10px; color: #777; font-style: italic; border: 2px dashed #bbb; }
+
+        .cv-wrapper { background: var(--white); display: flex; flex-wrap: wrap; box-shadow: 0 10px 25px rgba(0,0,0,0.1); border-radius: 10px; overflow: hidden; }
         
-        .cv-button { display: inline-block; background-color: var(--primary-color); color: var(--white); padding: 10px 20px; border-radius: 8px; font-weight: bold; margin-bottom: 20px; }
-        .about-content p { color: #444; font-size: 1rem; margin-bottom: 15px; text-align: justify; }
-
-        /* Grille des cartes responsive */
-        .grid-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-        .card { background: var(--white); border-radius: 15px; padding: 25px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-top: 5px solid var(--primary-color); display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.3s; }
-        .card:hover { transform: translateY(-3px); }
-        .card h3 { color: var(--primary-color); margin-top: 0; font-size: 1.4rem; margin-bottom: 15px; }
-        .card p { color: #555; font-size: 0.95rem; margin-bottom: 20px; }
-        .card-link { font-weight: bold; color: var(--accent); margin-top: auto; }
-
+        .cv-left { background-color: var(--cv-left-bg); flex: 1; min-width: 280px; padding: 30px; border-right: 2px solid #e0e0e0; }
+        .cv-left h2 { font-size: 1.8rem; margin-top: 0; color: var(--primary-color); }
+        .cv-left h4 { margin: 0 0 20px 0; color: #777; font-size: 1rem; }
+        
+        .cv-section { margin-bottom: 25px; }
+        .cv-title { font-size: 1.1rem; letter-spacing: 2px; margin-bottom: 10px; color: var(--primary-color); font-weight: bold; border-bottom: 2px solid var(--primary-color); padding-bottom: 3px; display: inline-block; }
+        
+        .contact-list, .skill-list { list-style: none; padding: 0; margin: 0; font-size: 0.9rem; }
+        .contact-list li { margin-bottom: 8px; }
+        .skill-list li { margin-bottom: 5px; }
+        .skill-category { font-weight: bold; color: var(--secondary-color); margin-top: 10px; display: block; }
+        
+        .cv-right { flex: 2.5; min-width: 300px; padding: 30px; }
+        .cv-header-right { background-color: var(--primary-color); color: white; padding: 20px; text-align: center; border-radius: 5px; margin-bottom: 30px; }
+        .cv-header-right h3 { margin: 0 0 5px 0; font-size: 1.3rem; }
+        .cv-header-right p { margin: 0; font-size: 0.95rem; font-weight: bold; color: #e0e0e0; }
+        
+        .timeline-item { margin-bottom: 30px; }
+        .timeline-date { color: var(--secondary-color); font-size: 0.95rem; font-weight: bold; display: block; margin-bottom: 3px; }
+        .timeline-title { font-size: 1.1rem; font-weight: bold; color: var(--text-color); margin-bottom: 3px; }
+        .timeline-subtitle { font-style: italic; color: #555; margin-bottom: 8px; display: block; font-size: 0.9rem; }
+        
+        ul.task-list { padding-left: 15px; margin-top: 5px; font-size: 0.9rem; }
+        ul.task-list li { margin-bottom: 4px; }
+        
         footer { background-color: #444; color: var(--white); text-align: center; padding: 30px 20px; margin-top: 50px; }
-        .contact-info { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 15px; }
-        .contact-info a { color: var(--white); font-size: 0.9rem; }
 
-        /* Media Queries pour Téléphones */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.2rem; }
             .menu-btn { display: block; }
             nav { display: none; width: 100%; flex-direction: column; background-color: var(--primary-color); position: absolute; top: 60px; left: 0; padding: 10px 0; text-align: center; box-shadow: 0 5px 10px rgba(0,0,0,0.2); }
             nav.active { display: flex; }
             nav a { padding: 12px 0; }
-            .about-section { padding: 20px; gap: 20px; }
+            .cv-right, .cv-left, .presentation-box { padding: 20px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- NAVIGATION -->
     <header>
         <div class="nav-container">
             <div class="logo">Mohamed Ifard</div>
@@ -83,73 +86,130 @@
         </div>
     </header>
 
-    <!-- SECTION HERO -->
-    <section class="hero">
-        <h1>Mohamed Ifard</h1>
-        <p>Portfolio</p>
-    </section>
-
-    <!-- CONTENU PRINCIPAL -->
     <div class="container">
-
-        <!-- SECTION QUI SUIS-JE -->
-        <div class="about-section">
-            <div class="about-photo">
-                [Insérez votre photo ici]
-            </div>
-            <div class="about-content">
-                <a href="cv.html" class="cv-button">Qui suis-je (Voir mon CV) ➔</a>
-                <p>Je m'appelle Mohamed Ifard. Je suis d'origine italienne et marocaine, ce qui a été pour moi un véritable défi lorsque je suis arrivé en France : d'abord pour apprendre la langue, mais aussi pour découvrir la culture du pays.</p>
-                <p>J'ai tout de même eu quelques facilités, car j'apprends rapidement. J'ai ensuite pu intégrer un lycée scientifique, car j'aime les sciences et je voulais devenir ingénieur. Grâce à mes spécialités : les mathématiques, la physique-chimie et les sciences de l'ingénieur, j'ai pu intégrer le BUT GMP à l'IUT d'Orléans.</p>
-            </div>
+        
+        <div class="presentation-box">
+            <h1 style="color: var(--primary-color); margin-bottom: 20px; font-size: 1.8rem;">PRÉSENTATION</h1>
+            <div class="video-placeholder">[Intégration de la vidéo à venir]</div>
         </div>
 
-        <!-- GRILLE DES CARTES -->
-        <div class="grid-cards">
+        <div class="cv-wrapper">
             
-            <a href="formation.html" class="card">
-                <div>
-                    <h3>Formation & Cursus</h3>
-                    <p><strong>IUT d'Orléans & Lycée Vaucanson (Tours)</strong><br><br>Bachelor Universitaire de Technologie en Génie Mécanique et Productique (GMP) - Spécialité Simulation numérique et réalité virtuelle.</p>
-                </div>
-                <span class="card-link">Voir le détail de ma formation →</span>
-            </a>
+            <div class="cv-left">
+                <h2>Mohamed IFARD</h2>
+                <h4>20 ANS (17/06/2005)</h4>
 
-            <a href="projets.html" class="card">
-                <div>
-                    <h3>Mes Projets</h3>
-                    <p>Découvrez mes projets associatifs (HYPERBOLE++), professionnels (Pousseur de papier, Stop-chute) et scolaires (Pompe à palettes) en détail.</p>
+                <div class="cv-section">
+                    <div class="cv-title">PROFIL</div>
+                    <p style="font-size: 0.9rem; text-align: justify;">Déterminé, sérieux, autonome et conscient du travail qui m'attend, je suis enthousiaste à l'idée de contribuer à développer des solutions innovantes.</p>
                 </div>
-                <span class="card-link">Voir mes projets en détail →</span>
-            </a>
 
-            <a href="logiciels.html" class="card" style="border-top-color: var(--accent);">
-                <div>
-                    <h3>Logiciels Maîtrisés</h3>
-                    <p>SolidWorks, TopSolid, Creo, Solid Edge, MATLAB & Simulink, Pack Office, Navisworks, Recap.</p>
+                <div class="cv-section">
+                    <div class="cv-title">CONTACT</div>
+                    <ul class="contact-list">
+                        <li>📍 133 Quai Paul Bert, Tours</li>
+                        <li>✉️ ifard.mohamed1@gmail.com</li>
+                        <li>📞 06 44 06 96 69</li>
+                    </ul>
                 </div>
-                <span class="card-link">Voir le détail des logiciels →</span>
-            </a>
 
+                <div class="cv-section">
+                    <div class="cv-title">COMPÉTENCES</div>
+                    <ul class="skill-list"><li><strong>Permis B</strong></li></ul>
+                    
+                    <span class="skill-category">LOGICIELS</span>
+                    <ul class="skill-list">
+                        <li>CREO / TOPSolide</li>
+                        <li>SolidWorks / SolidEdge / OnShape</li>
+                        <li>Simulink / Matlab</li>
+                        <li>Navisworks / Recap</li>
+                    </ul>
+
+                    <span class="skill-category">LANGUES</span>
+                    <ul class="skill-list">
+                        <li>Italien : Langue native</li>
+                        <li>Anglais : B2</li>
+                    </ul>
+                </div>
+
+                <div class="cv-section">
+                    <div class="cv-title">CENTRES D'INTÉRÊT</div>
+                    <ul class="skill-list">
+                        <li><strong>Sports :</strong> Football, Vélo</li>
+                        <li><strong>Voyages :</strong> Italie, Maroc, Angleterre</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="cv-right">
+                
+                <div class="cv-header-right">
+                    <h3>RECHERCHE CONTRAT D'APPRENTISSAGE</h3>
+                    <p>BUT - 3ÈME ANNÉE GMP (2026-2027)</p>
+                </div>
+
+                <div class="cv-section">
+                    <div class="cv-title">FORMATION</div>
+                    
+                    <div class="timeline-item">
+                        <span class="timeline-date">2023 - 2026</span>
+                        <div class="timeline-title">BUT Génie Mécanique et Productique (GMP)</div>
+                        <span class="timeline-subtitle">IUT D'Orléans (45) - Spécialité simulation numérique et réalité virtuelle</span>
+                        <ul class="task-list">
+                            <li>Solution mécanique, Éléments finis, Prototypage.</li>
+                        </ul>
+                        
+                        <p style="font-size: 0.9rem; font-weight: bold; margin-top: 10px; margin-bottom: 3px;">Projet : Intégration de train avant (Shell Eco-marathon)</p>
+                        <ul class="task-list">
+                            <li>Conception et analyse technique (Mai 2024).</li>
+                        </ul>
+
+                        <p style="font-size: 0.9rem; font-weight: bold; margin-top: 10px; margin-bottom: 3px;">Projet : Hybridation pile à combustible (Renault Twizy)</p>
+                        <ul class="task-list">
+                            <li>Défi UTAC : support bonbonne et optimisation énergétique.</li>
+                        </ul>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="timeline-date">2023</span>
+                        <div class="timeline-title">Bac scientifique (Maths & Sciences de l'ingénieur)</div>
+                        <span class="timeline-subtitle">Lycée Jacques de Vaucanson, Tours (Mention Assez Bien)</span>
+                    </div>
+                </div>
+
+                <div class="cv-section">
+                    <div class="cv-title">EXPÉRIENCE</div>
+                    
+                    <div class="timeline-item">
+                        <span class="timeline-date">16 mars - 19 juin 2026</span>
+                        <div class="timeline-title">Stage de 14 semaines (3ème année BUT)</div>
+                        <span class="timeline-subtitle">INGENAO, Saint-Jean-de-la-Ruelle</span>
+                        <ul class="task-list">
+                            <li>Gestion de projets, Mise en plan, Cotation GPS, Calcul de structure.</li>
+                        </ul>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="timeline-date">7 juillet - 31 août 2025</span>
+                        <div class="timeline-title">Stage de 8 semaines (2ème année BUT)</div>
+                        <span class="timeline-subtitle">INGENIUM 360, Nazelles-Négron</span>
+                        <ul class="task-list">
+                            <li>Cahier des charges, Cycle de vie, Nomenclature, Conception 3D.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
         </div>
-
     </div>
 
-    <!-- FOOTER -->
     <footer>
-        <p>Contactez-moi</p>
-        <div class="contact-info">
-            <a href="https://linkedin.com" target="_blank">🔗 LinkedIn</a>
-            <a href="mailto:ifard.mohamed1@gmail.com">✉️ ifard.mohamed1@gmail.com</a>
-            <a href="tel:+33644069669">📞 06 44 06 96 69</a>
-        </div>
+        <p>© Mohamed Ifard - Portfolio</p>
     </footer>
 
-    <!-- SCRIPT MENU MOBILE -->
     <script>
         function toggleMenu() {
-            const menu = document.getElementById('nav-menu');
-            menu.classList.toggle('active');
+            document.getElementById('nav-menu').classList.toggle('active');
         }
     </script>
 </body>
