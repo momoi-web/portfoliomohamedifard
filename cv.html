@@ -15,24 +15,44 @@
         }
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: var(--background-color); color: var(--text-color); line-height: 1.6; }
         a { text-decoration: none; color: var(--primary-color); }
+        
         header { background-color: var(--primary-color); color: var(--white); padding: 1.2rem 0; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
         nav { display: flex; justify-content: center; gap: 40px; }
         nav a { color: var(--white); font-weight: bold; padding: 8px 15px; border-radius: 5px; font-size: 1.1rem; }
         nav a:hover { background-color: var(--secondary-color); }
-        .container { max-width: 1000px; margin: 40px auto; padding: 20px; }
-        .presentation-box { background-color: var(--white); border-radius: 15px; padding: 40px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.05); margin-bottom: 60px; }
+        
+        .container { max-width: 1100px; margin: 40px auto; padding: 20px; }
+        
         .cv-wrapper { background: var(--white); display: flex; flex-wrap: wrap; box-shadow: 0 10px 25px rgba(0,0,0,0.1); border-radius: 10px; overflow: hidden; }
-        .cv-left { background-color: var(--cv-left-bg); flex: 1; min-width: 250px; padding: 40px 30px; border-right: 2px solid #e0e0e0; }
-        .cv-right { flex: 2.5; min-width: 350px; padding: 40px; }
-        .cv-header-right { background-color: #333; color: white; padding: 20px; text-align: center; border-radius: 5px; margin-bottom: 30px; }
-        .cv-title { font-size: 1.2rem; letter-spacing: 2px; margin-bottom: 20px; color: var(--primary-color); text-align: center; font-weight: bold; border-bottom: 1px solid var(--primary-color); padding-bottom: 5px; }
-        .cv-left h2 { font-size: 1.8rem; margin-top: 0; color: var(--primary-color); }
-        .cv-left h4 { margin: 5px 0 20px 0; color: #777; }
+        
+        /* Colonne Gauche */
+        .cv-left { background-color: var(--cv-left-bg); flex: 1; min-width: 280px; max-width: 350px; padding: 40px 30px; border-right: 2px solid #e0e0e0; }
+        .cv-left h2 { font-size: 2rem; margin-top: 0; color: var(--primary-color); line-height: 1.2; margin-bottom: 5px; }
+        .cv-left h4 { margin: 0 0 30px 0; color: #777; font-size: 1.1rem; }
+        
         .cv-section { margin-bottom: 30px; }
-        .cv-item-title { font-weight: bold; margin-bottom: 5px; }
-        .cv-date { color: var(--secondary-color); font-size: 0.9rem; font-weight: bold; }
-        ul { padding-left: 20px; margin-top: 5px; }
-        footer { background-color: #444; color: var(--white); text-align: center; padding: 60px 20px; margin-top: 60px; }
+        .cv-title { font-size: 1.2rem; letter-spacing: 2px; margin-bottom: 15px; color: var(--primary-color); font-weight: bold; border-bottom: 2px solid var(--primary-color); padding-bottom: 5px; display: inline-block; }
+        
+        .contact-list, .skill-list { list-style: none; padding: 0; margin: 0; font-size: 0.95rem; }
+        .contact-list li { margin-bottom: 10px; display: flex; align-items: flex-start; gap: 10px; }
+        .skill-list li { margin-bottom: 5px; }
+        .skill-category { font-weight: bold; color: var(--secondary-color); margin-top: 10px; display: block; }
+        
+        /* Colonne Droite */
+        .cv-right { flex: 2.5; min-width: 400px; padding: 40px; }
+        .cv-header-right { background-color: var(--primary-color); color: white; padding: 25px; text-align: center; border-radius: 5px; margin-bottom: 40px; }
+        .cv-header-right h3 { margin: 0 0 10px 0; font-size: 1.5rem; letter-spacing: 1px; }
+        .cv-header-right p { margin: 0; font-size: 1.1rem; font-weight: bold; color: #e0e0e0; }
+        
+        .timeline-item { margin-bottom: 35px; }
+        .timeline-date { color: var(--secondary-color); font-size: 1rem; font-weight: bold; display: block; margin-bottom: 5px; }
+        .timeline-title { font-size: 1.15rem; font-weight: bold; color: var(--text-color); margin-bottom: 5px; }
+        .timeline-subtitle { font-style: italic; color: #555; margin-bottom: 10px; display: block; }
+        
+        ul.task-list { padding-left: 20px; margin-top: 5px; font-size: 0.95rem; }
+        ul.task-list li { margin-bottom: 5px; }
+        
+        footer { background-color: #444; color: var(--white); text-align: center; padding: 40px 20px; margin-top: 60px; }
     </style>
 </head>
 <body>
@@ -42,53 +62,143 @@
             <a href="index.html">Accueil</a>
             <a href="cv.html">Mon CV</a>
             <a href="projets.html">Mes Projets</a>
-            <a href="#formation">Formation</a>
-            <a href="#logiciels">Logiciels</a>
         </nav>
     </header>
 
     <div class="container">
-        <div class="presentation-box">
-            <h1 style="color: var(--primary-color); margin-bottom: 30px;">PRÉSENTATION</h1>
-            <p>Ici, vous pourrez insérer votre vidéo ou photo de présentation.</p>
-        </div>
-
-        <h2 style="color: var(--primary-color);">Mon CV :</h2>
-
         <div class="cv-wrapper">
+            
+            <!-- COLONNE GAUCHE -->
             <div class="cv-left">
                 <h2>Mohamed IFARD</h2>
-                <h4>Né le 17/09/2004</h4>
+                <h4>20 ANS (17/06/2005)</h4>
 
                 <div class="cv-section">
                     <div class="cv-title">PROFIL</div>
-                    <p style="font-size: 0.9rem;">Déterminé, sérieux, autonome et conscient du travail qui m'attend, je suis enthousiaste à l'idée de contribuer à développer des solutions innovantes.[cite: 7]</p>
+                    <p style="font-size: 0.95rem; text-align: justify;">Déterminé, sérieux, autonome et conscient du travail qui m'attend, je suis enthousiaste à l'idée de contribuer à développer des solutions innovantes.</p>
                 </div>
 
                 <div class="cv-section">
                     <div class="cv-title">CONTACT</div>
-                    <p style="font-size: 0.9rem;">
-                        📍 155 Quai Paul Bert, 37100 Tours[cite: 7]<br>
-                        ✉️ ifard.mohamed1@gmail.com[cite: 7]<br>
-                        📞 06 44 06 96 69[cite: 7]
-                    </p>
+                    <ul class="contact-list">
+                        <li>📍 133 Quai Paul Bert, 37100, Tours</li>
+                        <li>✉️ ifard.mohamed1@gmail.com</li>
+                        <li>📞 06 44 06 96 69</li>
+                    </ul>
+                </div>
+
+                <div class="cv-section">
+                    <div class="cv-title">COMPÉTENCES</div>
+                    <ul class="skill-list">
+                        <li><strong>Permis B</strong></li>
+                    </ul>
+                    
+                    <span class="skill-category">LOGICIELS</span>
+                    <ul class="skill-list">
+                        <li>CAO/FAO : CREO / TOPSolide</li>
+                        <li>SolidWorks / SolidEdge / OnShape</li>
+                        <li>Simulink / Matlab</li>
+                        <li>Navisworks / Recap</li>
+                        <li>Suite Office</li>
+                    </ul>
+
+                    <span class="skill-category">LANGUES</span>
+                    <ul class="skill-list">
+                        <li>Italien : Langue native</li>
+                        <li>Anglais : B2</li>
+                    </ul>
+                </div>
+
+                <div class="cv-section">
+                    <div class="cv-title">CENTRES D'INTÉRÊT</div>
+                    <ul class="skill-list">
+                        <li><strong>Sports :</strong> Football, Vélo (niveau amateur)</li>
+                        <li><strong>Voyages :</strong> Italie, Maroc, Angleterre</li>
+                    </ul>
                 </div>
             </div>
 
+            <!-- COLONNE DROITE -->
             <div class="cv-right">
+                
                 <div class="cv-header-right">
-                    <h3>STAGE DE DEUXIÈME ANNÉE DE BUT GÉNIE MÉCANIQUE ET PRODUCTIQUE</h3>
-                    <p>16 MARS - 19 JUIN 2025[cite: 7]</p>
+                    <h3>RECHERCHE CONTRAT D'APPRENTISSAGE</h3>
+                    <p>BUT - 3ÈME ANNÉE GÉNIE MÉCANIQUE ET PRODUCTIQUE (2026-2027)</p>
                 </div>
 
                 <div class="cv-section">
                     <div class="cv-title">FORMATION</div>
-                    <div style="margin-bottom: 20px;">
-                        <span class="cv-date">2023-26</span>
-                        <div class="cv-item-title">Bachelor universitaire technologique (BUT) en Génie mécanique et Productique (GMP) - deuxième année[cite: 7]</div>
-                        <p style="margin: 0; font-size: 0.95rem;"><em>IUT D'Orléans (45) - spécialité simulation numérique et réalité virtuelle[cite: 7]</em></p>
+                    
+                    <div class="timeline-item">
+                        <span class="timeline-date">2023 - 2026</span>
+                        <div class="timeline-title">Bachelor universitaire technologique (BUT) en Génie mécanique et Productique (GMP)</div>
+                        <span class="timeline-subtitle">IUT D'Orléans (45) - spécialité simulation numérique et réalité virtuelle</span>
+                        <ul class="task-list" style="columns: 2;">
+                            <li>Solution mécanique</li>
+                            <li>Étude par éléments finis</li>
+                            <li>Projets de bureau d'étude</li>
+                            <li>Modélisation et conception 3D</li>
+                            <li>Rétro-conception</li>
+                            <li>Prototypage</li>
+                        </ul>
+                        
+                        <p style="font-size: 0.95rem; font-weight: bold; margin-top: 15px; margin-bottom: 5px;">Projet académique : Intégration de train avant dans un prototype (Shell Eco-marathon)</p>
+                        <ul class="task-list">
+                            <li>Conception du train avant et analyse technique.</li>
+                            <li>Réactivité à trouver des solutions et efficacité face aux problèmes imprévisibles.</li>
+                            <li>Participation au Shell Eco-marathon (15-22 mai 2024).</li>
+                        </ul>
+
+                        <p style="font-size: 0.95rem; font-weight: bold; margin-top: 15px; margin-bottom: 5px;">Projet académique : Hybridation d'une pile à combustible hydrogène (Renault Twizy)</p>
+                        <ul class="task-list">
+                            <li>Prototypage et élaboration d'un état de l'art.</li>
+                            <li>Conception d'un support pour la bonbonne d'hydrogène.</li>
+                            <li>Optimisation énergétique entre la batterie et la pile à combustible.</li>
+                        </ul>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="timeline-date">2023</span>
+                        <div class="timeline-title">Bac scientifique (Spécialité Mathématiques et Sciences de l'ingénieur)</div>
+                        <span class="timeline-subtitle">Lycée Jacques de Vaucanson, Tours (37) - Mention : Assez bien</span>
+                        <ul class="task-list">
+                            <li>Grand oral : influence de l'aérodynamisme sur les véhicules.</li>
+                        </ul>
                     </div>
                 </div>
+
+                <div class="cv-section">
+                    <div class="cv-title">EXPÉRIENCE</div>
+                    
+                    <div class="timeline-item">
+                        <span class="timeline-date">16 mars - 19 juin 2026</span>
+                        <div class="timeline-title">Stage de 14 semaines (Troisième année de BUT)</div>
+                        <span class="timeline-subtitle">INGENAO, Saint-Jean-de-la-Ruelle (45140)</span>
+                        <ul class="task-list" style="columns: 2;">
+                            <li>Gestion de plusieurs projets en parallèle</li>
+                            <li>Mise en plan d'ensembles complexes</li>
+                            <li>Cotation GPS</li>
+                            <li>Calcul de structure</li>
+                            <li>Conception mécanique & 3D</li>
+                        </ul>
+                    </div>
+
+                    <div class="timeline-item">
+                        <span class="timeline-date">7 juillet - 31 août 2025</span>
+                        <div class="timeline-title">Stage de 8 semaines (Deuxième année de BUT)</div>
+                        <span class="timeline-subtitle">INGENIUM 360, Nazelles-Négron (37530)</span>
+                        <ul class="task-list" style="columns: 2;">
+                            <li>Gérer le cycle de vie d'un produit</li>
+                            <li>Mise en place de cahier des charges</li>
+                            <li>Processus qualité produit</li>
+                            <li>Résolution de problème mécanique</li>
+                            <li>Gestion d'un projet & nomenclature</li>
+                            <li>Conception 3D</li>
+                        </ul>
+                    </div>
+
+                </div>
+
             </div>
         </div>
     </div>
