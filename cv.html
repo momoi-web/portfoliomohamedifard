@@ -3,144 +3,189 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohamed Ifard - Mon CV</title>
+    <title>Mohamed Ifard - Mon Profil</title>
     <style>
         :root {
-            --primary-color: #4a3b38;
-            --secondary-color: #6b5b58;
-            --background-color: #f9f9f9;
-            --text-color: #333333;
+            /* Palette stricte : Marron, Orange, Blanc */
+            --primary-color: #4a3b38; /* Marron Chocolat */
+            --secondary-color: #6b5b58; /* Marron clair */
+            --background-color: #fbf9f8; /* Blanc cassé */
+            --text-color: #4a3b38; /* Texte marron (pas de noir) */
             --white: #ffffff;
-            --cv-left-bg: #f4f1f0;
+            --accent: #d97736; /* Orange */
+            --shadow-color: rgba(74, 59, 56, 0.15);
+            --cv-left-bg: #fdfaf9;
         }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: var(--background-color); color: var(--text-color); line-height: 1.6; }
-        a { text-decoration: none; color: var(--primary-color); }
         
-        /* Navigation adaptative */
-        header { background-color: var(--primary-color); color: var(--white); position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: var(--background-color); color: var(--text-color); line-height: 1.6; overflow-x: hidden; }
+        a { text-decoration: none; color: inherit; }
+        
+        /* Navigation (Identique à l'accueil) */
+        header { background-color: var(--primary-color); color: var(--white); position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 15px var(--shadow-color); }
         .nav-container { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; }
-        .logo { font-weight: bold; font-size: 1.2rem; color: white; }
+        .logo { font-weight: bold; font-size: 1.4rem; color: white; letter-spacing: 1px; }
         
-        nav { display: flex; gap: 20px; }
-        nav a { color: var(--white); font-weight: bold; padding: 8px 12px; border-radius: 5px; font-size: 1rem; transition: background 0.3s; }
-        nav a:hover { background-color: var(--secondary-color); }
+        nav { display: flex; gap: 25px; }
+        nav a { color: var(--white); font-weight: bold; padding: 8px 15px; border-radius: 5px; font-size: 1.05rem; transition: all 0.3s ease; border: 1px solid transparent; }
+        nav a:hover { background-color: rgba(255,255,255,0.15); border-color: var(--white); }
 
-        .menu-btn { display: none; background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; }
+        .menu-btn { display: none; background: none; border: none; color: white; font-size: 1.8rem; cursor: pointer; }
         
+        /* Conteneur principal */
         .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
         
-        .presentation-box { background-color: var(--white); border-radius: 15px; padding: 30px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.05); margin-bottom: 40px; }
-        .video-placeholder { background-color: #e0e0e0; width: 100%; max-width: 700px; height: 300px; margin: 0 auto; display: flex; align-items: center; justify-content: center; border-radius: 10px; color: #777; font-style: italic; border: 2px dashed #bbb; }
+        /* Vidéo de présentation */
+        .presentation-box { background-color: var(--white); border-radius: 15px; padding: 30px; text-align: center; box-shadow: 0 10px 30px var(--shadow-color); margin-bottom: 40px; border-top: 5px solid var(--accent); }
+        .video-placeholder { background-color: #f4f1f0; width: 100%; max-width: 700px; height: 300px; margin: 0 auto; display: flex; align-items: center; justify-content: center; border-radius: 10px; color: var(--secondary-color); font-style: italic; border: 2px dashed var(--secondary-color); }
 
-        .cv-wrapper { background: var(--white); display: flex; flex-wrap: wrap; box-shadow: 0 10px 25px rgba(0,0,0,0.1); border-radius: 10px; overflow: hidden; }
+        /* Grille du CV */
+        .cv-wrapper { background: var(--white); display: flex; flex-wrap: wrap; box-shadow: 0 10px 30px var(--shadow-color); border-radius: 15px; overflow: hidden; }
         
-        .cv-left { background-color: var(--cv-left-bg); flex: 1; min-width: 280px; padding: 30px; border-right: 2px solid #e0e0e0; }
-        .cv-left h2 { font-size: 1.8rem; margin-top: 0; color: var(--primary-color); }
-        .cv-left h4 { margin: 0 0 20px 0; color: #777; font-size: 1rem; }
+        /* Colonne de gauche (Profil) */
+        .cv-left { background-color: var(--cv-left-bg); flex: 1; min-width: 280px; padding: 40px 30px; border-right: 2px solid rgba(74, 59, 56, 0.1); }
+        .cv-left h2 { font-size: 2rem; margin-top: 0; margin-bottom: 5px; color: var(--primary-color); letter-spacing: 1px; text-align: center; }
+        .cv-left h4 { margin: 0 0 25px 0; color: var(--secondary-color); font-size: 1.1rem; text-align: center; }
         
-        .cv-section { margin-bottom: 25px; }
-        .cv-title { font-size: 1.1rem; letter-spacing: 2px; margin-bottom: 10px; color: var(--primary-color); font-weight: bold; border-bottom: 2px solid var(--primary-color); padding-bottom: 3px; display: inline-block; }
-        
-        .contact-list, .skill-list { list-style: none; padding: 0; margin: 0; font-size: 0.9rem; }
-        .contact-list li { margin-bottom: 8px; }
-        .skill-list li { margin-bottom: 5px; }
-        .skill-category { font-weight: bold; color: var(--secondary-color); margin-top: 10px; display: block; }
-        
-        .cv-right { flex: 2.5; min-width: 300px; padding: 30px; }
-        .cv-header-right { background-color: var(--primary-color); color: white; padding: 20px; text-align: center; border-radius: 5px; margin-bottom: 30px; }
-        .cv-header-right h3 { margin: 0 0 5px 0; font-size: 1.3rem; }
-        .cv-header-right p { margin: 0; font-size: 0.95rem; font-weight: bold; color: #e0e0e0; }
-        
-        .timeline-item { margin-bottom: 30px; }
-        .timeline-date { color: var(--secondary-color); font-size: 0.95rem; font-weight: bold; display: block; margin-bottom: 3px; }
-        .timeline-title { font-size: 1.1rem; font-weight: bold; color: var(--text-color); margin-bottom: 3px; }
-        .timeline-subtitle { font-style: italic; color: #555; margin-bottom: 8px; display: block; font-size: 0.9rem; }
-        
-        ul.task-list { padding-left: 15px; margin-top: 5px; font-size: 0.9rem; }
-        ul.task-list li { margin-bottom: 4px; }
-        
-        footer { background-color: #444; color: var(--white); text-align: center; padding: 30px 20px; margin-top: 50px; }
+        /* Bouton Télécharger CV */
+        .download-btn {
+            display: block;
+            background-color: var(--accent);
+            color: var(--white);
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            text-align: center;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(217, 119, 54, 0.3);
+            margin-bottom: 35px;
+        }
+        .download-btn:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px var(--shadow-color);
+            color: var(--white);
+        }
 
+        .cv-section { margin-bottom: 30px; }
+        .cv-title { font-size: 1.2rem; letter-spacing: 2px; margin-bottom: 15px; color: var(--primary-color); font-weight: bold; border-bottom: 2px solid var(--accent); padding-bottom: 5px; display: inline-block; }
+        
+        .contact-list, .skill-list { list-style: none; padding: 0; margin: 0; font-size: 0.95rem; }
+        .contact-list li { margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+        .skill-list li { margin-bottom: 6px; }
+        .skill-category { font-weight: bold; color: var(--accent); margin-top: 15px; margin-bottom: 5px; display: block; font-size: 1rem; }
+        
+        /* Colonne de droite (Parcours) */
+        .cv-right { flex: 2.5; min-width: 300px; padding: 40px 30px; }
+        .cv-header-right { background-color: var(--primary-color); color: white; padding: 25px; text-align: center; border-radius: 10px; margin-bottom: 40px; border-left: 6px solid var(--accent); box-shadow: 0 5px 15px var(--shadow-color); }
+        .cv-header-right h3 { margin: 0 0 5px 0; font-size: 1.4rem; letter-spacing: 1px; }
+        .cv-header-right p { margin: 0; font-size: 1rem; font-weight: bold; color: rgba(255,255,255,0.85); }
+        
+        .timeline-item { margin-bottom: 35px; }
+        .timeline-date { color: var(--accent); font-size: 1rem; font-weight: bold; display: block; margin-bottom: 5px; }
+        .timeline-title { font-size: 1.2rem; font-weight: bold; color: var(--primary-color); margin-bottom: 5px; }
+        .timeline-subtitle { font-style: italic; color: var(--secondary-color); margin-bottom: 10px; display: block; font-size: 0.95rem; }
+        
+        ul.task-list { padding-left: 18px; margin-top: 8px; font-size: 0.95rem; color: var(--text-color); }
+        ul.task-list li { margin-bottom: 5px; }
+        
+        /* Footer (Marron comme sur l'accueil) */
+        footer { background-color: var(--primary-color); color: var(--white); text-align: center; padding: 50px 20px; margin-top: 80px; }
+        .contact-info { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-top: 20px; }
+        .contact-info a { color: var(--accent); font-weight: bold; font-size: 1.1rem; transition: color 0.3s; text-shadow: 0 1px 2px rgba(0,0,0,0.2); }
+        .contact-info a:hover { color: var(--white); }
+
+        /* Mobile */
         @media (max-width: 768px) {
             .menu-btn { display: block; }
-            nav { display: none; width: 100%; flex-direction: column; background-color: var(--primary-color); position: absolute; top: 60px; left: 0; padding: 10px 0; text-align: center; box-shadow: 0 5px 10px rgba(0,0,0,0.2); }
+            nav { display: none; width: 100%; flex-direction: column; background-color: var(--primary-color); position: absolute; top: 65px; left: 0; padding: 15px 0; text-align: center; box-shadow: 0 5px 15px var(--shadow-color); border-top: 1px solid rgba(255,255,255,0.1); }
             nav.active { display: flex; }
-            nav a { padding: 12px 0; }
-            .cv-right, .cv-left, .presentation-box { padding: 20px; }
+            nav a { padding: 15px 0; border: none; }
+            .cv-right, .cv-left, .presentation-box { padding: 25px; }
+            .contact-info { flex-direction: column; gap: 15px; }
         }
     </style>
 </head>
 <body>
 
+    <!-- NAVIGATION -->
     <header>
         <div class="nav-container">
-            <div class="logo">Mohamed Ifard</div>
+            <div class="logo">M. IFARD</div>
             <button class="menu-btn" onclick="toggleMenu()">☰</button>
             <nav id="nav-menu">
                 <a href="index.html">Accueil</a>
-                <a href="cv.html">Mon CV</a>
-                <a href="formation.html">Formation</a>
-                <a href="projets.html">Mes Projets</a>
-                <a href="logiciels.html">Logiciels</a>
+                <a href="cv.html">Mon Profil</a>
+                <a href="projets.html">Mes Réalisations</a>
+                <a href="#contact">Contact</a>
             </nav>
         </div>
     </header>
 
     <div class="container">
         
+        <!-- VIDEO DE PRESENTATION -->
         <div class="presentation-box">
-            <h1 style="color: var(--primary-color); margin-bottom: 20px; font-size: 1.8rem;">PRÉSENTATION</h1>
+            <h1 style="color: var(--primary-color); margin-bottom: 20px; font-size: 1.8rem; text-transform: uppercase; letter-spacing: 2px;">Présentation Vidéo</h1>
             <div class="video-placeholder">[Intégration de la vidéo à venir]</div>
         </div>
 
+        <!-- CORPS DU CV -->
         <div class="cv-wrapper">
             
+            <!-- COLONNE GAUCHE (Infos & Compétences) -->
             <div class="cv-left">
                 <h2>Mohamed IFARD</h2>
-                <h4>20 ANS (17/06/2005)</h4>
+                <h4>21 ANS (17/06/2005)</h4>
+                
+                <!-- BOUTON DE TÉLÉCHARGEMENT DU CV -->
+                <!-- Pense à remplacer "CV_Mohamed_Ifard.pdf" par le vrai nom de ton fichier PDF ! -->
+                <a href="CV_Mohamed_Ifard.pdf" download="CV_Mohamed_Ifard.pdf" class="download-btn">
+                    Télécharger mon CV (PDF) 📥
+                </a>
 
                 <div class="cv-section">
                     <div class="cv-title">PROFIL</div>
-                    <p style="font-size: 0.9rem; text-align: justify;">Déterminé, sérieux, autonome et conscient du travail qui m'attend, je suis enthousiaste à l'idée de contribuer à développer des solutions innovantes.</p>
+                    <p style="font-size: 0.95rem; text-align: justify;">Déterminé, sérieux, autonome et conscient du travail qui m'attend, je suis enthousiaste à l'idée de contribuer à développer des solutions innovantes en ingénierie.</p>
                 </div>
 
                 <div class="cv-section">
                     <div class="cv-title">CONTACT</div>
                     <ul class="contact-list">
-                        <li>📍 133 Quai Paul Bert, Tours</li>
-                        <li>✉️ ifard.mohamed1@gmail.com</li>
-                        <li>📞 06 44 06 96 69</li>
+                        <li><span>📍</span> 133 Quai Paul Bert, Tours</li>
+                        <li><span>✉️</span> ifard.mohamed1@gmail.com</li>
+                        <li><span>📞</span> 06 44 06 96 69</li>
                     </ul>
                 </div>
 
                 <div class="cv-section">
                     <div class="cv-title">COMPÉTENCES</div>
-                    <ul class="skill-list"><li><strong>Permis B</strong></li></ul>
+                    <ul class="skill-list"><li style="color: var(--primary-color);"><strong>Permis B</strong></li></ul>
                     
                     <span class="skill-category">LOGICIELS</span>
                     <ul class="skill-list">
-                        <li>CREO / TOPSolide</li>
-                        <li>SolidWorks / SolidEdge / OnShape</li>
-                        <li>Simulink / Matlab</li>
+                        <li>CREO / TopSolid</li>
+                        <li>SolidWorks / Solid Edge / OnShape</li>
+                        <li>Simulink / MATLAB</li>
                         <li>Navisworks / Recap</li>
                     </ul>
 
                     <span class="skill-category">LANGUES</span>
                     <ul class="skill-list">
                         <li>Italien : Langue native</li>
-                        <li>Anglais : B2</li>
+                        <li>Anglais : Niveau B2</li>
                     </ul>
                 </div>
 
                 <div class="cv-section">
                     <div class="cv-title">CENTRES D'INTÉRÊT</div>
                     <ul class="skill-list">
-                        <li><strong>Sports :</strong> Football, Vélo</li>
-                        <li><strong>Voyages :</strong> Italie, Maroc, Angleterre</li>
+                        <li><strong style="color: var(--primary-color);">Sports :</strong> Football, Vélo</li>
+                        <li><strong style="color: var(--primary-color);">Voyages :</strong> Italie, Maroc, Angleterre</li>
                     </ul>
                 </div>
             </div>
 
+            <!-- COLONNE DROITE (Parcours & Expérience) -->
             <div class="cv-right">
                 
                 <div class="cv-header-right">
@@ -159,12 +204,12 @@
                             <li>Solution mécanique, Éléments finis, Prototypage.</li>
                         </ul>
                         
-                        <p style="font-size: 0.9rem; font-weight: bold; margin-top: 10px; margin-bottom: 3px;">Projet : Intégration de train avant (Shell Eco-marathon)</p>
+                        <p style="font-size: 0.95rem; font-weight: bold; margin-top: 15px; margin-bottom: 5px; color: var(--accent);">Projet : Intégration de train avant (Shell Eco-marathon)</p>
                         <ul class="task-list">
                             <li>Conception et analyse technique (Mai 2024).</li>
                         </ul>
 
-                        <p style="font-size: 0.9rem; font-weight: bold; margin-top: 10px; margin-bottom: 3px;">Projet : Hybridation pile à combustible (Renault Twizy)</p>
+                        <p style="font-size: 0.95rem; font-weight: bold; margin-top: 15px; margin-bottom: 5px; color: var(--accent);">Projet : Hybridation pile à combustible (Renault Twizy)</p>
                         <ul class="task-list">
                             <li>Défi UTAC : support bonbonne et optimisation énergétique.</li>
                         </ul>
@@ -203,10 +248,17 @@
         </div>
     </div>
 
-    <footer>
-        <p>© Mohamed Ifard - Portfolio</p>
+    <!-- FOOTER -->
+    <footer id="contact">
+        <p style="margin-bottom: 5px; color: rgba(255,255,255,0.8);">Recherche contrat d'apprentissage - BUT 3ème année GMP</p>
+        <div class="contact-info">
+            <a href="https://linkedin.com" target="_blank">🔗 LinkedIn</a>
+            <a href="mailto:ifard.mohamed1@gmail.com">✉️ ifard.mohamed1@gmail.com</a>
+            <a href="tel:+33644069669">📞 06 44 06 96 69</a>
+        </div>
     </footer>
 
+    <!-- SCRIPT MENU MOBILE -->
     <script>
         function toggleMenu() {
             document.getElementById('nav-menu').classList.toggle('active');
