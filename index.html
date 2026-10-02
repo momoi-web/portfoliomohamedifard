@@ -6,63 +6,154 @@
     <title>Mohamed Ifard - Portfolio</title>
     <style>
         :root {
-            --primary-color: #4a3b38;
-            --secondary-color: #6b5b58;
-            --background-color: #f9f9f9;
-            --text-color: #333333;
-            --white: #ffffff;
-            --accent: #d97736;
+            /* Palette stricte : Marron, Orange, Blanc */
+            --primary-color: #4a3b38; /* Marron Chocolat */
+            --secondary-color: #6b5b58; /* Marron clair */
+            --background-color: #fbf9f8; /* Blanc cassé / très légèrement chaud */
+            --text-color: #4a3b38; /* Texte marron */
+            --white: #ffffff; /* Blanc pur */
+            --accent: #d97736; /* Orange */
+            --shadow-color: rgba(74, 59, 56, 0.15); /* Ombre marron */
         }
 
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: var(--background-color); color: var(--text-color); line-height: 1.8; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: var(--background-color); color: var(--text-color); line-height: 1.8; overflow-x: hidden; }
         a { text-decoration: none; color: inherit; }
         
-        /* Navigation adaptative */
-        header { background-color: var(--primary-color); color: var(--white); position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+        /* Navigation */
+        header { background-color: var(--primary-color); color: var(--white); position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 15px var(--shadow-color); }
         .nav-container { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; }
-        .logo { font-weight: bold; font-size: 1.2rem; }
+        .logo { font-weight: bold; font-size: 1.4rem; color: white; letter-spacing: 1px; }
         
-        nav { display: flex; gap: 20px; }
-        nav a { color: var(--white); font-weight: bold; padding: 8px 12px; border-radius: 5px; font-size: 1rem; transition: background 0.3s; }
-        nav a:hover { background-color: var(--secondary-color); }
+        nav { display: flex; gap: 25px; }
+        nav a { color: var(--white); font-weight: bold; padding: 8px 15px; border-radius: 5px; font-size: 1.05rem; transition: all 0.3s ease; border: 1px solid transparent; }
+        nav a:hover { background-color: rgba(255,255,255,0.15); border-color: var(--white); }
 
-        /* Bouton Menu Mobile (caché sur PC) */
-        .menu-btn { display: none; background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; }
+        .menu-btn { display: none; background: none; border: none; color: white; font-size: 1.8rem; cursor: pointer; }
 
-        .hero { background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('fond-aeroport.jpg') no-repeat center center/cover; color: var(--white); text-align: center; padding: 80px 20px; }
-        .hero h1 { font-size: 2.8rem; margin-bottom: 10px; font-family: 'Times New Roman', Times, serif; }
-        .hero p { font-size: 1.2rem; letter-spacing: 2px; text-transform: uppercase; }
-
-        .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
+        /* BANDEAU FUTURISTE - NOUVELLE PHOTO DE FOND */
+        .hero { 
+            position: relative; 
+            /* Dégradé Marron/Orange superposé à une nouvelle image de conception/ingénierie */
+            background: linear-gradient(135deg, rgba(74, 59, 56, 0.8), rgba(217, 119, 54, 0.65)), url('https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?auto=format&fit=crop&w=1920&q=80') center center/cover no-repeat;
+            color: var(--white); 
+            text-align: center; 
+            padding: 120px 20px; 
+            overflow: hidden; 
+            border-bottom: 5px solid var(--white);
+        }
         
-        /* Section Qui suis-je responsive */
-        .about-section { background: var(--white); border-radius: 15px; padding: 30px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); display: flex; flex-wrap: wrap; gap: 30px; align-items: center; margin-bottom: 40px; }
-        .about-photo { flex: 1; min-width: 250px; height: 320px; background-color: #e0e0e0; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: #777; font-style: italic; border: 2px dashed #ccc; }
-        .about-content { flex: 2; min-width: 280px; }
+        /* Grille 3D animée en blanc translucide */
+        .grid-bg {
+            position: absolute;
+            bottom: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+            background-size: 50px 50px;
+            transform: perspective(600px) rotateX(70deg) translateY(0);
+            animation: gridMove 10s linear infinite;
+            z-index: 1;
+        }
+
+        @keyframes gridMove {
+            0% { transform: perspective(600px) rotateX(70deg) translateY(0); }
+            100% { transform: perspective(600px) rotateX(70deg) translateY(50px); }
+        }
+
+        /* Engrenages en Orange */
+        .gears-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; opacity: 0.85; pointer-events: none; }
+        .gear { position: absolute; fill: transparent; stroke: var(--accent); stroke-width: 2.5; filter: drop-shadow(0 0 6px rgba(217, 119, 54, 0.8)); }
         
-        .cv-button { display: inline-block; background-color: var(--primary-color); color: var(--white); padding: 10px 20px; border-radius: 8px; font-weight: bold; margin-bottom: 20px; }
-        .about-content p { color: #444; font-size: 1rem; margin-bottom: 15px; text-align: justify; }
+        .gear1 { width: 350px; top: -120px; left: -80px; animation: spin 20s linear infinite; }
+        .gear2 { width: 220px; bottom: -50px; right: 5%; animation: spin-reverse 15s linear infinite; stroke: #8da3b5; filter: drop-shadow(0 0 6px rgba(141, 163, 181, 0.8)); }
+        .gear3 { width: 140px; top: 20%; right: -30px; animation: spin 10s linear infinite; }
 
-        /* Grille des cartes responsive */
-        .grid-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-        .card { background: var(--white); border-radius: 15px; padding: 25px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-top: 5px solid var(--primary-color); display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.3s; }
-        .card:hover { transform: translateY(-3px); }
-        .card h3 { color: var(--primary-color); margin-top: 0; font-size: 1.4rem; margin-bottom: 15px; }
-        .card p { color: #555; font-size: 0.95rem; margin-bottom: 20px; }
-        .card-link { font-weight: bold; color: var(--accent); margin-top: auto; }
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+        @keyframes spin-reverse { 100% { transform: rotate(-360deg); } }
 
-        footer { background-color: #444; color: var(--white); text-align: center; padding: 30px 20px; margin-top: 50px; }
-        .contact-info { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 15px; }
-        .contact-info a { color: var(--white); font-size: 0.9rem; }
+        /* Contenu du texte sur le bandeau */
+        .hero-content { position: relative; z-index: 10; display: flex; flex-direction: column; align-items: center; }
+        
+        /* Photo de profil bandeau (Bordure Orange) */
+        .hero-profile-pic {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--accent);
+            box-shadow: 0 0 20px rgba(217, 119, 54, 0.5);
+            margin-bottom: 25px;
+            animation: float 6s ease-in-out infinite;
+            background-color: var(--primary-color);
+        }
 
-        /* Media Queries pour Téléphones */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .hero h1 { 
+            font-size: 4rem; 
+            margin-bottom: 10px; 
+            margin-top: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            text-shadow: 0 2px 10px rgba(74, 59, 56, 0.6);
+            color: var(--white);
+        }
+        .hero p { 
+            font-size: 1.4rem; 
+            letter-spacing: 5px; 
+            text-transform: uppercase; 
+            color: var(--accent); 
+            font-weight: bold; 
+            text-shadow: 0 2px 8px rgba(74, 59, 56, 0.8);
+            margin-top: 0;
+        }
+
+        /* CONTENEUR PRINCIPAL */
+        .container { max-width: 1100px; margin: 60px auto; padding: 0 20px; }
+        
+        /* Section Qui suis-je */
+        .about-section { background: var(--white); border-radius: 15px; padding: 40px; box-shadow: 0 10px 30px var(--shadow-color); display: flex; flex-wrap: wrap; gap: 40px; align-items: center; margin-bottom: 60px; border-left: 6px solid var(--accent); }
+        .about-photo { flex: 1; min-width: 280px; height: 350px; background-color: #f4f1f0; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: var(--primary-color); font-style: italic; border: 2px dashed var(--secondary-color); overflow: hidden; }
+        .about-content { flex: 2; min-width: 300px; }
+        
+        .cv-button { display: inline-block; background-color: var(--accent); color: var(--white); padding: 15px 30px; border-radius: 8px; font-weight: bold; margin-bottom: 25px; transition: all 0.3s; font-size: 1.1rem; box-shadow: 0 4px 15px rgba(217, 119, 54, 0.3); }
+        .cv-button:hover { background-color: var(--primary-color); transform: translateY(-2px); box-shadow: 0 6px 20px var(--shadow-color); }
+        .about-content p { color: var(--text-color); font-size: 1.1rem; margin-bottom: 20px; text-align: justify; line-height: 1.8; }
+
+        /* Carte Projets */
+        .project-banner { background: linear-gradient(135deg, var(--white), #fdfaf9); border-radius: 15px; padding: 45px; box-shadow: 0 10px 30px var(--shadow-color); border-top: 6px solid var(--accent); text-align: center; display: block; transition: transform 0.3s, box-shadow 0.3s; }
+        .project-banner:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(74, 59, 56, 0.25); }
+        .project-banner h3 { color: var(--accent); margin-top: 0; font-size: 2rem; margin-bottom: 20px; }
+        .project-banner p { color: var(--text-color); font-size: 1.1rem; max-width: 700px; margin: 0 auto 30px auto; }
+        .project-banner .card-link { display: inline-block; font-weight: bold; color: var(--white); background-color: var(--accent); padding: 12px 25px; border-radius: 5px; font-size: 1.1rem; transition: background 0.3s; }
+        .project-banner:hover .card-link { background-color: var(--primary-color); }
+
+        /* Footer en Marron */
+        footer { background-color: var(--primary-color); color: var(--white); text-align: center; padding: 50px 20px; margin-top: 80px; }
+        .contact-info { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-top: 20px; }
+        .contact-info a { color: var(--accent); font-weight: bold; font-size: 1.1rem; transition: color 0.3s; text-shadow: 0 1px 2px rgba(0,0,0,0.2); }
+        .contact-info a:hover { color: var(--white); }
+
+        /* Mobile */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.2rem; }
+            .hero h1 { font-size: 2.2rem; letter-spacing: 2px; }
+            .hero p { font-size: 1rem; }
+            .hero-profile-pic { width: 140px; height: 140px; }
+            .hero { padding: 80px 20px; }
             .menu-btn { display: block; }
-            nav { display: none; width: 100%; flex-direction: column; background-color: var(--primary-color); position: absolute; top: 60px; left: 0; padding: 10px 0; text-align: center; box-shadow: 0 5px 10px rgba(0,0,0,0.2); }
+            nav { display: none; width: 100%; flex-direction: column; background-color: var(--primary-color); position: absolute; top: 65px; left: 0; padding: 15px 0; text-align: center; box-shadow: 0 5px 15px var(--shadow-color); border-top: 1px solid rgba(255,255,255,0.1); }
             nav.active { display: flex; }
-            nav a { padding: 12px 0; }
-            .about-section { padding: 20px; gap: 20px; }
+            nav a { padding: 15px 0; border: none; }
+            .about-section, .project-banner { padding: 25px; }
+            .contact-info { flex-direction: column; gap: 15px; }
         }
     </style>
 </head>
@@ -71,22 +162,34 @@
     <!-- NAVIGATION -->
     <header>
         <div class="nav-container">
-            <div class="logo">Mohamed Ifard</div>
+            <div class="logo">M. IFARD</div>
             <button class="menu-btn" onclick="toggleMenu()">☰</button>
             <nav id="nav-menu">
                 <a href="index.html">Accueil</a>
-                <a href="cv.html">Mon CV</a>
-                <a href="formation.html">Formation</a>
-                <a href="projets.html">Mes Projets</a>
-                <a href="logiciels.html">Logiciels</a>
+                <a href="cv.html">Mon Profil</a>
+                <a href="projets.html">Mes Réalisations</a>
+                <a href="#contact">Contact</a>
             </nav>
         </div>
     </header>
 
-    <!-- SECTION HERO -->
+    <!-- SECTION HERO ANIMÉE -->
     <section class="hero">
-        <h1>Mohamed Ifard</h1>
-        <p>Portfolio</p>
+        <div class="grid-bg"></div>
+        
+        <div class="gears-container">
+            <svg class="gear gear1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M43 5 L57 5 L60 20 A 30 30 0 0 1 74 26 L87 18 L96 30 L84 41 A 30 30 0 0 1 84 59 L96 70 L87 82 L74 74 A 30 30 0 0 1 60 80 L57 95 L43 95 L40 80 A 30 30 0 0 1 26 74 L13 82 L4 70 L16 59 A 30 30 0 0 1 16 41 L4 30 L13 18 L26 26 A 30 30 0 0 1 40 20 Z M 50 35 A 15 15 0 1 0 50 65 A 15 15 0 1 0 50 35 Z" fill-rule="evenodd" /></svg>
+            <svg class="gear gear2" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M45 5 L55 5 L58 18 A 32 32 0 0 1 72 25 L84 16 L92 26 L82 37 A 32 32 0 0 1 82 63 L92 74 L84 84 L72 75 A 32 32 0 0 1 58 82 L55 95 L45 95 L42 82 A 32 32 0 0 1 28 75 L16 84 L8 74 L18 63 A 32 32 0 0 1 18 37 L8 26 L16 16 L28 25 A 32 32 0 0 1 42 18 Z M 50 38 A 12 12 0 1 0 50 62 A 12 12 0 1 0 50 38 Z" fill-rule="evenodd" /></svg>
+            <svg class="gear gear3" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M43 5 L57 5 L60 20 A 30 30 0 0 1 74 26 L87 18 L96 30 L84 41 A 30 30 0 0 1 84 59 L96 70 L87 82 L74 74 A 30 30 0 0 1 60 80 L57 95 L43 95 L40 80 A 30 30 0 0 1 26 74 L13 82 L4 70 L16 59 A 30 30 0 0 1 16 41 L4 30 L13 18 L26 26 A 30 30 0 0 1 40 20 Z M 50 35 A 15 15 0 1 0 50 65 A 15 15 0 1 0 50 35 Z" fill-rule="evenodd" /></svg>
+        </div>
+        
+        <div class="hero-content">
+            <!-- Pense à uploader 'mohamed-profil.jpg' sur ton GitHub pour que la photo s'affiche ! -->
+            <img src="mohamed-profil.jpg" alt="Photo de Mohamed Ifard" class="hero-profile-pic" onerror="this.src='https://via.placeholder.com/180/4a3b38/d97736?text=Photo'">
+            
+            <h1>Mohamed Ifard</h1>
+            <p>Conception & Ingénierie Mécanique</p>
+        </div>
     </section>
 
     <!-- CONTENU PRINCIPAL -->
@@ -95,49 +198,29 @@
         <!-- SECTION QUI SUIS-JE -->
         <div class="about-section">
             <div class="about-photo">
-                [Insérez votre photo ici]
+                [Insérez votre 2ème photo ici]
             </div>
             <div class="about-content">
-                <a href="cv.html" class="cv-button">Qui suis-je (Voir mon CV) ➔</a>
+                <a href="cv.html" class="cv-button">Découvrir mon profil complet ➔</a>
+                
                 <p>Je m'appelle Mohamed Ifard. Je suis d'origine italienne et marocaine, ce qui a été pour moi un véritable défi lorsque je suis arrivé en France : d'abord pour apprendre la langue, mais aussi pour découvrir la culture du pays.</p>
+                
                 <p>J'ai tout de même eu quelques facilités, car j'apprends rapidement. J'ai ensuite pu intégrer un lycée scientifique, car j'aime les sciences et je voulais devenir ingénieur. Grâce à mes spécialités : les mathématiques, la physique-chimie et les sciences de l'ingénieur, j'ai pu intégrer le BUT GMP à l'IUT d'Orléans.</p>
             </div>
         </div>
 
-        <!-- GRILLE DES CARTES -->
-        <div class="grid-cards">
-            
-            <a href="formation.html" class="card">
-                <div>
-                    <h3>Formation & Cursus</h3>
-                    <p><strong>IUT d'Orléans & Lycée Vaucanson (Tours)</strong><br><br>Bachelor Universitaire de Technologie en Génie Mécanique et Productique (GMP) - Spécialité Simulation numérique et réalité virtuelle.</p>
-                </div>
-                <span class="card-link">Voir le détail de ma formation →</span>
-            </a>
-
-            <a href="projets.html" class="card">
-                <div>
-                    <h3>Mes Projets</h3>
-                    <p>Découvrez mes projets associatifs (HYPERBOLE++), professionnels (Pousseur de papier, Stop-chute) et scolaires (Pompe à palettes) en détail.</p>
-                </div>
-                <span class="card-link">Voir mes projets en détail →</span>
-            </a>
-
-            <a href="logiciels.html" class="card" style="border-top-color: var(--accent);">
-                <div>
-                    <h3>Logiciels Maîtrisés</h3>
-                    <p>SolidWorks, TopSolid, Creo, Solid Edge, MATLAB & Simulink, Pack Office, Navisworks, Recap.</p>
-                </div>
-                <span class="card-link">Voir le détail des logiciels →</span>
-            </a>
-
-        </div>
+        <!-- SECTION MES RÉALISATIONS -->
+        <a href="projets.html" class="project-banner">
+            <h3>Mes Réalisations</h3>
+            <p>Découvrez mes travaux techniques : conception d'un système Stop-chute industriel, rétro-conception par scan 3D, usinage FAO et participation au Shell Eco-marathon.</p>
+            <span class="card-link">Explorer mes réalisations →</span>
+        </a>
 
     </div>
 
     <!-- FOOTER -->
-    <footer>
-        <p>Contactez-moi</p>
+    <footer id="contact">
+        <p style="margin-bottom: 5px; color: rgba(255,255,255,0.8);">Recherche contrat d'apprentissage - BUT 3ème année GMP</p>
         <div class="contact-info">
             <a href="https://linkedin.com" target="_blank">🔗 LinkedIn</a>
             <a href="mailto:ifard.mohamed1@gmail.com">✉️ ifard.mohamed1@gmail.com</a>
@@ -148,8 +231,7 @@
     <!-- SCRIPT MENU MOBILE -->
     <script>
         function toggleMenu() {
-            const menu = document.getElementById('nav-menu');
-            menu.classList.toggle('active');
+            document.getElementById('nav-menu').classList.toggle('active');
         }
     </script>
 </body>
