@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohamed Ifard - Contact</title>
+    <style>
+        :root {
+            --primary-color: #4a3b38; /* Marron Chocolat */
+            --secondary-color: #6b5b58; /* Marron clair */
+            --background-color: #fbf9f8; /* Blanc cassé */
+            --text-color: #4a3b38; /* Texte marron */
+            --white: #ffffff;
+            --accent: #d97736; /* Orange */
+            --shadow-color: rgba(74, 59, 56, 0.15);
+        }
+
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: var(--background-color); color: var(--text-color); line-height: 1.8; overflow-x: hidden; }
+        a { text-decoration: none; color: inherit; }
+        
+        /* Navigation */
+        header { background-color: var(--primary-color); color: var(--white); position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 15px var(--shadow-color); }
+        .nav-container { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; }
+        .logo { font-weight: bold; font-size: 1.4rem; color: white; letter-spacing: 1px; }
+        
+        nav { display: flex; gap: 25px; }
+        nav a { color: var(--white); font-weight: bold; padding: 8px 15px; border-radius: 5px; font-size: 1.05rem; transition: all 0.3s ease; border: 1px solid transparent; }
+        nav a:hover { background-color: rgba(255,255,255,0.15); border-color: var(--white); }
+
+        .menu-btn { display: none; background: none; border: none; color: white; font-size: 1.8rem; cursor: pointer; }
+
+        /* BANDEAU CONTACT */
+        .contact-hero { 
+            background-color: var(--primary-color); 
+            color: var(--white); 
+            text-align: center; 
+            padding: 60px 20px; 
+            border-bottom: 5px solid var(--accent);
+        }
+        .contact-hero h1 { font-size: 2.8rem; margin: 0 0 10px 0; text-transform: uppercase; letter-spacing: 2px; }
+        .contact-hero p { font-size: 1.2rem; color: var(--accent); font-weight: bold; margin: 0; }
+
+        /* SECTION CONTACT (Deux colonnes) */
+        .container { max-width: 1100px; margin: 60px auto; padding: 0 20px; }
+        .contact-wrapper { 
+            display: flex; 
+            flex-wrap: wrap; 
+            background: var(--white); 
+            border-radius: 15px; 
+            box-shadow: 0 10px 30px var(--shadow-color); 
+            overflow: hidden; 
+        }
+
+        /* Colonne de gauche (Infos) */
+        .contact-info-panel { 
+            flex: 1; 
+            min-width: 300px; 
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); 
+            color: var(--white); 
+            padding: 50px 40px; 
+        }
+        .contact-info-panel h2 { margin-top: 0; font-size: 2rem; color: var(--accent); }
+        .contact-info-panel p { font-size: 1.1rem; margin-bottom: 40px; opacity: 0.9; }
+        
+        .info-item { display: flex; align-items: center; margin-bottom: 25px; font-size: 1.1rem; font-weight: bold; }
+        .info-item span { background-color: var(--accent); padding: 10px; border-radius: 50%; margin-right: 15px; display: flex; justify-content: center; align-items: center; width: 20px; height: 20px; font-size: 1.2rem; }
+        .info-item a { transition: color 0.3s; }
+        .info-item a:hover { color: var(--accent); }
+
+        /* Colonne de droite (Formulaire) */
+        .contact-form-panel { 
+            flex: 2; 
+            min-width: 300px; 
+            padding: 50px 40px; 
+        }
+        .contact-form-panel h2 { margin-top: 0; font-size: 2rem; color: var(--primary-color); margin-bottom: 30px; }
+
+        .form-group { margin-bottom: 25px; }
+        .form-group label { display: block; font-weight: bold; margin-bottom: 8px; color: var(--primary-color); }
+        .form-group input, .form-group textarea { 
+            width: 100%; 
+            padding: 15px; 
+            border: 2px solid rgba(74, 59, 56, 0.2); 
+            border-radius: 8px; 
+            background-color: var(--background-color); 
+            color: var(--text-color); 
+            font-size: 1rem; 
+            font-family: inherit; 
+            box-sizing: border-box; 
+            transition: border-color 0.3s; 
+        }
+        .form-group input:focus, .form-group textarea:focus { 
+            border-color: var(--accent); 
+            outline: none; 
+        }
+        .form-group textarea { resize: vertical; min-height: 150px; }
+
+        .submit-btn { 
+            background-color: var(--accent); 
+            color: var(--white); 
+            border: none; 
+            padding: 15px 35px; 
+            font-size: 1.1rem; 
+            font-weight: bold; 
+            border-radius: 8px; 
+            cursor: pointer; 
+            transition: all 0.3s; 
+            box-shadow: 0 4px 15px rgba(217, 119, 54, 0.3); 
+            width: 100%; 
+        }
+        .submit-btn:hover { 
+            background-color: var(--primary-color); 
+            transform: translateY(-2px); 
+            box-shadow: 0 6px 20px var(--shadow-color); 
+        }
+
+        /* Footer */
+        footer { background-color: var(--primary-color); color: var(--white); text-align: center; padding: 30px 20px; margin-top: 80px; }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .contact-hero h1 { font-size: 2.2rem; }
+            .menu-btn { display: block; }
+            nav { display: none; width: 100%; flex-direction: column; background-color: var(--primary-color); position: absolute; top: 65px; left: 0; padding: 15px 0; text-align: center; box-shadow: 0 5px 15px var(--shadow-color); border-top: 1px solid rgba(255,255,255,0.1); }
+            nav.active { display: flex; }
+            nav a { padding: 15px 0; border: none; }
+            .contact-info-panel, .contact-form-panel { padding: 30px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">M. IFARD</div>
+            <button class="menu-btn" onclick="toggleMenu()">☰</button>
+            <nav id="nav-menu">
+                <a href="index.html">Accueil</a>
+                <a href="cv.html">Mon Profil</a>
+                <a href="projets.html">Mes Réalisations</a>
+                <!-- Remarque : Le lien contact pointe maintenant vers cette page ! -->
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- BANDEAU -->
+    <section class="contact-hero">
+        <h1>Me Contacter</h1>
+        <p>Recherche d'alternance - BUT 3ème année GMP</p>
+    </section>
+
+    <!-- CONTENU CONTACT -->
+    <div class="container">
+        <div class="contact-wrapper">
+            
+            <!-- Colonne de gauche : Informations -->
+            <div class="contact-info-panel">
+                <h2>Mes Coordonnées</h2>
+                <p>N'hésitez pas à me contacter pour discuter de mon profil ou d'une éventuelle collaboration pour la rentrée prochaine.</p>
+                
+                <div class="info-item">
+                    <span>📍</span>
+                    <div>133 Quai Paul Bert<br>37100 Tours, France</div>
+                </div>
+                
+                <div class="info-item">
+                    <span>📞</span>
+                    <a href="tel:+33644069669">06 44 06 96 69</a>
+                </div>
+                
+                <div class="info-item">
+                    <span>✉️</span>
+                    <a href="mailto:ifard.mohamed1@gmail.com">ifard.mohamed1@gmail.com</a>
+                </div>
+                
+                <div class="info-item">
+                    <span>🔗</span>
+                    <a href="https://linkedin.com" target="_blank">Mon profil LinkedIn</a>
+                </div>
+            </div>
+
+            <!-- Colonne de droite : Formulaire -->
+            <div class="contact-form-panel">
+                <h2>Envoyez-moi un message</h2>
+                
+                <!-- Le formulaire (L'action est à configurer avec Formspree) -->
+                <form action="https://formspree.io/f/TON_CODE_ICI" method="POST">
+                    
+                    <div class="form-group">
+                        <label for="name">Nom et Prénom</label>
+                        <input type="text" id="name" name="nom" required placeholder="Ex: Jean Dupont">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Adresse Email</label>
+                        <input type="email" id="email" name="email" required placeholder="Ex: jean.dupont@entreprise.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Objet</label>
+                        <input type="text" id="subject" name="objet" required placeholder="Ex: Proposition d'alternance">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Votre Message</label>
+                        <textarea id="message" name="message" required placeholder="Bonjour Mohamed, je vous contacte suite à la consultation de votre portfolio..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Envoyer le message 🚀</button>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p style="margin: 0; color: rgba(255,255,255,0.8);">© 2026 Mohamed Ifard - Conception & Ingénierie Mécanique</p>
+    </footer>
+
+    <!-- SCRIPT MENU MOBILE -->
+    <script>
+        function toggleMenu() {
+            document.getElementById('nav-menu').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
