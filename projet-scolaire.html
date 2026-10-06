@@ -3,98 +3,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Détail du Projet - Pompe à Palettes</title>
+    <title>Mohamed Ifard - Pompe à Palettes</title>
     <style>
         :root {
-            --primary-color: #4a3b38;
-            --secondary-color: #6b5b58;
-            --background-color: #f9f9f9;
-            --text-color: #333333;
+            /* Palette stricte : Marron, Orange, Blanc */
+            --primary-color: #4a3b38; /* Marron Chocolat */
+            --secondary-color: #6b5b58; /* Marron clair */
+            --background-color: #fbf9f8; /* Blanc cassé */
+            --text-color: #4a3b38; /* Texte marron (zéro noir) */
             --white: #ffffff;
-            --accent: #d97736;
+            --accent: #d97736; /* Orange */
+            --shadow-color: rgba(74, 59, 56, 0.15);
         }
 
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: var(--background-color); color: var(--text-color); line-height: 1.8; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: var(--background-color); color: var(--text-color); line-height: 1.8; overflow-x: hidden; }
         a { text-decoration: none; color: inherit; }
         
-        header { background-color: var(--primary-color); color: var(--white); position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+        /* Navigation (Harmonisée) */
+        header { background-color: var(--primary-color); color: var(--white); position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 15px var(--shadow-color); }
         .nav-container { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; }
-        .logo { font-weight: bold; font-size: 1.2rem; color: white; }
+        .logo { font-weight: bold; font-size: 1.4rem; color: white; letter-spacing: 1px; }
         
-        nav { display: flex; gap: 20px; }
-        nav a { color: var(--white); font-weight: bold; padding: 8px 12px; border-radius: 5px; font-size: 1rem; transition: background 0.3s; }
-        nav a:hover { background-color: var(--secondary-color); }
+        nav { display: flex; gap: 25px; }
+        nav a { color: var(--white); font-weight: bold; padding: 8px 15px; border-radius: 5px; font-size: 1.05rem; transition: all 0.3s ease; border: 1px solid transparent; }
+        nav a:hover { background-color: rgba(255,255,255,0.15); border-color: var(--white); }
 
-        .menu-btn { display: none; background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; }
+        .menu-btn { display: none; background: none; border: none; color: white; font-size: 1.8rem; cursor: pointer; }
 
-        .project-hero { background-color: var(--secondary-color); color: var(--white); text-align: center; padding: 50px 20px; }
-        .project-hero h1 { font-size: 2.2rem; margin-bottom: 10px; }
+        /* BANDEAU SANS QUADRILLAGE NI ENGRENAGES */
+        .project-hero { 
+            position: relative; 
+            background: linear-gradient(135deg, rgba(74, 59, 56, 0.9), rgba(217, 119, 54, 0.75)), url('photo_boreau_2.jpg') center center/cover no-repeat;
+            color: var(--white); 
+            text-align: center; 
+            padding: 80px 20px; 
+            border-bottom: 5px solid var(--white);
+        }
+        .hero-content { position: relative; z-index: 10; }
+        .project-hero h1 { font-size: 3rem; margin-bottom: 10px; margin-top: 0; text-transform: uppercase; letter-spacing: 3px; text-shadow: 0 2px 10px rgba(74, 59, 56, 0.9); }
+        .project-hero p { font-size: 1.2rem; color: var(--white); font-weight: bold; letter-spacing: 2px; text-transform: uppercase; margin: 0; text-shadow: 0 2px 8px rgba(74, 59, 56, 0.9); }
 
-        .container { max-width: 1000px; margin: 30px auto; padding: 0 20px; }
+        /* CONTENEUR PRINCIPAL */
+        .container { max-width: 1000px; margin: 50px auto; padding: 40px; background: var(--white); border-radius: 15px; box-shadow: 0 10px 30px var(--shadow-color); border-top: 6px solid var(--accent); }
         
-        .back-button { display: inline-block; margin-bottom: 20px; font-weight: bold; color: var(--secondary-color); }
-        .back-button:hover { text-decoration: underline; }
+        .back-button { display: inline-block; margin-bottom: 30px; font-weight: bold; color: var(--accent); transition: color 0.3s; font-size: 1.05rem; }
+        .back-button:hover { color: var(--primary-color); }
 
-        .intro-box { background-color: #f4f1f0; padding: 25px; border-left: 5px solid var(--primary-color); margin-bottom: 40px; border-radius: 0 10px 10px 0; }
-        .section-block { margin-bottom: 40px; }
-        .section-title { color: var(--primary-color); font-size: 1.4rem; margin-bottom: 15px; border-bottom: 2px solid #eee; padding-bottom: 8px; }
+        /* BLOCS DU PROJET */
+        .intro-box { background-color: #fdfaf9; padding: 30px; border-left: 5px solid var(--accent); margin-bottom: 50px; border-radius: 0 10px 10px 0; display: flex; flex-wrap: wrap; gap: 30px; align-items: center; box-shadow: 0 4px 15px rgba(74, 59, 56, 0.05); }
+        .intro-text { flex: 2; min-width: 300px; }
+        .intro-img { flex: 1; min-width: 250px; height: 220px; background-color: #f4f1f0; display: flex; align-items: center; justify-content: center; color: var(--secondary-color); border-radius: 10px; padding: 15px; text-align: center; border: 2px dashed var(--secondary-color); font-style: italic; }
+
+        .section-block { margin-bottom: 50px; }
+        .section-title { color: var(--accent); font-size: 1.6rem; margin-bottom: 20px; border-bottom: 2px solid #f4f1f0; padding-bottom: 10px; font-weight: bold; }
+        
+        .content-flex { display: flex; flex-wrap: wrap; gap: 30px; align-items: flex-start; }
+        .content-text { flex: 1; min-width: 300px; }
+        .content-img { flex: 1; min-width: 280px; height: 220px; background-color: #f4f1f0; display: flex; align-items: center; justify-content: center; color: var(--secondary-color); border-radius: 10px; padding: 15px; text-align: center; border: 2px dashed var(--secondary-color); font-style: italic; }
         
         ul { padding-left: 20px; }
-        li { margin-bottom: 6px; }
+        li { margin-bottom: 8px; }
 
-        footer { background-color: #444; color: var(--white); text-align: center; padding: 30px 20px; margin-top: 50px; }
+        /* FOOTER HARMONISÉ */
+        footer { background-color: var(--primary-color); color: var(--white); text-align: center; padding: 50px 20px; margin-top: 80px; }
+        .contact-info { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-top: 20px; }
+        .contact-info a { color: var(--accent); font-weight: bold; font-size: 1.1rem; transition: color 0.3s; text-shadow: 0 1px 2px rgba(0,0,0,0.2); }
+        .contact-info a:hover { color: var(--white); }
 
+        /* Mobile */
         @media (max-width: 768px) {
+            .project-hero h1 { font-size: 2.2rem; }
+            .container { padding: 25px 20px; }
             .menu-btn { display: block; }
-            nav { display: none; width: 100%; flex-direction: column; background-color: var(--primary-color); position: absolute; top: 60px; left: 0; padding: 10px 0; text-align: center; box-shadow: 0 5px 10px rgba(0,0,0,0.2); }
+            nav { display: none; width: 100%; flex-direction: column; background-color: var(--primary-color); position: absolute; top: 65px; left: 0; padding: 15px 0; text-align: center; box-shadow: 0 5px 15px var(--shadow-color); border-top: 1px solid rgba(255,255,255,0.1); }
             nav.active { display: flex; }
-            nav a { padding: 12px 0; }
+            nav a { padding: 15px 0; border: none; }
+            .contact-info { flex-direction: column; gap: 15px; }
         }
     </style>
 </head>
 <body>
 
+    <!-- NAVIGATION -->
     <header>
         <div class="nav-container">
-            <div class="logo">Mohamed Ifard</div>
+            <div class="logo">M. IFARD</div>
             <button class="menu-btn" onclick="toggleMenu()">☰</button>
             <nav id="nav-menu">
                 <a href="index.html">Accueil</a>
-                <a href="cv.html">Mon CV</a>
-                <a href="formation.html">Formation</a>
-                <a href="projets.html">Mes Projets</a>
-                <a href="logiciels.html">Logiciels</a>
+                <a href="cv.html">Mon Profil</a>
+                <a href="projets.html">Mes Réalisations</a>
+                <a href="contact.html">Contact</a>
             </nav>
         </div>
     </header>
 
-    <div class="project-hero">
-        <h1>Projet Scolaire : Pompe à Palettes</h1>
-        <p style="font-size: 1.1rem;">Travaux Pratiques du Semestre 5 (BUT GMP)</p>
-    </div>
+    <!-- BANDEAU PROJET -->
+    <section class="project-hero">
+        <div class="hero-content">
+            <h1>Pompe à Palettes</h1>
+            <p>Projet Académique • TP d'industrialisation (BUT GMP S5)</p>
+        </div>
+    </section>
 
+    <!-- CONTENU DU PROJET -->
     <div class="container">
-        <a href="projets.html" class="back-button">← Retour à tous les projets</a>
+        <a href="projets.html" class="back-button">← Retour à mes réalisations</a>
 
+        <!-- Introduction -->
         <div class="intro-box">
-            <p>Ce projet académique s'inscrit dans le cadre de notre formation en Génie Mécanique et Productique, nous amenant à industrialiser et fabriquer une <strong>pompe à palettes</strong>.</p>
+            <div class="intro-text">
+                <p>Dans le cadre de notre TP d'industrialisation en semestre 5 du BUT GMP, nous devions réaliser une pompe à palettes composée de plusieurs sous-ensembles mécaniques. Deux pièces clés étaient spécifiquement à fabriquer : le corps principal et l'axe de transmission.</p>
+                <p>Nous disposions de la maquette numérisée CAO complète du système, ce qui nous a permis d'engager la phase d'étude de fabrication de manière efficace.</p>
+            </div>
+            <div class="intro-img">
+                [Image : Modélisation CAO de la Pompe à palettes avec le corps]
+            </div>
         </div>
 
+        <!-- Section 1 : Usinage et FAO -->
         <div class="section-block">
-            <h2 class="section-title">Étapes de réalisation</h2>
-            <ul>
-                <li>Usinage dans la masse du corps de la pompe et de l'axe.</li>
-                <li>Conception et fabrication de l'outillage de maintien spécifique.</li>
-                <li>Création de trois programmes FAO pour le pilotage des machines d'usinage.</li>
-                <li>Contrôle dimensionnel et validation des tolérances géométriques.</li>
-            </ul>
+            <h2 class="section-title">Fabrication & FAO</h2>
+            <div class="content-flex" style="flex-direction: row-reverse;">
+                <div class="content-text">
+                    <p>Au sein de l'équipe, j'ai été chargé de la réalisation de ces deux composants par usinage dans la masse, ainsi que de la conception de l'outillage spécifique destiné au maintien en position du corps de pompe lors des phases d'usinage.</p>
+                    <p>Il a donc été nécessaire de concevoir et générer <strong>trois stratégies FAO</strong> distinctes :</p>
+                    <ul>
+                        <li>Une gamme et programme FAO pour l'outillage de maintien,</li>
+                        <li>Une séquence d'usinage complète pour le corps de pompe,</li>
+                        <li>Et le programme d'usinage pour l'axe.</li>
+                    </ul>
+                </div>
+                <div class="content-img">
+                    [Image : Modélisation de l'outillage de maintien]
+                </div>
+            </div>
         </div>
+
+        <!-- Section 2 : Bilan du processus -->
+        <div class="section-block">
+            <h2 class="section-title">Bilan du Projet</h2>
+            <p>Ce projet d'industrialisation nous a permis d'appréhender l'intégralité de la chaîne numérique : de l'analyse du modèle CAO initial jusqu'à l'exécution sur machine-outil à commande numérique (MOCN), en passant par le choix des outils et la programmation FAO.</p>
+            <p>Cette mise en situation réelle a permis de faire face aux contraintes concourantes d'usinage, de tolérancement dimensionnel et de maintien de pièces complexes.</p>
+        </div>
+
     </div>
 
-    <footer>
-        <p>© Mohamed Ifard - Portfolio</p>
+    <!-- FOOTER -->
+    <footer id="contact">
+        <p style="margin-bottom: 5px; color: rgba(255,255,255,0.8);">Recherche contrat d'apprentissage - BUT 3ème année GMP</p>
+        <div class="contact-info">
+            <a href="https://linkedin.com" target="_blank">🔗 LinkedIn</a>
+            <a href="mailto:ifard.mohamed1@gmail.com">✉️ ifard.mohamed1@gmail.com</a>
+            <a href="tel:+33644069669">📞 06 44 06 96 69</a>
+        </div>
     </footer>
 
+    <!-- SCRIPT MENU MOBILE -->
     <script>
         function toggleMenu() {
             document.getElementById('nav-menu').classList.toggle('active');
