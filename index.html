@@ -30,11 +30,11 @@
 
         .menu-btn { display: none; background: none; border: none; color: white; font-size: 1.8rem; cursor: pointer; }
 
-        /* BANDEAU FUTURISTE - NOUVELLE PHOTO DE FOND */
+        /* BANDEAU FUTURISTE - SANS ENGRENAGES NI QUADRILLAGE */
         .hero { 
             position: relative; 
-            /* Dégradé Marron/Orange superposé à une nouvelle image de conception/ingénierie */
-            background: linear-gradient(135deg, rgba(74, 59, 56, 0.8), rgba(217, 119, 54, 0.65)), url('https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?auto=format&fit=crop&w=1920&q=80') center center/cover no-repeat;
+            /* J'ai mis l'image mécanique de ta capture d'écran */
+            background: linear-gradient(135deg, rgba(74, 59, 56, 0.8), rgba(217, 119, 54, 0.65)), url('https://images.unsplash.com/photo-1565439387494-ce5ac08560f6?auto=format&fit=crop&w=1920&q=80') center center/cover no-repeat;
             color: var(--white); 
             text-align: center; 
             padding: 120px 20px; 
@@ -42,38 +42,6 @@
             border-bottom: 5px solid var(--white);
         }
         
-        /* Grille 3D animée en blanc translucide */
-        .grid-bg {
-            position: absolute;
-            bottom: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background-image: 
-                linear-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.15) 1px, transparent 1px);
-            background-size: 50px 50px;
-            transform: perspective(600px) rotateX(70deg) translateY(0);
-            animation: gridMove 10s linear infinite;
-            z-index: 1;
-        }
-
-        @keyframes gridMove {
-            0% { transform: perspective(600px) rotateX(70deg) translateY(0); }
-            100% { transform: perspective(600px) rotateX(70deg) translateY(50px); }
-        }
-
-        /* Engrenages en Orange */
-        .gears-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; opacity: 0.85; pointer-events: none; }
-        .gear { position: absolute; fill: transparent; stroke: var(--accent); stroke-width: 2.5; filter: drop-shadow(0 0 6px rgba(217, 119, 54, 0.8)); }
-        
-        .gear1 { width: 350px; top: -120px; left: -80px; animation: spin 20s linear infinite; }
-        .gear2 { width: 220px; bottom: -50px; right: 5%; animation: spin-reverse 15s linear infinite; stroke: #8da3b5; filter: drop-shadow(0 0 6px rgba(141, 163, 181, 0.8)); }
-        .gear3 { width: 140px; top: 20%; right: -30px; animation: spin 10s linear infinite; }
-
-        @keyframes spin { 100% { transform: rotate(360deg); } }
-        @keyframes spin-reverse { 100% { transform: rotate(-360deg); } }
-
         /* Contenu du texte sur le bandeau */
         .hero-content { position: relative; z-index: 10; display: flex; flex-direction: column; align-items: center; }
         
@@ -136,7 +104,7 @@
         .project-banner .card-link { display: inline-block; font-weight: bold; color: var(--white); background-color: var(--accent); padding: 12px 25px; border-radius: 5px; font-size: 1.1rem; transition: background 0.3s; }
         .project-banner:hover .card-link { background-color: var(--primary-color); }
 
-        /* Footer en Marron */
+        /* Footer */
         footer { background-color: var(--primary-color); color: var(--white); text-align: center; padding: 50px 20px; margin-top: 80px; }
         .contact-info { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-top: 20px; }
         .contact-info a { color: var(--accent); font-weight: bold; font-size: 1.1rem; transition: color 0.3s; text-shadow: 0 1px 2px rgba(0,0,0,0.2); }
@@ -173,18 +141,10 @@
         </div>
     </header>
 
-    <!-- SECTION HERO ANIMÉE -->
+    <!-- SECTION HERO SANS ENGRENAGES NI QUADRILLAGE -->
     <section class="hero">
-        <div class="grid-bg"></div>
-        
-        <div class="gears-container">
-            <svg class="gear gear1" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M43 5 L57 5 L60 20 A 30 30 0 0 1 74 26 L87 18 L96 30 L84 41 A 30 30 0 0 1 84 59 L96 70 L87 82 L74 74 A 30 30 0 0 1 60 80 L57 95 L43 95 L40 80 A 30 30 0 0 1 26 74 L13 82 L4 70 L16 59 A 30 30 0 0 1 16 41 L4 30 L13 18 L26 26 A 30 30 0 0 1 40 20 Z M 50 35 A 15 15 0 1 0 50 65 A 15 15 0 1 0 50 35 Z" fill-rule="evenodd" /></svg>
-            <svg class="gear gear2" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M45 5 L55 5 L58 18 A 32 32 0 0 1 72 25 L84 16 L92 26 L82 37 A 32 32 0 0 1 82 63 L92 74 L84 84 L72 75 A 32 32 0 0 1 58 82 L55 95 L45 95 L42 82 A 32 32 0 0 1 28 75 L16 84 L8 74 L18 63 A 32 32 0 0 1 18 37 L8 26 L16 16 L28 25 A 32 32 0 0 1 42 18 Z M 50 38 A 12 12 0 1 0 50 62 A 12 12 0 1 0 50 38 Z" fill-rule="evenodd" /></svg>
-            <svg class="gear gear3" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M43 5 L57 5 L60 20 A 30 30 0 0 1 74 26 L87 18 L96 30 L84 41 A 30 30 0 0 1 84 59 L96 70 L87 82 L74 74 A 30 30 0 0 1 60 80 L57 95 L43 95 L40 80 A 30 30 0 0 1 26 74 L13 82 L4 70 L16 59 A 30 30 0 0 1 16 41 L4 30 L13 18 L26 26 A 30 30 0 0 1 40 20 Z M 50 35 A 15 15 0 1 0 50 65 A 15 15 0 1 0 50 35 Z" fill-rule="evenodd" /></svg>
-        </div>
-        
         <div class="hero-content">
-            <!-- Pense à uploader 'mohamed-profil.jpg' sur ton GitHub pour que la photo s'affiche ! -->
+            <!-- N'oublie pas de mettre le vrai nom de ton image à la place de mohamed-profil.jpg -->
             <img src="mohamed-profil.jpg" alt="Photo de Mohamed Ifard" class="hero-profile-pic" onerror="this.src='https://via.placeholder.com/180/4a3b38/d97736?text=Photo'">
             
             <h1>Mohamed Ifard</h1>
