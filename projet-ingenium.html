@@ -3,100 +3,252 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Détail du Projet - Stage INGENIUM 360</title>
+    <title>Stage chez Ingenium 360 - Mohamed Ifard</title>
     <style>
         :root {
-            --primary-color: #4a3b38;
-            --secondary-color: #6b5b58;
-            --background-color: #f9f9f9;
-            --text-color: #333333;
-            --white: #ffffff;
-            --accent: #d97736;
+            --primary-color: #4a3b38; /* Marron Chocolat */
+            --secondary-color: #6b5b58; /* Marron clair */
+            --background-color: #fbf9f8; /* Blanc cassé */
+            --text-color: #4a3b38; /* Texte marron */
+            --white: #ffffff; /* Blanc pur */
+            --accent: #d97736; /* Orange */
+            --shadow-color: rgba(74, 59, 56, 0.15);
         }
 
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: var(--background-color); color: var(--text-color); line-height: 1.8; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: var(--background-color); color: var(--text-color); line-height: 1.8; overflow-x: hidden; }
         a { text-decoration: none; color: inherit; }
         
-        header { background-color: var(--primary-color); color: var(--white); position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+        /* Navigation */
+        header { background-color: var(--primary-color); color: var(--white); position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 15px var(--shadow-color); }
         .nav-container { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; }
-        .logo { font-weight: bold; font-size: 1.2rem; color: white; }
+        .logo { font-weight: bold; font-size: 1.4rem; color: white; letter-spacing: 1px; }
         
-        nav { display: flex; gap: 20px; }
-        nav a { color: var(--white); font-weight: bold; padding: 8px 12px; border-radius: 5px; font-size: 1rem; transition: background 0.3s; }
-        nav a:hover { background-color: var(--secondary-color); }
+        nav { display: flex; gap: 25px; }
+        nav a { color: var(--white); font-weight: bold; padding: 8px 15px; border-radius: 5px; font-size: 1.05rem; transition: all 0.3s ease; border: 1px solid transparent; }
+        nav a:hover { background-color: rgba(255,255,255,0.15); border-color: var(--white); }
 
-        .menu-btn { display: none; background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; }
+        .menu-btn { display: none; background: none; border: none; color: white; font-size: 1.8rem; cursor: pointer; }
 
-        .project-hero { background-color: var(--secondary-color); color: var(--white); text-align: center; padding: 50px 20px; }
-        .project-hero h1 { font-size: 2.2rem; margin-bottom: 10px; }
+        /* En-tête de page de projet */
+        .project-hero {
+            background: linear-gradient(135deg, rgba(74, 59, 56, 0.85), rgba(217, 119, 54, 0.7)), url('assets/img/ingenium.png') center center/cover no-repeat;
+            color: var(--white);
+            text-align: center;
+            padding: 80px 20px;
+            border-bottom: 5px solid var(--white);
+        }
+        .project-hero h1 { font-size: 3rem; margin: 0 0 10px 0; text-transform: uppercase; letter-spacing: 2px; }
+        .project-hero p { font-size: 1.2rem; color: var(--accent); font-weight: bold; margin: 0; text-transform: uppercase; letter-spacing: 3px; }
 
-        .container { max-width: 1000px; margin: 30px auto; padding: 0 20px; }
-        
-        .back-button { display: inline-block; margin-bottom: 20px; font-weight: bold; color: var(--secondary-color); }
-        .back-button:hover { text-decoration: underline; }
+        /* Conteneur principal */
+        .container { max-width: 1000px; margin: 50px auto; padding: 0 20px; }
 
-        .intro-box { background-color: #f4f1f0; padding: 25px; border-left: 5px solid var(--primary-color); margin-bottom: 40px; border-radius: 0 10px 10px 0; }
-        .section-block { margin-bottom: 40px; }
-        .section-title { color: var(--primary-color); font-size: 1.4rem; margin-bottom: 15px; border-bottom: 2px solid #eee; padding-bottom: 8px; }
-        
-        ul { padding-left: 20px; }
-        li { margin-bottom: 6px; }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 30px;
+            font-weight: bold;
+            color: var(--accent);
+            background-color: var(--white);
+            padding: 10px 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 10px var(--shadow-color);
+            transition: all 0.3s;
+        }
+        .back-link:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
 
-        footer { background-color: #444; color: var(--white); text-align: center; padding: 30px 20px; margin-top: 50px; }
+        /* Blocs de contenu */
+        .content-box {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px var(--shadow-color);
+            margin-bottom: 40px;
+            border-left: 6px solid var(--accent);
+        }
 
+        .content-box h2 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--background-color);
+            padding-bottom: 10px;
+        }
+
+        .content-box p {
+            font-size: 1.05rem;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        /* Image / Schéma stylisé */
+        .media-container {
+            margin: 30px 0;
+            text-align: center;
+        }
+        .media-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 2px solid var(--secondary-color);
+            box-shadow: 0 5px 15px var(--shadow-color);
+        }
+
+        .grid-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: center;
+        }
+
+        /* Liste technique pour le système de ressort */
+        .tech-list {
+            background-color: #fcf8f6;
+            border-left: 4px solid var(--primary-color);
+            padding: 20px 25px;
+            border-radius: 6px;
+            margin: 20px 0;
+        }
+        .tech-list ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+        .tech-list li {
+            margin-bottom: 10px;
+            font-size: 1.02rem;
+        }
+
+        /* Footer */
+        footer { background-color: var(--primary-color); color: var(--white); text-align: center; padding: 50px 20px; margin-top: 80px; }
+        .contact-info { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-top: 20px; }
+        .contact-info a { color: var(--accent); font-weight: bold; font-size: 1.1rem; transition: color 0.3s; text-shadow: 0 1px 2px rgba(0,0,0,0.2); }
+        .contact-info a:hover { color: var(--white); }
+
+        /* Mobile */
         @media (max-width: 768px) {
+            .project-hero h1 { font-size: 2rem; }
+            .grid-split { grid-template-columns: 1fr; }
             .menu-btn { display: block; }
-            nav { display: none; width: 100%; flex-direction: column; background-color: var(--primary-color); position: absolute; top: 60px; left: 0; padding: 10px 0; text-align: center; box-shadow: 0 5px 10px rgba(0,0,0,0.2); }
+            nav { display: none; width: 100%; flex-direction: column; background-color: var(--primary-color); position: absolute; top: 65px; left: 0; padding: 15px 0; text-align: center; box-shadow: 0 5px 15px var(--shadow-color); }
             nav.active { display: flex; }
-            nav a { padding: 12px 0; }
+            nav a { padding: 15px 0; border: none; }
+            .content-box { padding: 25px; }
         }
     </style>
 </head>
 <body>
 
+    <!-- NAVIGATION -->
     <header>
         <div class="nav-container">
-            <div class="logo">Mohamed Ifard</div>
+            <div class="logo">M. IFARD</div>
             <button class="menu-btn" onclick="toggleMenu()">☰</button>
             <nav id="nav-menu">
                 <a href="index.html">Accueil</a>
-                <a href="cv.html">Mon CV</a>
-                <a href="formation.html">Formation</a>
-                <a href="projets.html">Mes Projets</a>
-                <a href="logiciels.html">Logiciels</a>
+                <a href="index.html#presentation">Mon Profil</a>
+                <a href="index.html#projets">Mes Réalisations</a>
+                <a href="#contact">Contact</a>
             </nav>
         </div>
     </header>
 
-    <div class="project-hero">
-        <h1>Stage chez INGENIUM 360</h1>
-        <p style="font-size: 1.1rem;">Système Stop-chute / Fall Arrest (8 semaines)</p>
-    </div>
+    <!-- HERO PROJET -->
+    <section class="project-hero">
+        <h1>Stage chez Ingenium 360</h1>
+        <p>Projet Aéronautique Air France — Amboise</p>
+    </section>
 
+    <!-- CONTENU PRINCIPAL -->
     <div class="container">
-        <a href="projets.html" class="back-button">← Retour à tous les projets</a>
 
-        <div class="intro-box">
-            <p>Lors de mon stage de 8 semaines de deuxième année de BUT chez <strong>INGENIUM 360</strong> (Nazelles-Négron), j'ai participé activement à la conception et à la gestion du cycle de vie d'un produit innovant.</p>
+        <a href="index.html#projets" class="back-link">← Retour aux réalisations</a>
+
+        <!-- Section 1 : Contexte -->
+        <div class="content-box">
+            <h2>Contexte & Présentation de l'entreprise</h2>
+            <div class="media-container" style="max-width: 350px;">
+                <img src="assets/img/logo_ingenium360.png" alt="Logo Ingenium 360" onerror="this.onerror=null; this.src='https://via.placeholder.com/350x100?text=Logo+Ingenium+360';">
+            </div>
+            <p>Dans le cadre de mon cursus en BUT Génie Mécanique et Productique à l'IUT d'Orléans, j'ai effectué mon stage de 8 semaines (du 7 juillet au 31 août) au sein de l'entreprise <strong>Ingénium 360</strong> à Amboise[cite: 14]. Cette entreprise est spécialisée dans les prestations de service en calcul et en conception mécanique pour tous secteurs industriels[cite: 14].</p>
         </div>
 
-        <div class="section-block">
-            <h2 class="section-title">Missions et Réalisations</h2>
-            <ul>
-                <li>Gestion du cycle de vie d'un produit (PLM).</li>
-                <li>Mise en place de cahiers des charges fonctionnels.</li>
-                <li>Élaboration et gestion des nomenclatures.</li>
-                <li>Résolution de problèmes mécaniques complexes.</li>
-                <li>Mise en place d'un processus qualité produit.</li>
-                <li>Conception 3D d'une solution technique par crabots pour relâcher le ressort (Stop-chute).</li>
-            </ul>
+        <!-- Section 2 : Projet Air France & Stop Chute -->
+        <div class="content-box">
+            <h2>Projet AIR FRANCE : Le Stop-Chute Motorisé</h2>
+            <div class="grid-split">
+                <div class="media-container" style="margin: 0;">
+                    <img src="assets/img/stop_chute_air_france.png" alt="Stop-chute motorisé" onerror="this.onerror=null; this.src='https://via.placeholder.com/400x300?text=Stop-Chute+Air+France';">
+                </div>
+                <div>
+                    <p>On m'a assigné au projet Air France pour le développement d'un nouveau produit : le <strong>stop-chute motorisé</strong>[cite: 14]. Ce dispositif résout des problèmes d'encombrement et facilite le déplacement des différents outils en toute sécurité dans les hangars de maintenance[cite: 14]. Il garantit également la sécurité des techniciens lors de leurs interventions directes sur les avions[cite: 14].</p>
+                </div>
+            </div>
+            <p style="margin-top: 20px;">Mon intervention s'est articulée autour de deux axes principaux : la traçabilité et le contrôle qualité des composants d'une part, et la proposition d'une solution technique de réglage de tension à distance d'autre part[cite: 14].</p>
         </div>
+
+        <!-- Section 3 : Traçabilité & Contrôle -->
+        <div class="content-box">
+            <h2>Traçabilité & Contrôle Qualité des Pièces</h2>
+            <p>Pour assurer un suivi rigoureux de fabrication, nous avons constitué un fichier centralisé de traçabilité répertoriant les désignations, les références constructeurs et les pièces associées pour chaque stop-chute produit[cite: 14].</p>
+            
+            <div class="media-container">
+                <img src="assets/img/tableau_tracabilite.png" alt="Tableau de traçabilité" onerror="this.onerror=null; this.src='https://via.placeholder.com/800x250?text=Tableau+Tracabilite';">
+            </div>
+
+            <p>J'ai également pris en charge le contrôle réception des pièces issues de la gamme de conception <strong>PLA (plan)</strong>, en vérifiant la conformité des cotes avant assemblage par rapport aux plans directeurs[cite: 14].</p>
+
+            <div class="media-container">
+                <img src="assets/img/tableau_pla.png" alt="Contrôle pièces PLA" onerror="this.onerror=null; this.src='https://via.placeholder.com/800x350?text=Tableau+Controle+PLA';">
+            </div>
+        </div>
+
+        <!-- Section 4 : Analyse fonctionnelle & Cahier des charges -->
+        <div class="content-box">
+            <h2>Analyse Fonctionnelle & Cahier des Charges</h2>
+            <p>J'ai été amené à concevoir une solution permettant de régler à distance la raideur du ressort agissant sur le système de serrage du câble. Pour formaliser les exigences du projet, j'ai réalisé un cahier des charges fonctionnel synthétisé sous forme de <strong>diagramme pieuvre</strong>[cite: 14] :</p>
+
+            <div class="media-container" style="max-width: 650px;">
+                <img src="assets/img/diagramme_pieuvre.png" alt="Diagramme Pieuvre" onerror="this.onerror=null; this.src='https://via.placeholder.com/650x380?text=Diagramme+Pieuvre';">
+            </div>
+        </div>
+
+        <!-- Section 5 : Solution technique & Système de ressort -->
+        <div class="content-box">
+            <h2>Solution Technique : Actionnement & Système de Ressort</h2>
+            <p>Pour répondre à la problématique de contrôle à distance de la force de serrage, j'ai proposé et modélisé une architecture mécanique associant un motoréducteur, un système vis-écrou et un ressort de pression[cite: 14].</p>
+
+            <div class="media-container" style="max-width: 600px;">
+                <img src="assets/img/schema_motoreducteur.png" alt="Schéma cinématique motoréducteur" onerror="this.onerror=null; this.src='https://via.placeholder.com/600x320?text=Schema+Motoreducteur';">
+            </div>
+
+            <div class="tech-list">
+                <h4 style="color: var(--primary-color); margin-top: 0; margin-bottom: 12px; font-size: 1.1rem;">Détail du fonctionnement du système de ressort :</h4>
+                <ul>
+                    <li><strong>Motoréducteur d'entraînement :</strong> Permet d'assurer le couple et la réduction nécessaire pour actionner le mécanisme de réglage à distance sans effort manuel de l'opérateur[cite: 14].</li>
+                    <li><strong>Transformation de mouvement Vis-Écrou :</strong> Le motoréducteur met la vis en rotation. L'écrou associé est guidé de manière à être bloqué en rotation ; il est donc contraint d'effectuer un mouvement de <em>translation axiale pure</em>[cite: 14].</li>
+                    <li><strong>Compression du ressort :</strong> En se déplaçant axialement, l'écrou vient directement pousser et comprimer le <strong>ressort de pression</strong>[cite: 14]. Cette compression module et ajuste la raideur ainsi que la force de serrage appliquée sur le câble du stop-chute[cite: 14].</li>
+                </ul>
+            </div>
+        </div>
+
+        <a href="index.html#projets" class="back-link">← Retour aux réalisations</a>
+
     </div>
 
-    <footer>
-        <p>© Mohamed Ifard - Portfolio</p>
+    <!-- FOOTER -->
+    <footer id="contact">
+        <p style="margin-bottom: 5px; color: rgba(255,255,255,0.8);">Recherche contrat d'apprentissage - BUT 3ème année GMP</p>
+        <div class="contact-info">
+            <a href="https://linkedin.com" target="_blank">🔗 LinkedIn</a>
+            <a href="mailto:ifard.mohamed1@gmail.com">✉️ ifard.mohamed1@gmail.com</a>
+            <a href="tel:+33644069669">📞 06 44 06 96 69</a>
+        </div>
     </footer>
 
+    <!-- SCRIPT MENU MOBILE -->
     <script>
         function toggleMenu() {
             document.getElementById('nav-menu').classList.toggle('active');
