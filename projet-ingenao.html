@@ -3,99 +3,206 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Détail du Projet - Stage INGENAO</title>
+    <title>Mohamed Ifard - Stage INGENAO</title>
     <style>
         :root {
-            --primary-color: #4a3b38;
-            --secondary-color: #6b5b58;
-            --background-color: #f9f9f9;
-            --text-color: #333333;
+            /* Palette stricte : Marron, Orange, Blanc */
+            --primary-color: #4a3b38; /* Marron Chocolat */
+            --secondary-color: #6b5b58; /* Marron clair */
+            --background-color: #fbf9f8; /* Blanc cassé */
+            --text-color: #4a3b38; /* Texte marron (zéro noir) */
             --white: #ffffff;
-            --accent: #d97736;
+            --accent: #d97736; /* Orange */
+            --shadow-color: rgba(74, 59, 56, 0.15);
         }
 
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: var(--background-color); color: var(--text-color); line-height: 1.8; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: var(--background-color); color: var(--text-color); line-height: 1.8; overflow-x: hidden; }
         a { text-decoration: none; color: inherit; }
         
-        header { background-color: var(--primary-color); color: var(--white); position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+        /* Navigation (Harmonisée) */
+        header { background-color: var(--primary-color); color: var(--white); position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 15px var(--shadow-color); }
         .nav-container { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; }
-        .logo { font-weight: bold; font-size: 1.2rem; color: white; }
+        .logo { font-weight: bold; font-size: 1.4rem; color: white; letter-spacing: 1px; }
         
-        nav { display: flex; gap: 20px; }
-        nav a { color: var(--white); font-weight: bold; padding: 8px 12px; border-radius: 5px; font-size: 1rem; transition: background 0.3s; }
-        nav a:hover { background-color: var(--secondary-color); }
+        nav { display: flex; gap: 25px; }
+        nav a { color: var(--white); font-weight: bold; padding: 8px 15px; border-radius: 5px; font-size: 1.05rem; transition: all 0.3s ease; border: 1px solid transparent; }
+        nav a:hover { background-color: rgba(255,255,255,0.15); border-color: var(--white); }
 
-        .menu-btn { display: none; background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; }
+        .menu-btn { display: none; background: none; border: none; color: white; font-size: 1.8rem; cursor: pointer; }
 
-        .project-hero { background-color: var(--secondary-color); color: var(--white); text-align: center; padding: 50px 20px; }
-        .project-hero h1 { font-size: 2.2rem; margin-bottom: 10px; }
+        /* BANDEAU SANS QUADRILLAGE NI ENGRENAGES */
+        .project-hero { 
+            position: relative; 
+            background: linear-gradient(135deg, rgba(74, 59, 56, 0.9), rgba(217, 119, 54, 0.75)), url('photo_boreau_2.jpg') center center/cover no-repeat;
+            color: var(--white); 
+            text-align: center; 
+            padding: 80px 20px; 
+            border-bottom: 5px solid var(--white);
+        }
+        .hero-content { position: relative; z-index: 10; }
+        .project-hero h1 { font-size: 3rem; margin-bottom: 10px; margin-top: 0; text-transform: uppercase; letter-spacing: 3px; text-shadow: 0 2px 10px rgba(74, 59, 56, 0.9); }
+        .project-hero p { font-size: 1.2rem; color: var(--white); font-weight: bold; letter-spacing: 2px; text-transform: uppercase; margin: 0; text-shadow: 0 2px 8px rgba(74, 59, 56, 0.9); }
 
-        .container { max-width: 1000px; margin: 30px auto; padding: 0 20px; }
+        /* CONTENEUR PRINCIPAL */
+        .container { max-width: 1000px; margin: 50px auto; padding: 40px; background: var(--white); border-radius: 15px; box-shadow: 0 10px 30px var(--shadow-color); border-top: 6px solid var(--accent); }
         
-        .back-button { display: inline-block; margin-bottom: 20px; font-weight: bold; color: var(--secondary-color); }
-        .back-button:hover { text-decoration: underline; }
+        .back-button { display: inline-block; margin-bottom: 30px; font-weight: bold; color: var(--accent); transition: color 0.3s; font-size: 1.05rem; }
+        .back-button:hover { color: var(--primary-color); }
 
-        .intro-box { background-color: #f4f1f0; padding: 25px; border-left: 5px solid var(--primary-color); margin-bottom: 40px; border-radius: 0 10px 10px 0; }
-        .section-block { margin-bottom: 40px; }
-        .section-title { color: var(--primary-color); font-size: 1.4rem; margin-bottom: 15px; border-bottom: 2px solid #eee; padding-bottom: 8px; }
+        /* BLOCS DU PROJET */
+        .intro-box { background-color: #fdfaf9; padding: 30px; border-left: 5px solid var(--accent); margin-bottom: 40px; border-radius: 0 10px 10px 0; box-shadow: 0 4px 15px rgba(74, 59, 56, 0.05); }
+        
+        /* DIAGRAMME DE PROCESSUS */
+        .process-diagram { display: flex; justify-content: space-between; align-items: center; margin: 40px 0 60px 0; background: var(--background-color); padding: 30px; border-radius: 10px; border: 1px solid rgba(74, 59, 56, 0.1); text-align: center; flex-wrap: wrap; gap: 20px; }
+        .process-step { flex: 1; min-width: 150px; }
+        .process-icon { font-size: 2.5rem; color: var(--accent); margin-bottom: 15px; }
+        .process-arrow { font-size: 2rem; color: var(--secondary-color); font-weight: bold; }
+        .process-step strong { color: var(--primary-color); font-size: 1.1rem; }
+        .process-step span { font-size: 0.9rem; color: var(--secondary-color); font-style: italic; display: block; margin-top: 5px; }
+
+        .step-block { margin-bottom: 50px; }
+        .step-title { color: var(--accent); font-size: 1.6rem; margin-bottom: 20px; border-bottom: 2px solid #f4f1f0; padding-bottom: 10px; font-weight: bold; display: flex; align-items: center; gap: 10px; }
+        
+        .content-flex { display: flex; flex-wrap: wrap; gap: 30px; align-items: flex-start; }
+        .content-text { flex: 1; min-width: 300px; }
+        .content-img { flex: 1; min-width: 280px; height: 220px; background-color: #f4f1f0; display: flex; align-items: center; justify-content: center; color: var(--secondary-color); border-radius: 10px; padding: 15px; text-align: center; border: 2px dashed var(--secondary-color); font-style: italic; }
         
         ul { padding-left: 20px; }
-        li { margin-bottom: 6px; }
+        li { margin-bottom: 8px; }
 
-        footer { background-color: #444; color: var(--white); text-align: center; padding: 30px 20px; margin-top: 50px; }
+        /* FOOTER HARMONISÉ */
+        footer { background-color: var(--primary-color); color: var(--white); text-align: center; padding: 50px 20px; margin-top: 80px; }
+        .contact-info { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-top: 20px; }
+        .contact-info a { color: var(--accent); font-weight: bold; font-size: 1.1rem; transition: color 0.3s; text-shadow: 0 1px 2px rgba(0,0,0,0.2); }
+        .contact-info a:hover { color: var(--white); }
 
+        /* Mobile */
         @media (max-width: 768px) {
+            .project-hero h1 { font-size: 2.2rem; }
+            .container { padding: 25px 20px; }
             .menu-btn { display: block; }
-            nav { display: none; width: 100%; flex-direction: column; background-color: var(--primary-color); position: absolute; top: 60px; left: 0; padding: 10px 0; text-align: center; box-shadow: 0 5px 10px rgba(0,0,0,0.2); }
+            nav { display: none; width: 100%; flex-direction: column; background-color: var(--primary-color); position: absolute; top: 65px; left: 0; padding: 15px 0; text-align: center; box-shadow: 0 5px 15px var(--shadow-color); border-top: 1px solid rgba(255,255,255,0.1); }
             nav.active { display: flex; }
-            nav a { padding: 12px 0; }
+            nav a { padding: 15px 0; border: none; }
+            .contact-info { flex-direction: column; gap: 15px; }
+            .process-diagram { flex-direction: column; }
+            .process-arrow { transform: rotate(90deg); margin: 10px 0; }
         }
     </style>
 </head>
 <body>
 
+    <!-- NAVIGATION -->
     <header>
         <div class="nav-container">
-            <div class="logo">Mohamed Ifard</div>
+            <div class="logo">M. IFARD</div>
             <button class="menu-btn" onclick="toggleMenu()">☰</button>
             <nav id="nav-menu">
                 <a href="index.html">Accueil</a>
-                <a href="cv.html">Mon CV</a>
-                <a href="formation.html">Formation</a>
-                <a href="projets.html">Mes Projets</a>
-                <a href="logiciels.html">Logiciels</a>
+                <a href="cv.html">Mon Profil</a>
+                <a href="projets.html">Mes Réalisations</a>
+                <a href="contact.html">Contact</a>
             </nav>
         </div>
     </header>
 
-    <div class="project-hero">
-        <h1>Stage chez INGENAO</h1>
-        <p style="font-size: 1.1rem;">Méthodologie & Pousseur de papier (14 semaines)</p>
-    </div>
+    <!-- BANDEAU PROJET -->
+    <section class="project-hero">
+        <div class="hero-content">
+            <h1>Stage chez INGENAO</h1>
+            <p>Mise en place d'une méthodologie de travail</p>
+        </div>
+    </section>
 
+    <!-- CONTENU DU PROJET -->
     <div class="container">
-        <a href="projets.html" class="back-button">← Retour à tous les projets</a>
+        <a href="projets.html" class="back-button">← Retour à mes réalisations</a>
 
+        <!-- Introduction -->
         <div class="intro-box">
-            <p>Durant mon stage de 14 semaines de troisième année de BUT au sein de l'entreprise <strong>INGENAO</strong> (Saint-Jean-de-la-Ruelle), j'ai eu l'opportunité de travailler sur des missions concrètes de conception mécanique et de gestion de projets.</p>
+            <p>Dans le cadre de mon cursus en BUT Génie Mécanique et Productique à l'IUT d'Orléans, j'ai effectué mon stage de 14 semaines (du 15 mars au 19 juin) au sein de l'entreprise <strong>INGENAO</strong> à Orléans[cite: 10]. Cette entreprise est spécialisée dans la prestation de services, de conception mécanique et tuyauterie pour l'industrie[cite: 10].</p>
+            <p>Au cours de ce stage, j'ai effectué plusieurs projets, certains seul et d'autres en m'intégrant sur quelques jours d'une commande[cite: 10]. Dans ce stage j'ai dû faire preuve d'autonomie au maximum[cite: 10]. Le bureau d'étude m'a confié différentes tâches notamment en rapport avec le <strong>"pousseur de papier"</strong>[cite: 10]. J'ai compilé et allégé des assemblages en cours afin qu'on puisse le proposer au client pour une première évolution[cite: 10].</p>
         </div>
 
-        <div class="section-block">
-            <h2 class="section-title">Missions principales</h2>
-            <ul>
-                <li>Gestion de plusieurs projets en parallèle.</li>
-                <li>Mise en plan d'ensembles et de sous-ensembles complexes.</li>
-                <li>Application de la cotation GPS (Spécification Géométrique des Produits).</li>
-                <li>Réalisation de calculs de structure.</li>
-                <li>Conception mécanique et modélisation 3D avancée.</li>
-            </ul>
+        <!-- Diagramme de processus -->
+        <div class="process-diagram">
+            <div class="process-step">
+                <div class="process-icon">📷</div>
+                <strong>Nuage de points</strong>
+                <span>(fonctionnel)</span>
+            </div>
+            <div class="process-arrow">➔</div>
+            <div class="process-step">
+                <div class="process-icon">💻</div>
+                <strong>Étude & conception 3D</strong>
+            </div>
+            <div class="process-arrow">➔</div>
+            <div class="process-step">
+                <div class="process-icon">📄</div>
+                <strong>Mise en plan</strong>
+                <span>(pour fabrication)</span>
+            </div>
         </div>
+
+        <!-- Etape 1 -->
+        <div class="step-block">
+            <h2 class="step-title">Étape 1 : Réalisation d'un scan 3D</h2>
+            <div class="content-flex">
+                <div class="content-img">
+                    [Image : Logiciel de scan 3D / Nuage de points]
+                </div>
+                <div class="content-text">
+                    <p>Plusieurs positions de scan pour relever toutes les zones et points d'accroche possibles[cite: 10].</p>
+                    <p>Vient ensuite l'étape du <strong>nettoyage</strong>, car lors de la prise de scan, nous numérisons également certains éléments du décor qui n'ont aucune utilité et peuvent gêner le travail[cite: 10]. Pour ce faire, on supprime donc l'ensemble des éléments indésirables afin d'obtenir un résultat exploitable[cite: 10].</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Etape 2 -->
+        <div class="step-block">
+            <h2 class="step-title">Étape 2 : Étude & conception 3D</h2>
+            <div class="content-flex" style="flex-direction: row-reverse;">
+                <div class="content-img">
+                    [Image : Modélisation 3D du pousseur de papier]
+                </div>
+                <div class="content-text">
+                    <p>Après cette étape vient le début de l'étude et donc de la conception de la maquette 3D[cite: 10]. Il est important de noter que l'étape précédente est essentielle au bon déroulement de l'étude[cite: 10]. Je me concentrerai ici uniquement sur le projet du pousseur de papier[cite: 10].</p>
+                    <p>Dans cette étape, j'ai pu valider les différentes étapes, en <strong>optimisant les différentes pièces</strong> ou encore en <strong>allégeant l'assemblage 3D</strong>[cite: 10].</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Etape 3 -->
+        <div class="step-block" style="margin-bottom: 0;">
+            <h2 class="step-title">Étape 3 : Mise en plan pour fabrication</h2>
+            <div class="content-flex">
+                <div class="content-img">
+                    [Image : Mise en plan 2D (Cartouche INGENAO)]
+                </div>
+                <div class="content-text">
+                    <ul>
+                        <li><strong>Mise en plan de l'ensemble :</strong> vues de détails pour valider[cite: 10].</li>
+                        <li><strong>Trier les ensembles :</strong> distinguer les pièces standard des pièces sur mesure[cite: 10].</li>
+                        <li><strong>Feuilles de détail :</strong> vues isométriques pour le dossier d'usinage[cite: 10].</li>
+                        <li><strong>Affichage :</strong> ajouter des spécifications pour le contrôle (ex: tolérance géométrique)[cite: 10].</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
     </div>
 
-    <footer>
-        <p>© Mohamed Ifard - Portfolio</p>
+    <!-- FOOTER -->
+    <footer id="contact">
+        <p style="margin-bottom: 5px; color: rgba(255,255,255,0.8);">Recherche contrat d'apprentissage - BUT 3ème année GMP</p>
+        <div class="contact-info">
+            <a href="https://linkedin.com" target="_blank">🔗 LinkedIn</a>
+            <a href="mailto:ifard.mohamed1@gmail.com">✉️ ifard.mohamed1@gmail.com</a>
+            <a href="tel:+33644069669">📞 06 44 06 96 69</a>
+        </div>
     </footer>
 
+    <!-- SCRIPT MENU MOBILE -->
     <script>
         function toggleMenu() {
             document.getElementById('nav-menu').classList.toggle('active');
