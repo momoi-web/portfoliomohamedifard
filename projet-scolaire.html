@@ -19,7 +19,7 @@
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: var(--background-color); color: var(--text-color); line-height: 1.8; overflow-x: hidden; }
         a { text-decoration: none; color: inherit; }
         
-        /* Navigation (Harmonisée) */
+        /* Navigation */
         header { background-color: var(--primary-color); color: var(--white); position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 15px var(--shadow-color); }
         .nav-container { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; }
         .logo { font-weight: bold; font-size: 1.4rem; color: white; letter-spacing: 1px; }
@@ -30,7 +30,7 @@
 
         .menu-btn { display: none; background: none; border: none; color: white; font-size: 1.8rem; cursor: pointer; }
 
-        /* BANDEAU SANS QUADRILLAGE NI ENGRENAGES */
+        /* BANDEAU PROJET */
         .project-hero { 
             position: relative; 
             background: linear-gradient(135deg, rgba(74, 59, 56, 0.9), rgba(217, 119, 54, 0.75)), url('photo_boreau_2.jpg') center center/cover no-repeat;
@@ -52,19 +52,29 @@
         /* BLOCS DU PROJET */
         .intro-box { background-color: #fdfaf9; padding: 30px; border-left: 5px solid var(--accent); margin-bottom: 50px; border-radius: 0 10px 10px 0; display: flex; flex-wrap: wrap; gap: 30px; align-items: center; box-shadow: 0 4px 15px rgba(74, 59, 56, 0.05); }
         .intro-text { flex: 2; min-width: 300px; }
-        .intro-img { flex: 1; min-width: 250px; height: 220px; background-color: #f4f1f0; display: flex; align-items: center; justify-content: center; color: var(--secondary-color); border-radius: 10px; padding: 15px; text-align: center; border: 2px dashed var(--secondary-color); font-style: italic; }
+        
+        /* Style des images réelles */
+        .project-img {
+            flex: 1;
+            min-width: 250px;
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px var(--shadow-color);
+            border: 1px solid rgba(74, 59, 56, 0.1);
+            object-fit: cover;
+        }
 
         .section-block { margin-bottom: 50px; }
         .section-title { color: var(--accent); font-size: 1.6rem; margin-bottom: 20px; border-bottom: 2px solid #f4f1f0; padding-bottom: 10px; font-weight: bold; }
         
-        .content-flex { display: flex; flex-wrap: wrap; gap: 30px; align-items: flex-start; }
+        .content-flex { display: flex; flex-wrap: wrap; gap: 30px; align-items: center; }
         .content-text { flex: 1; min-width: 300px; }
-        .content-img { flex: 1; min-width: 280px; height: 220px; background-color: #f4f1f0; display: flex; align-items: center; justify-content: center; color: var(--secondary-color); border-radius: 10px; padding: 15px; text-align: center; border: 2px dashed var(--secondary-color); font-style: italic; }
         
         ul { padding-left: 20px; }
         li { margin-bottom: 8px; }
 
-        /* FOOTER HARMONISÉ */
+        /* FOOTER */
         footer { background-color: var(--primary-color); color: var(--white); text-align: center; padding: 50px 20px; margin-top: 80px; }
         .contact-info { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-top: 20px; }
         .contact-info a { color: var(--accent); font-weight: bold; font-size: 1.1rem; transition: color 0.3s; text-shadow: 0 1px 2px rgba(0,0,0,0.2); }
@@ -110,18 +120,16 @@
     <div class="container">
         <a href="projets.html" class="back-button">← Retour à mes réalisations</a>
 
-        <!-- Introduction -->
+        <!-- Introduction avec la 1ère image (Pompe CAO) -->
         <div class="intro-box">
             <div class="intro-text">
                 <p>Dans le cadre de notre TP d'industrialisation en semestre 5 du BUT GMP, nous devions réaliser une pompe à palettes composée de plusieurs sous-ensembles mécaniques. Deux pièces clés étaient spécifiquement à fabriquer : le corps principal et l'axe de transmission.</p>
                 <p>Nous disposions de la maquette numérisée CAO complète du système, ce qui nous a permis d'engager la phase d'étude de fabrication de manière efficace.</p>
             </div>
-            <div class="intro-img">
-                [Image : Modélisation CAO de la Pompe à palettes avec le corps]
-            </div>
+            <img src="pompe-3d.png" alt="Modélisation CAO de la Pompe à palettes" class="project-img" onerror="this.src='https://via.placeholder.com/400x300?text=Pompe+CAO'">
         </div>
 
-        <!-- Section 1 : Usinage et FAO -->
+        <!-- Section 1 : Usinage et FAO avec la 2ème image (Outillage) -->
         <div class="section-block">
             <h2 class="section-title">Fabrication & FAO</h2>
             <div class="content-flex" style="flex-direction: row-reverse;">
@@ -134,9 +142,7 @@
                         <li>Et le programme d'usinage pour l'axe.</li>
                     </ul>
                 </div>
-                <div class="content-img">
-                    [Image : Modélisation de l'outillage de maintien]
-                </div>
+                <img src="outillage-maintien.png" alt="Modélisation de l'outillage de maintien" class="project-img" onerror="this.src='https://via.placeholder.com/400x300?text=Outillage+Maintien'">
             </div>
         </div>
 
