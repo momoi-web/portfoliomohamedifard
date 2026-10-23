@@ -20,7 +20,7 @@
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: var(--background-color); color: var(--text-color); line-height: 1.6; overflow-x: hidden; }
         a { text-decoration: none; color: inherit; }
         
-        /* Navigation (Identique à l'accueil) */
+        /* Navigation */
         header { background-color: var(--primary-color); color: var(--white); position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 15px var(--shadow-color); }
         .nav-container { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; }
         .logo { font-weight: bold; font-size: 1.4rem; color: white; letter-spacing: 1px; }
@@ -36,7 +36,26 @@
         
         /* Vidéo de présentation */
         .presentation-box { background-color: var(--white); border-radius: 15px; padding: 30px; text-align: center; box-shadow: 0 10px 30px var(--shadow-color); margin-bottom: 40px; border-top: 5px solid var(--accent); }
-        .video-placeholder { background-color: #f4f1f0; width: 100%; max-width: 700px; height: 300px; margin: 0 auto; display: flex; align-items: center; justify-content: center; border-radius: 10px; color: var(--secondary-color); font-style: italic; border: 2px dashed var(--secondary-color); }
+        
+        /* Conteneur vidéo responsive */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* Ratio 16:9 */
+            height: 0;
+            overflow: hidden;
+            max-width: 850px;
+            margin: 0 auto;
+            border-radius: 10px;
+            box-shadow: 0 8px 25px var(--shadow-color);
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
 
         /* Grille du CV */
         .cv-wrapper { background: var(--white); display: flex; flex-wrap: wrap; box-shadow: 0 10px 30px var(--shadow-color); border-radius: 15px; overflow: hidden; }
@@ -125,8 +144,21 @@
         
         <!-- VIDEO DE PRESENTATION -->
         <div class="presentation-box">
-            <h1 style="color: var(--primary-color); margin-bottom: 20px; font-size: 1.8rem; text-transform: uppercase; letter-spacing: 2px;">Présentation Vidéo</h1>
-            <div class="video-placeholder">[Intégration de la vidéo à venir]</div>
+            <h1 style="color: var(--primary-color); margin-bottom: 30px; font-size: 1.8rem; text-transform: uppercase; letter-spacing: 2px;">Présentation Vidéo</h1>
+            
+            <!-- Intégration YouTube -->
+            <div style="max-width: 850px; margin: 0 auto;">
+                <div class="video-container">
+                    <iframe 
+                        src="https://www.youtube.com/embed/xU4JG27pkIY?si=7Vgn_TxHsf_AvYZ6" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        referrerpolicy="strict-origin-when-cross-origin" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
         </div>
 
         <!-- CORPS DU CV -->
@@ -138,7 +170,6 @@
                 <h4>21 ANS (17/06/2005)</h4>
                 
                 <!-- BOUTON DE TÉLÉCHARGEMENT DU CV -->
-                <!-- Pense à remplacer "CV_Mohamed_Ifard.pdf" par le vrai nom de ton fichier PDF ! -->
                 <a href="CV_Mohamed_Ifard.pdf" download="CV_Mohamed_Ifard.pdf" class="download-btn">
                     Télécharger mon CV (PDF) 📥
                 </a>
