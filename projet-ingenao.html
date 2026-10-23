@@ -65,7 +65,24 @@
         
         .content-flex { display: flex; flex-wrap: wrap; gap: 30px; align-items: flex-start; }
         .content-text { flex: 1; min-width: 300px; }
-        .content-img { flex: 1; min-width: 280px; height: 220px; background-color: #f4f1f0; display: flex; align-items: center; justify-content: center; color: var(--secondary-color); border-radius: 10px; padding: 15px; text-align: center; border: 2px dashed var(--secondary-color); font-style: italic; }
+        
+        /* STYLES POUR LA GRILLE DE DEUX IMAGES */
+        .images-grid { 
+            flex: 1.2; 
+            min-width: 350px; 
+            display: grid;
+            grid-template-columns: 1fr 1fr; 
+            gap: 15px; 
+        }
+        .images-grid img { 
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px var(--shadow-color);
+            border: 1px solid rgba(74, 59, 56, 0.1);
+        }
+
+        .content-img-placeholder { flex: 1; min-width: 280px; height: 220px; background-color: #f4f1f0; display: flex; align-items: center; justify-content: center; color: var(--secondary-color); border-radius: 10px; padding: 15px; text-align: center; border: 2px dashed var(--secondary-color); font-style: italic; }
         
         ul { padding-left: 20px; }
         li { margin-bottom: 8px; }
@@ -87,6 +104,7 @@
             .contact-info { flex-direction: column; gap: 15px; }
             .process-diagram { flex-direction: column; }
             .process-arrow { transform: rotate(90deg); margin: 10px 0; }
+            .images-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -148,9 +166,13 @@
         <div class="step-block">
             <h2 class="step-title">Étape 1 : Réalisation d'un scan 3D</h2>
             <div class="content-flex">
-                <div class="content-img">
-                    [Image : Logiciel de scan 3D / Nuage de points]
+                
+                <!-- Zone des DEUX images avec les noms renommés -->
+                <div class="images-grid">
+                    <img src="nuage-points.png" alt="Nuage de points - Vue de haut" onerror="this.src='https://via.placeholder.com/300x500?text=Scan+Vue+Haut'">
+                    <img src="recap-pro.png" alt="Nuage de points dans Autodesk ReCap Pro" onerror="this.src='https://via.placeholder.com/300x500?text=ReCap+Pro'">
                 </div>
+                
                 <div class="content-text">
                     <p>Plusieurs positions de scan pour relever toutes les zones et points d'accroche possibles.</p>
                     <p>Vient ensuite l'étape du <strong>nettoyage</strong>, car lors de la prise de scan, nous numérisons également certains éléments du décor qui n'ont aucune utilité et peuvent gêner le travail. Pour ce faire, on supprime donc l'ensemble des éléments indésirables afin d'obtenir un résultat exploitable.</p>
@@ -162,7 +184,7 @@
         <div class="step-block">
             <h2 class="step-title">Étape 2 : Étude & conception 3D</h2>
             <div class="content-flex" style="flex-direction: row-reverse;">
-                <div class="content-img">
+                <div class="content-img-placeholder">
                     [Image : Modélisation 3D du pousseur de papier]
                 </div>
                 <div class="content-text">
@@ -176,7 +198,7 @@
         <div class="step-block" style="margin-bottom: 0;">
             <h2 class="step-title">Étape 3 : Mise en plan pour fabrication</h2>
             <div class="content-flex">
-                <div class="content-img">
+                <div class="content-img-placeholder">
                     [Image : Mise en plan 2D (Cartouche INGENAO)]
                 </div>
                 <div class="content-text">
