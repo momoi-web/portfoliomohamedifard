@@ -33,7 +33,6 @@
         /* BANDEAU FUTURISTE - SANS ENGRENAGES NI QUADRILLAGE */
         .hero { 
             position: relative; 
-            /* J'ai mis l'image mécanique de ta capture d'écran */
             background: linear-gradient(135deg, rgba(74, 59, 56, 0.8), rgba(217, 119, 54, 0.65)), url('https://images.unsplash.com/photo-1565439387494-ce5ac08560f6?auto=format&fit=crop&w=1920&q=80') center center/cover no-repeat;
             color: var(--white); 
             text-align: center; 
@@ -89,7 +88,8 @@
         
         /* Section Qui suis-je */
         .about-section { background: var(--white); border-radius: 15px; padding: 40px; box-shadow: 0 10px 30px var(--shadow-color); display: flex; flex-wrap: wrap; gap: 40px; align-items: center; margin-bottom: 60px; border-left: 6px solid var(--accent); }
-        .about-photo { flex: 1; min-width: 280px; height: 350px; background-color: #f4f1f0; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: var(--primary-color); font-style: italic; border: 2px dashed var(--secondary-color); overflow: hidden; }
+        .about-photo { flex: 1; min-width: 280px; height: 350px; background-color: #f4f1f0; border-radius: 10px; display: flex; align-items: center; justify-content: center; overflow: hidden; border: 1px solid rgba(74, 59, 56, 0.1); }
+        .about-photo img { width: 100%; height: 100%; object-fit: cover; }
         .about-content { flex: 2; min-width: 300px; }
         
         .cv-button { display: inline-block; background-color: var(--accent); color: var(--white); padding: 15px 30px; border-radius: 8px; font-weight: bold; margin-bottom: 25px; transition: all 0.3s; font-size: 1.1rem; box-shadow: 0 4px 15px rgba(217, 119, 54, 0.3); }
@@ -141,11 +141,11 @@
         </div>
     </header>
 
-    <!-- SECTION HERO SANS ENGRENAGES NI QUADRILLAGE -->
+    <!-- SECTION HERO -->
     <section class="hero">
         <div class="hero-content">
-            <!-- N'oublie pas de mettre le vrai nom de ton image à la place de mohamed-profil.jpg -->
-            <img src="mohamed-profil.jpg" alt="Photo de Mohamed Ifard" class="hero-profile-pic" onerror="this.src='https://via.placeholder.com/180/4a3b38/d97736?text=Photo'">
+            <!-- 1ère photo : recadrée serrée sur votre visage -->
+            <img src="mohamed-profil.jpg" alt="Photo de Mohamed Ifard" class="hero-profile-pic">
             
             <h1>Mohamed Ifard</h1>
             <p>Conception & Ingénierie Mécanique</p>
@@ -158,7 +158,8 @@
         <!-- SECTION QUI SUIS-JE -->
         <div class="about-section">
             <div class="about-photo">
-                [Insérez votre 2ème photo ici]
+                <!-- 2ème photo : de face, en entier devant le mur IUT'O -->
+                <img src="mohamed-iut.jpg" alt="Portrait de Mohamed Ifard à l'IUT">
             </div>
             <div class="about-content">
                 <a href="cv.html" class="cv-button">Découvrir mon profil complet ➔</a>
