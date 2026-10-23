@@ -8,7 +8,7 @@
         :root {
             --primary-color: #4a3b38; /* Marron Chocolat */
             --secondary-color: #6b5b58; /* Marron clair */
-            --background-color: #fbf9f8; /* Blanc cassé / très légèrement chaud */
+            --background-color: #fbf9f8; /* Blanc cassé */
             --text-color: #4a3b38; /* Texte marron */
             --white: #ffffff; /* Blanc pur */
             --accent: #d97736; /* Orange */
@@ -59,14 +59,24 @@
 
         .intro-box { background-color: var(--white); padding: 35px; border-left: 6px solid var(--accent); margin-bottom: 40px; border-radius: 12px; box-shadow: 0 10px 30px var(--shadow-color); display: flex; flex-wrap: wrap; gap: 30px; align-items: center; }
         .intro-text { flex: 2; min-width: 250px; }
-        .intro-img { flex: 1; min-width: 250px; height: 200px; background-color: #f4f1f0; display: flex; align-items: center; justify-content: center; color: var(--secondary-color); border-radius: 10px; font-style: italic; border: 2px dashed var(--secondary-color); }
+        
+        /* Style des vraies images */
+        .project-img {
+            flex: 1;
+            min-width: 250px;
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px var(--shadow-color);
+            border: 1px solid rgba(74, 59, 56, 0.1);
+            object-fit: cover;
+        }
 
         .section-block { background: var(--white); border-radius: 12px; padding: 35px; box-shadow: 0 10px 30px var(--shadow-color); margin-bottom: 40px; border-left: 6px solid var(--accent); }
         .section-title { color: var(--primary-color); font-size: 1.6rem; margin-top: 0; margin-bottom: 20px; border-bottom: 2px solid var(--background-color); padding-bottom: 10px; }
         
         .content-flex { display: flex; flex-wrap: wrap; gap: 30px; align-items: center; }
         .content-text { flex: 1; min-width: 280px; }
-        .content-img { flex: 1; min-width: 280px; height: 240px; background-color: #f4f1f0; display: flex; align-items: center; justify-content: center; color: var(--secondary-color); border-radius: 10px; font-style: italic; border: 2px dashed var(--secondary-color); }
         
         ul { padding-left: 20px; color: var(--text-color); }
         li { margin-bottom: 10px; }
@@ -112,15 +122,15 @@
     <div class="container">
         <a href="projets.html" class="back-button">← Retour à tous les projets</a>
 
+        <!-- 1ère photo : Stand / Équipe -->
         <div class="intro-box">
             <div class="intro-text">
                 <p>Pendant mon cursus, j'ai pu rejoindre une association de mon université nommée <strong>HYPERBOLE ++</strong>, qui a fait participer des élèves pour construire un prototype permettant de participer au SHELL ECO-MARATHON.</p>
             </div>
-            <div class="intro-img">
-                [Image : Stand HYPERBOLE++]
-            </div>
+            <img src="stand-hyperbole.png" alt="Stand HYPERBOLE++" class="project-img" onerror="this.src='https://via.placeholder.com/400x300?text=Stand+Hyperbole'">
         </div>
 
+        <!-- 2ème photo : Piste Shell Eco-marathon -->
         <div class="section-block">
             <h2 class="section-title">Qu'est-ce que le Shell Eco-marathon ?</h2>
             <div class="content-flex">
@@ -132,12 +142,11 @@
                         <li><strong>UrbanConcept :</strong> modèles proches de la ville, très économes.</li>
                     </ul>
                 </div>
-                <div class="content-img">
-                    [Image : Piste Shell Eco-marathon]
-                </div>
+                <img src="piste-shell.png" alt="Piste Shell Eco-marathon" class="project-img" onerror="this.src='https://via.placeholder.com/400x300?text=Piste+Shell'">
             </div>
         </div>
 
+        <!-- 3ème photo : Prototype sur scène / Équipe technique -->
         <div class="section-block">
             <h2 class="section-title">Notre Prototype Électrique</h2>
             <div class="content-flex" style="flex-direction: row-reverse;">
@@ -145,9 +154,7 @@
                     <p>Notre équipe a participé avec notre prototype électrique conçu et fabriqué par nos soins, doté d'une coque en carbone et d'un design aérodynamique optimisé.</p>
                     <p>Malgré un budget modeste, nous nous sommes distingués grâce à notre ingéniosité et notre maîtrise des technologies électriques.</p>
                 </div>
-                <div class="content-img">
-                    [Image : Prototype sur scène]
-                </div>
+                <img src="prototype-scene.png" alt="Prototype et Équipe" class="project-img" onerror="this.src='https://via.placeholder.com/400x300?text=Prototype+Equipe'">
             </div>
         </div>
 
