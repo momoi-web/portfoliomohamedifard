@@ -19,7 +19,7 @@
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: var(--background-color); color: var(--text-color); line-height: 1.8; overflow-x: hidden; }
         a { text-decoration: none; color: inherit; }
         
-        /* Navigation (Harmonisée) */
+        /* Navigation */
         header { background-color: var(--primary-color); color: var(--white); position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 15px var(--shadow-color); }
         .nav-container { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 15px 20px; }
         .logo { font-weight: bold; font-size: 1.4rem; color: white; letter-spacing: 1px; }
@@ -30,7 +30,7 @@
 
         .menu-btn { display: none; background: none; border: none; color: white; font-size: 1.8rem; cursor: pointer; }
 
-        /* BANDEAU SANS QUADRILLAGE NI ENGRENAGES */
+        /* BANDEAU */
         .project-hero { 
             position: relative; 
             background: linear-gradient(135deg, rgba(74, 59, 56, 0.9), rgba(217, 119, 54, 0.75)), url('photo_boreau_2.jpg') center center/cover no-repeat;
@@ -63,10 +63,10 @@
         .step-block { margin-bottom: 50px; }
         .step-title { color: var(--accent); font-size: 1.6rem; margin-bottom: 20px; border-bottom: 2px solid #f4f1f0; padding-bottom: 10px; font-weight: bold; display: flex; align-items: center; gap: 10px; }
         
-        .content-flex { display: flex; flex-wrap: wrap; gap: 30px; align-items: flex-start; }
+        .content-flex { display: flex; flex-wrap: wrap; gap: 30px; align-items: center; }
         .content-text { flex: 1; min-width: 300px; }
         
-        /* STYLES POUR LA GRILLE DE DEUX IMAGES */
+        /* STYLES DES IMAGES (Adaptés pour que ça passe super bien) */
         .images-grid { 
             flex: 1.2; 
             min-width: 350px; 
@@ -76,18 +76,28 @@
         }
         .images-grid img { 
             width: 100%;
-            height: auto;
+            height: 250px; /* Hauteur fixe pour que les deux s'alignent parfaitement */
+            object-fit: cover; /* Recadre joliment l'image sans la déformer */
             border-radius: 8px;
             box-shadow: 0 4px 10px var(--shadow-color);
             border: 1px solid rgba(74, 59, 56, 0.1);
         }
 
-        .content-img-placeholder { flex: 1; min-width: 280px; height: 220px; background-color: #f4f1f0; display: flex; align-items: center; justify-content: center; color: var(--secondary-color); border-radius: 10px; padding: 15px; text-align: center; border: 2px dashed var(--secondary-color); font-style: italic; }
+        /* Classe pour les images simples (Etape 2 et 3) */
+        .single-img {
+            flex: 1; 
+            min-width: 280px; 
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px var(--shadow-color);
+            border: 1px solid rgba(74, 59, 56, 0.1);
+        }
         
         ul { padding-left: 20px; }
         li { margin-bottom: 8px; }
 
-        /* FOOTER HARMONISÉ */
+        /* FOOTER */
         footer { background-color: var(--primary-color); color: var(--white); text-align: center; padding: 50px 20px; margin-top: 80px; }
         .contact-info { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-top: 20px; }
         .contact-info a { color: var(--accent); font-weight: bold; font-size: 1.1rem; transition: color 0.3s; text-shadow: 0 1px 2px rgba(0,0,0,0.2); }
@@ -105,6 +115,7 @@
             .process-diagram { flex-direction: column; }
             .process-arrow { transform: rotate(90deg); margin: 10px 0; }
             .images-grid { grid-template-columns: 1fr; }
+            .images-grid img { height: auto; aspect-ratio: 16/9; } /* Sur mobile, laisse l'image respirer */
         }
     </style>
 </head>
@@ -166,13 +177,12 @@
         <div class="step-block">
             <h2 class="step-title">Étape 1 : Réalisation d'un scan 3D</h2>
             <div class="content-flex">
-                
-                <!-- Zone des DEUX images avec les noms renommés -->
                 <div class="images-grid">
+                    <!-- Image ReCap Pro en PREMIER -->
+                    <img src="recap-pro.jpg" alt="Nuage de points dans Autodesk ReCap Pro" onerror="this.src='https://via.placeholder.com/300x500?text=ReCap+Pro'">
+                    <!-- Image Nuage de points en SECOND -->
                     <img src="nuage-points.png" alt="Nuage de points - Vue de haut" onerror="this.src='https://via.placeholder.com/300x500?text=Scan+Vue+Haut'">
-                    <img src="recap-pro.png" alt="Nuage de points dans Autodesk ReCap Pro" onerror="this.src='https://via.placeholder.com/300x500?text=ReCap+Pro'">
                 </div>
-                
                 <div class="content-text">
                     <p>Plusieurs positions de scan pour relever toutes les zones et points d'accroche possibles.</p>
                     <p>Vient ensuite l'étape du <strong>nettoyage</strong>, car lors de la prise de scan, nous numérisons également certains éléments du décor qui n'ont aucune utilité et peuvent gêner le travail. Pour ce faire, on supprime donc l'ensemble des éléments indésirables afin d'obtenir un résultat exploitable.</p>
@@ -184,8 +194,9 @@
         <div class="step-block">
             <h2 class="step-title">Étape 2 : Étude & conception 3D</h2>
             <div class="content-flex" style="flex-direction: row-reverse;">
-                <div class="content-img-placeholder">
-                    [Image : Modélisation 3D du pousseur de papier]
+                <!-- Insertion de la Modélisation 3D -->
+                <div style="flex: 1; text-align: center;">
+                    <img src="modele-3d.png" alt="Modélisation 3D du pousseur de papier" class="single-img" onerror="this.src='https://via.placeholder.com/400x300?text=Modélisation+3D'">
                 </div>
                 <div class="content-text">
                     <p>Après cette étape vient le début de l'étude et donc de la conception de la maquette 3D. Il est important de noter que l'étape précédente est essentielle au bon déroulement de l'étude. Je me concentrerai ici uniquement sur le projet du pousseur de papier.</p>
@@ -198,8 +209,9 @@
         <div class="step-block" style="margin-bottom: 0;">
             <h2 class="step-title">Étape 3 : Mise en plan pour fabrication</h2>
             <div class="content-flex">
-                <div class="content-img-placeholder">
-                    [Image : Mise en plan 2D (Cartouche INGENAO)]
+                <!-- Insertion de la Mise en plan -->
+                <div style="flex: 1; text-align: center;">
+                    <img src="mise-en-plan.png" alt="Mise en plan 2D Cartouche INGENAO" class="single-img" onerror="this.src='https://via.placeholder.com/400x300?text=Mise+en+plan'">
                 </div>
                 <div class="content-text">
                     <ul>
